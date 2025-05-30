@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome",
+    "title": "Reproducible Science Starter-Pack",
     "section": "",
-    "text": "Welcome to pre-school workshop\nThis is the homepage for my project that includes a Git submodule.\nNavigate to the compendium from the navbar!"
+    "text": "This is the homepage for my project that includes a Git submodule.\nNavigate to the compendium from the navbar!"
   },
   {
     "objectID": "example-compendium/CONDUCT.html",
@@ -18,7 +18,7 @@
     "href": "example-compendium/index.html",
     "title": "Example Compendium",
     "section": "",
-    "text": "Example Compendium\nThis content lives in the submodule."
+    "text": "This content lives in the submodule."
   },
   {
     "objectID": "example-compendium/LICENSE.html",
