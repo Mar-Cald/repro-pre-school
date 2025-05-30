@@ -1,0 +1,469 @@
+---
+title: Reproducible Science  
+author: Margherita Calderan  
+institute: "**Replicability School**"
+format:  
+  revealjs:  
+    theme: style/mytheme.scss  
+    width: 1200
+date: 2025/06/06  
+date-format: long  
+bibliography: "biblio.bib"
+csl: style/apa.csl
+reference-section-title: References
+final-slide: true  
+from: markdown+emoji  
+incremental: true  
+engine: knitr  
+---
+
+## About me :wave:
+
+<br/>
+
+::: nonincremental
+-   I am a post-doctoral researcher in **Cognitive Psychology** at the Department of General Psychology, University of Padova. <br/><br/>
+-   My research interests include the computational modeling of **cognitive** and **learning processes**, and **Bayesian** hypothesis testing. <br/><br/>
+-   I completed a PhD in Psychological Science on **March 6, 2025**.
+:::
+
+------------------------------------------------------------------------
+
+## Our job is hard :fire:
+
+<br/>
+
+::::: columns
+::: {.column width="50%"}
+-   Running experiments\
+-   Conducting analyses\
+-   Managing trainees\
+-   Managing data\
+-   Writing papers\
+:::
+
+::: {.column width="50%"}
+-   Preparing talks and abstracts\
+-   Reading papers\
+-   Responding to reviewers\
+-   Collaborating with peers and supervisors\
+:::
+:::::
+
+## Is reproducible science even harder?
+
+<br/>
+
+At first, yes - but then...:fire_extinguisher::fire:
+
+::: nonincremental
+-   Helps you stay **organized**.
+-   Makes it **easier to remember** what you did.
+-   Allows others to **understand**, **reproduce**, and **build on** your work.
+:::
+
+> *Learning the tools takes effort but once you do, your workflow becomes smoother, clearer, and more reliable.*
+
+## Keys to reproducible science :closed_lock_with_key:
+
+<br/>
+
+::: nonincremental
+**1.** A general purpose programming language such as `r fontawesome::fa(name = "r-project")` or `r fontawesome::fa(name = "python")`. <br/><br/> **2.** A literate programming framework to integrate code and text. <br/><br/> **3.** A version control system to track projects. <br/><br/> **4.** An online repository for future-proof sharing.
+:::
+
+## ![R](images/R_logo.png){fig-align="center" width="80"} and RStudio
+
+::::: columns
+::: {.column width="50%"}
+-   R packages allow to **do almost everything**.
+
+-   It is **free** and **open-source**.
+
+-   The **community** is wide, active thus solving problems is very easy.
+
+-   Force you to **learn scripting**.
+:::
+
+::: {.column width="50%"}
+-   ![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjNveWQ4ZThld2pidDg3dHlmdXA0NTQ0ZHYzeXFqaWVhbTBzdHA4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13py6c5BSnBkic/giphy.gif)
+:::
+:::::
+
+## Writing better code
+
+### *Naming variables*
+
+Be consistent and descriptive. Avoid cryptic names like `x1`. Use either:
+
+``` r
+x1 = rep(c("DPSS","DPG","DSS"), 4)  # What does 'x' mean?
+DepUni = x1      # CamelCase
+dep_uni = x1     # snake_case
+```
+
+Try to **stick to one style**.
+
+### *Comment*
+
+Leave meaningful comments. You might not remember your own code in a few months, imagine someone else trying to read it!
+
+## Functional Programming, example...
+
+We have a dataset (`mtcars`) and we want to calculate the mean, median, standard deviation, minimum and maximum of each column and store the result in a table.
+
+```{r}
+#| echo: true
+head(mtcars, n = 3)
+str(mtcars)
+```
+
+## Functional Programming
+
+The standard (\~imperative) option is using a `for` loop, iterating through columns, calculate the values and store into another data structure.
+
+```{r}
+#| echo: true
+ncols <- ncol(mtcars)
+means <- medians <- mins <- maxs <- rep(0, ncols)
+
+for(i in 1:ncols){
+  means[i] <- mean(mtcars[[i]])
+  medians[i] <- median(mtcars[[i]])
+  mins[i] <- min(mtcars[[i]])
+  maxs[i] <- max(mtcars[[i]])
+}
+
+results <- data.frame(means, medians, mins, maxs)
+results$col <- names(mtcars)
+
+head(results, n = 3)
+
+```
+
+## Functional Programming
+
+The main idea is to decompose the problem writing a function and loop over the columns of the dataframe:
+
+```{r}
+#| echo: true
+summ <- function(x){
+  data.frame(means = mean(x), 
+             medians = median(x), 
+             mins = min(x), 
+             maxs = max(x))
+}
+ncols <- ncol(mtcars)
+dfs <- vector(mode = "list", length = ncols)
+
+for(i in 1:ncols){
+  dfs[[i]] <- summ(mtcars[[i]])
+}
+```
+
+## Functional Programming
+
+```{r}
+#| echo: true
+
+results <- do.call(rbind, dfs)
+head(results, n = 6)
+
+```
+
+## Functional Programming
+
+The actual real functional way require using the built-in iteration tools `*apply`. In this way you avoid writing the verbose `for` loop.
+
+```{r}
+#| echo: true
+results <- lapply(mtcars, summ)
+results <- do.call(rbind, results)
+head(results, n = 6)
+
+```
+
+## Functional Programming, `*apply`
+
+-   The `*apply` family is one of the best tool in R. The idea is pretty simple: apply a function to each element of a list.
+-   The powerful side is that in R everything can be considered as a list. A vector is a list of single elements, a dataframe is a list of columns etc.
+-   Internally, R is still using a `for` loop but the verbose part (preallocation, choosing the iterator, indexing) is encapsulated into the `*apply` function.
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+means <- rep(0, ncol(mtcars))
+for(i in 1:length(means)){
+  means[i] <- mean(mtcars[[i]])
+}
+
+# the same with sapply
+means <- sapply(mtcars, mean)
+```
+
+## `for` loops are bad?
+
+`for` loops are the core of each operation in R (and in every programming language). For complex operation thery are more readable and effective compared to `*apply`. In R we need extra care for writing efficent `for` loops.
+
+Extremely slow, no preallocation:
+
+```{r}
+#| eval: false
+#| echo: true
+res <- c()
+for(i in 1:1000){
+  # do something
+  res[i] <- i^2
+}
+```
+
+Very fast:
+
+```{r}
+#| eval: false
+#| echo: true
+res <- rep(0, 1000)
+for(i in 1:length(res)){
+  # do something
+  res[i] <- i^2
+}
+```
+
+## `microbenchmark`
+
+```{r}
+#| echo: true
+library(microbenchmark)
+
+microbenchmark(
+  grow_in_loop = {
+    res <- c()
+    for (i in 1:10000) {
+      res[i] <- i^2  
+    }
+  },
+  preallocated = {
+    res <- rep(0, 10000)
+    for (i in 1:length(res)) {
+      res[i] <- i^2  
+    }
+  }, times = 100)
+```
+
+## With `*apply` you can do crazy stuff!
+
+```{r}
+#| echo: true
+funs <- list(mean = mean, sd = sd, min = min, max = max, median = median)
+sapply(funs, function(f) lapply(mtcars, function(x) f(x)))
+```
+
+## Pure functions
+
+Pure functions have no side effects and always return the same output for a given input.
+
+::::: columns
+::: {.column width="50%"}
+### Pure function
+
+```{r, echo=TRUE}
+x = 4
+add_pure<- function(x) {
+  return(x + 1)
+}
+add_pure(2)
+print(x)
+```
+:::
+
+::: {.column width="50%"}
+### Impure function
+
+```{r, echo=TRUE}
+add_impure <- function(x) {
+  x <<- x + 1
+}
+add_impure(x)
+print(x)
+```
+:::
+:::::
+
+## Test your functions - `fuzzr`
+
+::::: columns
+::: {.column width="50%"}
+Define your function...
+
+```{r, echo=TRUE}
+my_mean <- function(x, na.rm = TRUE) {
+  if (!is.numeric(x)) stop("`x` must be numeric")
+  if (length(x) == 0) return(NA)
+  if (na.rm) x <- x[!is.na(x)]
+  if (length(x) == 0) return(NA)
+  sum(x) / length(x)
+}
+```
+:::
+
+::: {.column width="50%"}
+Define properties that should always hold true...
+
+```{r, echo=TRUE}
+property_mean_correct <- function(x) {
+  x_no_na <- x[!is.na(x)] #remove NA
+  if (length(x_no_na) == 0) return(TRUE)
+  abs(my_mean(x) - mean(x, na.rm = TRUE)) < 1e-8
+}
+```
+:::
+:::::
+
+------------------------------------------------------------------------
+
+Test the function across many randomly generated inputs...
+
+::::: columns
+::: {.column width="70%"}
+```{r, echo=TRUE}
+# Property-based testing with 'fuzzr'
+library(fuzzr)
+test = fuzz_function(fun = property_mean_correct, 
+                     arg_name = "x", 
+                     tests = test_dbl()) 
+lapply(test, function(res) res$test_result$value)
+```
+:::
+
+::: {.column width="30%"}
+```{r, echo=TRUE}
+fuzzr::test_dbl()
+```
+:::
+:::::
+
+## Why functional programming?
+
+-   We can write less and reusable code that can be shared and used in multiple projects.
+-   The scripts are more compact, easy to modify and less error prone (imagine that you want to improve the `summ` function, you only need to change it once instead of touching the `for` loop).
+-   Functions can be easily and consistently documented (see [roxygen](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) documentation) improving the reproducibility and readability of your code.
+
+## 
+
+If your functions are project-specific you can define them into your scripts or write some R scripts only with functions and `source()` them into the global environment.
+
+```         
+project/
+├─ R/
+│  ├─ utils.R
+├─ analysis.R
+```
+
+And inside `utils.R` you have some functions:
+
+```{r}
+#| eval: false
+#| echo: true
+
+myfun <- function(x) {
+  # something
+}
+```
+
+Then you can load the function using `source("R/utils.R)` at the beginning of `analysis.R`:
+
+```{r}
+#| eval: false
+#| echo: true
+source("R/utils.R")
+```
+
+## More about functional programming in R
+
+-   Advanced R by Hadley Wickham, section on Functional Programming (<https://adv-r.hadley.nz/fp.html>)
+-   Hands-On Programming with R by Garrett Grolemund <https://rstudio-education.github.io/hopr/>
+-   Hadley Wickham: [The Joy of Functional Programming (for Data Science)](https://www.youtube.com/watch?v=bzUmK0Y07ck)
+
+. . .
+
+<center>
+
+::::: columns
+::: {.column width="50%"}
+![Advanced R](images/advanced-r.jpg){fig-align="center" width="172"}
+:::
+
+::: {.column width="50%"}
+![Hands-on Programming With R](images/hand-on-programming.jpeg){fig-align="center" width="198"}
+:::
+:::::
+
+</center>
+
+## Organize your work - R projects
+
+### Research compendium
+
+::::: columns
+::: {.column width="50%"}
+> *... the goal is to provide a standard and easily recognisable way for organising the digital materials of a project to enable others to inspect, reproduce, and extend the research... [@Marwick02012018]*
+:::
+
+::: {.column width="50%"}
+![](images/compendia.png){fig-align="center" width="300"}
+:::
+:::::
+
+## Research compendium `rrtools` :package:
+
+-   Organize its files according to the prevailing conventions.
+-   Maintain a clear separation of data, method, and output, while unambiguously expressing the relationship between those three (original data is untouched!).
+-   Specify the computational environment that was used for the original analysis
+
+[Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
+
+## 
+
+`rrtools::create_compendium()` builds the basic structure for a research compendium.
+
+-   Storage for general metadata (e.g., citation details)
+-   Dependency management via **DESCRIPTION** file
+-   Function storage and documentation in R/ folder
+
+These features enable managing, installing, and sharing project-related functionality.
+
+## Research `renv` :package:
+
+`renv` helps you create reproducible environments for your R projects.
+
+![[renv workflow](https://rstudio.github.io/renv/articles/renv.html)](images/renv.png){fig-align="center" width="300"}
+
+## Project specific library
+
+`install.packages('microbenchmark')`
+
+The following package(s) will be installed:
+
+\- microbenchmark \[1.5.0\]
+
+These packages will be installed into
+
+**"\~/repro-pre-school/example-renv/renv/library/macos/R-4.4/aarch64-apple-darwin20".**
+
+## Research `rrtools` + `renv` :package:
+
+## Better code
+
+Use consistent naming and comments :white_check_mark: <br/>
+
+Break long scripts into functions! :white_check_mark: <br/>
+
+Use clear structure
+
+Use version control (e.g., Git)
+
+## Data sharing
+
+## Reproducible Documents
