@@ -165,7 +165,7 @@
     "href": "slide/repro-preschool.html#microbenchmark",
     "title": "Reproducible Science",
     "section": "microbenchmark",
-    "text": "microbenchmark\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  grow_in_loop = {\n    res &lt;- c()\n    for (i in 1:10000) {\n      res[i] &lt;- i^2  \n    }\n  },\n  preallocated = {\n    res &lt;- rep(0, 10000)\n    for (i in 1:length(res)) {\n      res[i] &lt;- i^2  \n    }\n  }, times = 100)\n\nUnit: microseconds\n         expr      min        lq      mean    median       uq      max neval\n grow_in_loop 1109.542 1199.2500 1379.3872 1244.8625 1314.870 5050.954   100\n preallocated  650.383  671.6005  686.7775  682.5065  694.827  845.092   100\n cld\n  a \n   b"
+    "text": "microbenchmark\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  grow_in_loop = {\n    res &lt;- c()\n    for (i in 1:10000) {\n      res[i] &lt;- i^2  \n    }\n  },\n  preallocated = {\n    res &lt;- rep(0, 10000)\n    for (i in 1:length(res)) {\n      res[i] &lt;- i^2  \n    }\n  }, times = 100)\n\nUnit: microseconds\n         expr      min       lq      mean    median        uq      max neval\n grow_in_loop 1203.063 1348.633 1567.1258 1412.1835 1518.3530 4825.823   100\n preallocated  658.829  754.769  792.4107  774.8385  804.9735 2051.886   100\n cld\n  a \n   b"
   },
   {
     "objectID": "slide/repro-preschool.html#with-apply-you-can-do-crazy-stuff",
