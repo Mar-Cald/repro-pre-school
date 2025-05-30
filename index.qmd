@@ -1,0 +1,10 @@
+---
+title: "Welcome"
+format: html
+---
+
+# Welcome to pre-school workshop
+
+This is the homepage for my project that includes a Git submodule.
+
+Navigate to the compendium from the navbar!

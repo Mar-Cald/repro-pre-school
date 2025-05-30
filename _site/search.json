@@ -1,0 +1,275 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to pre-school workshop\nThis is the homepage for my project that includes a Git submodule.\nNavigate to the compendium from the navbar!"
+  },
+  {
+    "objectID": "example-compendium/CONDUCT.html",
+    "href": "example-compendium/CONDUCT.html",
+    "title": "Contributor Code of Conduct",
+    "section": "",
+    "text": "Contributor Code of Conduct\nAs contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.\nWe are committed to making participation in this project a harassment-free experience for everyone, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, or religion.\nExamples of unacceptable behavior by participants include the use of sexual language or imagery, derogatory comments or personal attacks, trolling, public or private harassment, insults, or other unprofessional conduct.\nProject maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct. Project maintainers who do not follow the Code of Conduct may be removed from the project team.\nInstances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening an issue or contacting one or more of the project maintainers.\nThis Code of Conduct is adapted from the Contributor Covenant (http:contributor-covenant.org), version 1.0.0, available at http://contributor-covenant.org/version/1/0/0/"
+  },
+  {
+    "objectID": "example-compendium/index.html",
+    "href": "example-compendium/index.html",
+    "title": "Example Compendium",
+    "section": "",
+    "text": "Example Compendium\nThis content lives in the submodule."
+  },
+  {
+    "objectID": "example-compendium/LICENSE.html",
+    "href": "example-compendium/LICENSE.html",
+    "title": "MIT License",
+    "section": "",
+    "text": "MIT License\nCopyright (c) 2025 Mar-Cald\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "example-compendium/analysis/templates/template.html",
+    "href": "example-compendium/analysis/templates/template.html",
+    "title": "My title",
+    "section": "",
+    "text": "In the MS Word document, the following modifications must be made in the ‘Modify Style’ menu:\n\nSet the font color to ‘white’ (rather than ‘Automatic’).\nSelect the smallest font size (8 rather than 11).\nSelect ‘Page break before’ in the ‘Line and Page Breaks’ tab.\nSet the line spacing to ‘Exactly’ and ‘1 pt’ in the ‘Indents and Spacing’ tab.\n\nAfter these tweaks, the ‘Heading 5’ style will no longer format a heading of level 5. Instead it will insert a very small and white (and, thus, invisible) line followed by a page break.\nNow knit this doc, and edit the styles in the resulting docx file. Then rename as ‘template’ and use this in the yml:\noutput:\n  word_document:\n    reference_docx: templates/template.docx\nDon’t forget line numbers for JAS! Headings are bold, underline, nothing. And Arial Narrow 10pt for tables.\nSee here for more information: http://rmarkdown.rstudio.com/articles_docx.html"
+  },
+  {
+    "objectID": "example-compendium/analysis/templates/template.html#heading-2",
+    "href": "example-compendium/analysis/templates/template.html#heading-2",
+    "title": "My title",
+    "section": "",
+    "text": "In the MS Word document, the following modifications must be made in the ‘Modify Style’ menu:\n\nSet the font color to ‘white’ (rather than ‘Automatic’).\nSelect the smallest font size (8 rather than 11).\nSelect ‘Page break before’ in the ‘Line and Page Breaks’ tab.\nSet the line spacing to ‘Exactly’ and ‘1 pt’ in the ‘Indents and Spacing’ tab.\n\nAfter these tweaks, the ‘Heading 5’ style will no longer format a heading of level 5. Instead it will insert a very small and white (and, thus, invisible) line followed by a page break.\nNow knit this doc, and edit the styles in the resulting docx file. Then rename as ‘template’ and use this in the yml:\noutput:\n  word_document:\n    reference_docx: templates/template.docx\nDon’t forget line numbers for JAS! Headings are bold, underline, nothing. And Arial Narrow 10pt for tables.\nSee here for more information: http://rmarkdown.rstudio.com/articles_docx.html"
+  },
+  {
+    "objectID": "example-compendium/CONTRIBUTING.html",
+    "href": "example-compendium/CONTRIBUTING.html",
+    "title": "Contributing",
+    "section": "",
+    "text": "We love pull requests from everyone. By participating in this project, you agree to abide by our code of conduct.\n\n\n\nMake sure you have a GitHub account. If you are not familar with git and GitHub, take a look at http://happygitwithr.com/ to get started.\nSubmit a post for your issue, assuming one does not already exist.\n\nClearly describe your issue, including steps to reproduce when it is a bug, or some justification for a proposed improvement.\n\nFork the repository on GitHub to make a copy of the repository on your account. Or use this line in your shell terminal:\ngit clone git@github.com:your-username/&lt;REPO&gt;.git\n\n\n\n\n\nEdit the files, save often, and make commits of logical units, where each commit indicates one concept\nFollow our style guide.\nMake sure you write good commit messages.\nMake sure you have added the necessary tests for your code changes.\nRun all the tests using devtools::check() to assure nothing else was accidentally broken.\nIf you need help or unsure about anything, post an update to your issue.\n\n\n\n\nPush to your fork and submit a pull request.\nAt this point you’re waiting on us. We like to at least comment on pull requests within a few days (and, typically, one business day). We may suggest some changes or improvements or alternatives.\nSome things you can do that will increase the chance that your pull request is accepted:\n\nEngage in discussion on your issue.\nBe familiar with the backround literature cited in the README\nWrite tests that pass.\nFollow our code style guide.\nWrite a good commit message."
+  },
+  {
+    "objectID": "example-compendium/CONTRIBUTING.html#getting-started",
+    "href": "example-compendium/CONTRIBUTING.html#getting-started",
+    "title": "Contributing",
+    "section": "",
+    "text": "Make sure you have a GitHub account. If you are not familar with git and GitHub, take a look at http://happygitwithr.com/ to get started.\nSubmit a post for your issue, assuming one does not already exist.\n\nClearly describe your issue, including steps to reproduce when it is a bug, or some justification for a proposed improvement.\n\nFork the repository on GitHub to make a copy of the repository on your account. Or use this line in your shell terminal:\ngit clone git@github.com:your-username/&lt;REPO&gt;.git"
+  },
+  {
+    "objectID": "example-compendium/CONTRIBUTING.html#making-changes",
+    "href": "example-compendium/CONTRIBUTING.html#making-changes",
+    "title": "Contributing",
+    "section": "",
+    "text": "Edit the files, save often, and make commits of logical units, where each commit indicates one concept\nFollow our style guide.\nMake sure you write good commit messages.\nMake sure you have added the necessary tests for your code changes.\nRun all the tests using devtools::check() to assure nothing else was accidentally broken.\nIf you need help or unsure about anything, post an update to your issue."
+  },
+  {
+    "objectID": "example-compendium/CONTRIBUTING.html#submitting-your-changes",
+    "href": "example-compendium/CONTRIBUTING.html#submitting-your-changes",
+    "title": "Contributing",
+    "section": "",
+    "text": "Push to your fork and submit a pull request.\nAt this point you’re waiting on us. We like to at least comment on pull requests within a few days (and, typically, one business day). We may suggest some changes or improvements or alternatives.\nSome things you can do that will increase the chance that your pull request is accepted:\n\nEngage in discussion on your issue.\nBe familiar with the backround literature cited in the README\nWrite tests that pass.\nFollow our code style guide.\nWrite a good commit message."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#about-me",
+    "href": "slide/repro-preschool.html#about-me",
+    "title": "Reproducible Science",
+    "section": "About me 👋",
+    "text": "About me 👋\n\n\n\nI am a post-doctoral researcher in Cognitive Psychology at the Department of General Psychology, University of Padova. \nMy research interests include the computational modeling of cognitive and learning processes, and Bayesian hypothesis testing. \nI completed a PhD in Psychological Science on March 6, 2025."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#our-job-is-hard",
+    "href": "slide/repro-preschool.html#our-job-is-hard",
+    "title": "Reproducible Science",
+    "section": "Our job is hard 🔥",
+    "text": "Our job is hard 🔥\n\n\n\n\nRunning experiments\n\nConducting analyses\n\nManaging trainees\n\nManaging data\n\nWriting papers\n\n\n\n\nPreparing talks and abstracts\n\nReading papers\n\nResponding to reviewers\n\nCollaborating with peers and supervisors"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#is-reproducible-science-even-harder",
+    "href": "slide/repro-preschool.html#is-reproducible-science-even-harder",
+    "title": "Reproducible Science",
+    "section": "Is reproducible science even harder?",
+    "text": "Is reproducible science even harder?\n\nAt first, yes - but then…🧯🔥\n\n\nHelps you stay organized.\nMakes it easier to remember what you did.\nAllows others to understand, reproduce, and build on your work.\n\n\n\nLearning the tools takes effort but once you do, your workflow becomes smoother, clearer, and more reliable."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#keys-to-reproducible-science",
+    "href": "slide/repro-preschool.html#keys-to-reproducible-science",
+    "title": "Reproducible Science",
+    "section": "Keys to reproducible science 🔐",
+    "text": "Keys to reproducible science 🔐\n\n\n1. A general purpose programming language such as  or .  2. A literate programming framework to integrate code and text.  3. A version control system to track projects.  4. An online repository for future-proof sharing."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#r-and-rstudio",
+    "href": "slide/repro-preschool.html#r-and-rstudio",
+    "title": "Reproducible Science",
+    "section": " and RStudio",
+    "text": "and RStudio\n\n\n\nR packages allow to do almost everything.\nIt is free and open-source.\nThe community is wide, active thus solving problems is very easy.\nForce you to learn scripting."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#writing-better-code",
+    "href": "slide/repro-preschool.html#writing-better-code",
+    "title": "Reproducible Science",
+    "section": "Writing better code",
+    "text": "Writing better code\nNaming variables\nBe consistent and descriptive. Avoid cryptic names like x1. Use either:\nx1 = rep(c(\"DPSS\",\"DPG\",\"DSS\"), 4)  # What does 'x' mean?\nDepUni = x1      # CamelCase\ndep_uni = x1     # snake_case\nTry to stick to one style.\nComment\nLeave meaningful comments. You might not remember your own code in a few months, imagine someone else trying to read it!"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#functional-programming-example",
+    "href": "slide/repro-preschool.html#functional-programming-example",
+    "title": "Reproducible Science",
+    "section": "Functional Programming, example…",
+    "text": "Functional Programming, example…\nWe have a dataset (mtcars) and we want to calculate the mean, median, standard deviation, minimum and maximum of each column and store the result in a table.\n\nhead(mtcars, n = 3)\n\n               mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\n\nstr(mtcars)\n\n'data.frame':   32 obs. of  11 variables:\n $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...\n $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...\n $ disp: num  160 160 108 258 360 ...\n $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...\n $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...\n $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...\n $ qsec: num  16.5 17 18.6 19.4 17 ...\n $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...\n $ am  : num  1 1 1 0 0 0 0 0 0 0 ...\n $ gear: num  4 4 4 3 3 3 3 4 4 4 ...\n $ carb: num  4 4 1 1 2 1 4 2 2 4 ..."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#functional-programming",
+    "href": "slide/repro-preschool.html#functional-programming",
+    "title": "Reproducible Science",
+    "section": "Functional Programming",
+    "text": "Functional Programming\nThe standard (~imperative) option is using a for loop, iterating through columns, calculate the values and store into another data structure.\n\nncols &lt;- ncol(mtcars)\nmeans &lt;- medians &lt;- mins &lt;- maxs &lt;- rep(0, ncols)\n\nfor(i in 1:ncols){\n  means[i] &lt;- mean(mtcars[[i]])\n  medians[i] &lt;- median(mtcars[[i]])\n  mins[i] &lt;- min(mtcars[[i]])\n  maxs[i] &lt;- max(mtcars[[i]])\n}\n\nresults &lt;- data.frame(means, medians, mins, maxs)\nresults$col &lt;- names(mtcars)\n\nhead(results, n = 3)\n\n      means medians mins  maxs  col\n1  20.09062    19.2 10.4  33.9  mpg\n2   6.18750     6.0  4.0   8.0  cyl\n3 230.72188   196.3 71.1 472.0 disp"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#functional-programming-1",
+    "href": "slide/repro-preschool.html#functional-programming-1",
+    "title": "Reproducible Science",
+    "section": "Functional Programming",
+    "text": "Functional Programming\nThe main idea is to decompose the problem writing a function and loop over the columns of the dataframe:\n\nsumm &lt;- function(x){\n  data.frame(means = mean(x), \n             medians = median(x), \n             mins = min(x), \n             maxs = max(x))\n}\nncols &lt;- ncol(mtcars)\ndfs &lt;- vector(mode = \"list\", length = ncols)\n\nfor(i in 1:ncols){\n  dfs[[i]] &lt;- summ(mtcars[[i]])\n}"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#functional-programming-2",
+    "href": "slide/repro-preschool.html#functional-programming-2",
+    "title": "Reproducible Science",
+    "section": "Functional Programming",
+    "text": "Functional Programming\n\nresults &lt;- do.call(rbind, dfs)\nhead(results, n = 6)\n\n       means medians   mins    maxs\n1  20.090625  19.200 10.400  33.900\n2   6.187500   6.000  4.000   8.000\n3 230.721875 196.300 71.100 472.000\n4 146.687500 123.000 52.000 335.000\n5   3.596563   3.695  2.760   4.930\n6   3.217250   3.325  1.513   5.424"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#functional-programming-3",
+    "href": "slide/repro-preschool.html#functional-programming-3",
+    "title": "Reproducible Science",
+    "section": "Functional Programming",
+    "text": "Functional Programming\nThe actual real functional way require using the built-in iteration tools *apply. In this way you avoid writing the verbose for loop.\n\nresults &lt;- lapply(mtcars, summ)\nresults &lt;- do.call(rbind, results)\nhead(results, n = 6)\n\n          means medians   mins    maxs\nmpg   20.090625  19.200 10.400  33.900\ncyl    6.187500   6.000  4.000   8.000\ndisp 230.721875 196.300 71.100 472.000\nhp   146.687500 123.000 52.000 335.000\ndrat   3.596563   3.695  2.760   4.930\nwt     3.217250   3.325  1.513   5.424"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#functional-programming-apply",
+    "href": "slide/repro-preschool.html#functional-programming-apply",
+    "title": "Reproducible Science",
+    "section": "Functional Programming, *apply",
+    "text": "Functional Programming, *apply\n\nThe *apply family is one of the best tool in R. The idea is pretty simple: apply a function to each element of a list.\nThe powerful side is that in R everything can be considered as a list. A vector is a list of single elements, a dataframe is a list of columns etc.\nInternally, R is still using a for loop but the verbose part (preallocation, choosing the iterator, indexing) is encapsulated into the *apply function.\n\n\n\nmeans &lt;- rep(0, ncol(mtcars))\nfor(i in 1:length(means)){\n  means[i] &lt;- mean(mtcars[[i]])\n}\n\n# the same with sapply\nmeans &lt;- sapply(mtcars, mean)"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#for-loops-are-bad",
+    "href": "slide/repro-preschool.html#for-loops-are-bad",
+    "title": "Reproducible Science",
+    "section": "for loops are bad?",
+    "text": "for loops are bad?\nfor loops are the core of each operation in R (and in every programming language). For complex operation thery are more readable and effective compared to *apply. In R we need extra care for writing efficent for loops.\nExtremely slow, no preallocation:\n\nres &lt;- c()\nfor(i in 1:1000){\n  # do something\n  res[i] &lt;- i^2\n}\n\nVery fast:\n\nres &lt;- rep(0, 1000)\nfor(i in 1:length(res)){\n  # do something\n  res[i] &lt;- i^2\n}"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#microbenchmark",
+    "href": "slide/repro-preschool.html#microbenchmark",
+    "title": "Reproducible Science",
+    "section": "microbenchmark",
+    "text": "microbenchmark\n\nlibrary(microbenchmark)\n\nmicrobenchmark(\n  grow_in_loop = {\n    res &lt;- c()\n    for (i in 1:10000) {\n      res[i] &lt;- i^2  \n    }\n  },\n  preallocated = {\n    res &lt;- rep(0, 10000)\n    for (i in 1:length(res)) {\n      res[i] &lt;- i^2  \n    }\n  }, times = 100)\n\nUnit: microseconds\n         expr      min       lq      mean   median        uq      max neval cld\n grow_in_loop 1166.245 1214.153 1365.6510 1250.418 1317.7195 4392.822   100  a \n preallocated  648.866  666.004  712.4894  681.789  701.4895 2024.088   100   b"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#with-apply-you-can-do-crazy-stuff",
+    "href": "slide/repro-preschool.html#with-apply-you-can-do-crazy-stuff",
+    "title": "Reproducible Science",
+    "section": "With *apply you can do crazy stuff!",
+    "text": "With *apply you can do crazy stuff!\n\nfuns &lt;- list(mean = mean, sd = sd, min = min, max = max, median = median)\nsapply(funs, function(f) lapply(mtcars, function(x) f(x)))\n\n     mean     sd        min   max   median\nmpg  20.09062 6.026948  10.4  33.9  19.2  \ncyl  6.1875   1.785922  4     8     6     \ndisp 230.7219 123.9387  71.1  472   196.3 \nhp   146.6875 68.56287  52    335   123   \ndrat 3.596563 0.5346787 2.76  4.93  3.695 \nwt   3.21725  0.9784574 1.513 5.424 3.325 \nqsec 17.84875 1.786943  14.5  22.9  17.71 \nvs   0.4375   0.5040161 0     1     0     \nam   0.40625  0.4989909 0     1     0     \ngear 3.6875   0.7378041 3     5     4     \ncarb 2.8125   1.6152    1     8     2"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#pure-functions",
+    "href": "slide/repro-preschool.html#pure-functions",
+    "title": "Reproducible Science",
+    "section": "Pure functions",
+    "text": "Pure functions\nPure functions have no side effects and always return the same output for a given input.\n\n\nPure function\n\nx = 4\nadd_pure&lt;- function(x) {\n  return(x + 1)\n}\nadd_pure(2)\n\n[1] 3\n\nprint(x)\n\n[1] 4\n\n\n\nImpure function\n\nadd_impure &lt;- function(x) {\n  x &lt;&lt;- x + 1\n}\nadd_impure(x)\nprint(x)\n\n[1] 5"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#test-your-functions---fuzzr",
+    "href": "slide/repro-preschool.html#test-your-functions---fuzzr",
+    "title": "Reproducible Science",
+    "section": "Test your functions - fuzzr",
+    "text": "Test your functions - fuzzr\n\n\nDefine your function…\n\nmy_mean &lt;- function(x, na.rm = TRUE) {\n  if (!is.numeric(x)) stop(\"`x` must be numeric\")\n  if (length(x) == 0) return(NA)\n  if (na.rm) x &lt;- x[!is.na(x)]\n  if (length(x) == 0) return(NA)\n  sum(x) / length(x)\n}\n\n\nDefine properties that should always hold true…\n\nproperty_mean_correct &lt;- function(x) {\n  x_no_na &lt;- x[!is.na(x)] #remove NA\n  if (length(x_no_na) == 0) return(TRUE)\n  abs(my_mean(x) - mean(x, na.rm = TRUE)) &lt; 1e-8\n}"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#why-functional-programming",
+    "href": "slide/repro-preschool.html#why-functional-programming",
+    "title": "Reproducible Science",
+    "section": "Why functional programming?",
+    "text": "Why functional programming?\n\nWe can write less and reusable code that can be shared and used in multiple projects.\nThe scripts are more compact, easy to modify and less error prone (imagine that you want to improve the summ function, you only need to change it once instead of touching the for loop).\nFunctions can be easily and consistently documented (see roxygen documentation) improving the reproducibility and readability of your code."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#section",
+    "href": "slide/repro-preschool.html#section",
+    "title": "Reproducible Science",
+    "section": "",
+    "text": "If your functions are project-specific you can define them into your scripts or write some R scripts only with functions and source() them into the global environment.\nproject/\n├─ R/\n│  ├─ utils.R\n├─ analysis.R\nAnd inside utils.R you have some functions:\n\nmyfun &lt;- function(x) {\n  # something\n}\n\nThen you can load the function using source(\"R/utils.R) at the beginning of analysis.R:\n\nsource(\"R/utils.R\")"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#more-about-functional-programming-in-r",
+    "href": "slide/repro-preschool.html#more-about-functional-programming-in-r",
+    "title": "Reproducible Science",
+    "section": "More about functional programming in R",
+    "text": "More about functional programming in R\n\nAdvanced R by Hadley Wickham, section on Functional Programming (https://adv-r.hadley.nz/fp.html)\nHands-On Programming with R by Garrett Grolemund https://rstudio-education.github.io/hopr/\nHadley Wickham: The Joy of Functional Programming (for Data Science)\n\n\n\n\n\n\n\n\nAdvanced R\n\n\n\n\n\n\nHands-on Programming With R"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#organize-your-work---r-projects",
+    "href": "slide/repro-preschool.html#organize-your-work---r-projects",
+    "title": "Reproducible Science",
+    "section": "Organize your work - R projects",
+    "text": "Organize your work - R projects\nResearch compendium\n\n\n\n… the goal is to provide a standard and easily recognisable way for organising the digital materials of a project to enable others to inspect, reproduce, and extend the research… (Marwick et al., 2018)"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#research-compendium-rrtools",
+    "href": "slide/repro-preschool.html#research-compendium-rrtools",
+    "title": "Reproducible Science",
+    "section": "Research compendium rrtools 📦",
+    "text": "Research compendium rrtools 📦\n\nOrganize its files according to the prevailing conventions.\nMaintain a clear separation of data, method, and output, while unambiguously expressing the relationship between those three (original data is untouched!).\nSpecify the computational environment that was used for the original analysis\n\nTutorial"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#section-1",
+    "href": "slide/repro-preschool.html#section-1",
+    "title": "Reproducible Science",
+    "section": "",
+    "text": "rrtools::create_compendium() builds the basic structure for a research compendium.\n\nStorage for general metadata (e.g., citation details)\nDependency management via DESCRIPTION file\nFunction storage and documentation in R/ folder\n\nThese features enable managing, installing, and sharing project-related functionality."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#research-renv",
+    "href": "slide/repro-preschool.html#research-renv",
+    "title": "Reproducible Science",
+    "section": "Research renv 📦",
+    "text": "Research renv 📦\nrenv helps you create reproducible environments for your R projects.\n\nrenv workflow"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#project-specific-library",
+    "href": "slide/repro-preschool.html#project-specific-library",
+    "title": "Reproducible Science",
+    "section": "Project specific library",
+    "text": "Project specific library\ninstall.packages('microbenchmark')\nThe following package(s) will be installed:\n- microbenchmark [1.5.0]\nThese packages will be installed into\n“~/repro-pre-school/example-renv/renv/library/macos/R-4.4/aarch64-apple-darwin20”."
+  },
+  {
+    "objectID": "slide/repro-preschool.html#research-rrtools-renv",
+    "href": "slide/repro-preschool.html#research-rrtools-renv",
+    "title": "Reproducible Science",
+    "section": "Research rrtools + renv 📦",
+    "text": "Research rrtools + renv 📦"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#better-code",
+    "href": "slide/repro-preschool.html#better-code",
+    "title": "Reproducible Science",
+    "section": "Better code",
+    "text": "Better code\nUse consistent naming and comments ✅ \nBreak long scripts into functions! ✅ \nUse clear structure\nUse version control (e.g., Git)"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#data-sharing",
+    "href": "slide/repro-preschool.html#data-sharing",
+    "title": "Reproducible Science",
+    "section": "Data sharing",
+    "text": "Data sharing"
+  },
+  {
+    "objectID": "slide/repro-preschool.html#reproducible-documents",
+    "href": "slide/repro-preschool.html#reproducible-documents",
+    "title": "Reproducible Science",
+    "section": "Reproducible Documents",
+    "text": "Reproducible Documents"
+  }
+]
