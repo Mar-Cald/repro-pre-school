@@ -1,34 +1,7 @@
 ---
-title: "Reproducible Science Starter-Pack"
+title: "Material"
 format: html
 ---
 
-
-Navigate to the compendium from the navbar!
-
-
-# 📝 APA Quarto Example
-
-This page shows the **Quarto source** and the **rendered Word document** (in APA style) directly in-browser.
-
-
-## 📄 View `.docx` Output Inline
-
-You can view the `.docx` below. This uses Microsoft Office's live embed feature:
-
-<iframe 
-  src="https://view.officeapps.live.com/op/embed.aspx?src=https://mar-cald.github/repro-pre-school/example-compendium/analysis/paper/example.docx" 
-  width="100%" 
-  height="600px" 
-  frameborder="0">
-</iframe>
-
-> ℹ️ If the preview doesn’t load, make sure your site is deployed over HTTPS and the `.docx` is in the `files/` folder.
-
-
-## 🔍 View the Quarto Source (`.qmd`)
-
-```{.markdown}
-```{include: example-compendium/analysis/paper/example.qmd}
-```
-
+Slide - PDF
+Slide - HTLM

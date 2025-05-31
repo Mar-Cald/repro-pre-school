@@ -454,13 +454,13 @@ These packages will be installed into
 
 ## Research `rrtools` + `renv` :package:
 
-
-
 ## Quarto
 
 ## Apa quarto https://wjschne.github.io/apaquarto/
 
+[PDF output](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.pdf)
 
+docx output
 
 ## Better code
 
