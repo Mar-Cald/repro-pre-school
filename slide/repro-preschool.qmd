@@ -454,6 +454,14 @@ These packages will be installed into
 
 ## Research `rrtools` + `renv` :package:
 
+
+
+## Quarto
+
+## Apa quarto https://wjschne.github.io/apaquarto/
+
+
+
 ## Better code
 
 Use consistent naming and comments :white_check_mark: <br/>
