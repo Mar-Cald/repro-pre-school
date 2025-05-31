@@ -9,8 +9,8 @@ website:
         text: Home
       - href: slide/repro-preschool.html
         text: slide
-      - href: example-compendium/index.qmd
-        text: Compendium
+      - href: example-compendium/analysis/paper/view-source.qmd
+        text: APAQuarto
 
 format:
   html:
