@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Reproducible Science Starter-Pack",
     "section": "",
-    "text": "This is the homepage for my project that includes a Git submodule.\nNavigate to the compendium from the navbar!"
+    "text": "Navigate to the compendium from the navbar!"
   },
   {
     "objectID": "example-compendium/CONDUCT.html",
@@ -397,5 +397,19 @@
     "title": "📝 APA Quarto Example",
     "section": "",
     "text": "```{include: example-compendium/analysis/paper/example.qmd}"
+  },
+  {
+    "objectID": "index.html#view-.docx-output-inline",
+    "href": "index.html#view-.docx-output-inline",
+    "title": "Reproducible Science Starter-Pack",
+    "section": "📄 View .docx Output Inline",
+    "text": "📄 View .docx Output Inline\nYou can view the .docx below. This uses Microsoft Office’s live embed feature:\n\n\n\nℹ️ If the preview doesn’t load, make sure your site is deployed over HTTPS and the .docx is in the files/ folder."
+  },
+  {
+    "objectID": "index.html#view-the-quarto-source-.qmd",
+    "href": "index.html#view-the-quarto-source-.qmd",
+    "title": "Reproducible Science Starter-Pack",
+    "section": "🔍 View the Quarto Source (.qmd)",
+    "text": "🔍 View the Quarto Source (.qmd)\n```{include: example-compendium/analysis/paper/example.qmd}"
   }
 ]
