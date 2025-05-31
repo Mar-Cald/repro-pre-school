@@ -1,7 +1,20 @@
 ---
-title: "Material"
-format: html
+title: Reproducible Science  
+author: Margherita Calderan  
+institute: "**Replicability School**"
+format:  
+  html:  
+    theme: slide/style/mytheme.scss  
+    width: 1200
+date: 2025/06/06  
+date-format: long  
+final-slide: true  
+from: markdown+emoji  
+incremental: true  
+engine: knitr  
 ---
 
-Slide - PDF
-Slide - HTLM
+Here you can find the slide... :smile:
+
+[Slides](slide/repro-preschool.html)  
+[PDF](slide/repro-preschool.pdf)
