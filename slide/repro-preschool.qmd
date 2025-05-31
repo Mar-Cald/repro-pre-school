@@ -454,13 +454,22 @@ These packages will be installed into
 
 ## Research `rrtools` + `renv` :package:
 
+
+## Reproducible Documents
+
 ## Quarto
 
-## Apa quarto https://wjschne.github.io/apaquarto/
+Quarto is an open-source scientific and technical publishing system that lets you create dynamic documents, reports, presentations, websites, and books using Markdown, code, and multiformat output (e.g., HTML, PDF, Word).
 
-[PDF output](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.pdf)
+## [APA quarto](https://wjschne.github.io/apaquarto/)
 
-docx output
+APA Quarto is a Quarto extension that makes it easy to write documents in APA 7th edition style — with automatic formatting for title pages, headings, citations, references, tables, and figures.
+
+[qmd source](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.qmd)
+
+[docx output](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.docx)
+
+
 
 ## Better code
 
