@@ -1,12 +1,10 @@
 ---
 title: Reproducible Science  
 author: Margherita Calderan  
-institute: "**Replicability School**"
 format:  
   html:  
-    theme: slide/style/mytheme.scss  
+    csl: files/apa.cv.csl  
     width: 1200
-date: 2025/06/06  
 date-format: long  
 final-slide: true  
 from: markdown+emoji  

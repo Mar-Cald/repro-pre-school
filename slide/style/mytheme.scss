@@ -17,7 +17,7 @@ $presentation-heading-font: "Inter";
 
 $body-bg: white;
 $body-color: black;
-$link-color: $theme-purple;
+$link-color: $theme-blue;
 $selection-bg: $theme-blue;
 
 
@@ -33,3 +33,7 @@ $selection-bg: $theme-blue;
   color: $theme-blue !important;
 }
 
+
+.reveal li {
+  padding: 6px; 
+}

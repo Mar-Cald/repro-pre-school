@@ -11,7 +11,7 @@ date-format: long
 bibliography: "biblio.bib"
 csl: style/apa.csl
 reference-section-title: References
-final-slide: true  
+final-slide: false  
 from: markdown+emoji  
 incremental: true  
 engine: knitr  
@@ -19,38 +19,67 @@ engine: knitr
 
 ## About me :wave:
 
-<br/>
-
 ::: nonincremental
--   I am a post-doctoral researcher in **Cognitive Psychology** at the Department of General Psychology, University of Padova. <br/><br/>
--   My research interests include the computational modeling of **cognitive** and **learning processes**, and **Bayesian** hypothesis testing. <br/><br/>
--   I completed a PhD in Psychological Science on **March 6, 2025**.
+-   Post-doctoral researcher in **Cognitive Psychology**, University of Padova.\
+-   Research: Computational modeling of **cognitive** and **learning processes**, **Bayesian** hypothesis testing.\
+-   PhD in Psychological Science, completed **March 6, 2025**.\
+-   Passionate about reproducible science after struggling with disorganized datasets in my early research!
 :::
-
-------------------------------------------------------------------------
 
 ## Our job is hard :fire:
 
 <br/>
 
 ::::: columns
-::: {.column width="50%"}
--   Running experiments\
--   Conducting analyses\
--   Managing trainees\
--   Managing data\
--   Writing papers\
+::: {.column .nonincremental width="50%"}
+-   Running experiments
+
+-   Analyzing data
+
+-   Managing trainees
+
+-   Writing papers
+
+-   Responding to reviewers\
 :::
 
 ::: {.column width="50%"}
--   Preparing talks and abstracts\
--   Reading papers\
--   Responding to reviewers\
--   Collaborating with peers and supervisors\
+![](images/burn.jpg)
 :::
 :::::
 
-## Is reproducible science even harder?
+## Reproducibility helps!
+
+::::: columns
+::: {.column width="30%"}
+![](images/happy.jpeg)
+:::
+
+::: {.column .nonincremental width="50%"}
+<br/>
+
+-   **Organizes** your workflow.
+
+-   **Saves time** by documenting steps.
+
+-   **Builds trust** in your findings.
+
+-   Enables others to **reproduce** and **extend** your work.
+:::
+:::::
+
+## Keys to Reproducible Science :closed_lock_with_key:
+
+<br/>
+
+::: nonincremental
+-   **Programming**: Use R or Python for transparent analysis.
+-   **Literate Programming**: Combine code and text with Quarto.
+-   **Version Control**: Track changes with Git/GitHub.
+-   **Repositories**: Share data and code via OSF.\
+:::
+
+## So... Is reproducible science even harder?
 
 <br/>
 
@@ -64,49 +93,201 @@ At first, yes - but then...:fire_extinguisher::fire:
 
 > *Learning the tools takes effort but once you do, your workflow becomes smoother, clearer, and more reliable.*
 
-## Keys to reproducible science :closed_lock_with_key:
+## Outline
 
 <br/>
 
-::: nonincremental
-**1.** A general purpose programming language such as `r fontawesome::fa(name = "r-project")` or `r fontawesome::fa(name = "python")`. <br/><br/> **2.** A literate programming framework to integrate code and text. <br/><br/> **3.** A version control system to track projects. <br/><br/> **4.** An online repository for future-proof sharing.
-:::
+### Data
 
-## ![R](images/R_logo.png){fig-align="center" width="80"} and RStudio
+### Code
+
+### R projects
+
+### Literate Programming
+
+### Version Control
+
+# Data
+
+## Data Types in Research
 
 ::::: columns
-::: {.column width="50%"}
--   R packages allow to **do almost everything**.
+::: {.column .nonincremental width="50%"}
+<br/>
 
--   It is **free** and **open-source**.
-
--   The **community** is wide, active thus solving problems is very easy.
-
--   Force you to **learn scripting**.
+-   **Raw Data**: Original, unprocessed (e.g., survey responses).
+-   **Processed Data**: Cleaned, digitized, or compressed.
+-   **Analyzed Data**: Summarized in tables, charts, or text.
 :::
 
 ::: {.column width="50%"}
--   ![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjNveWQ4ZThld2pidDg3dHlmdXA0NTQ0ZHYzeXFqaWVhbTBzdHA4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13py6c5BSnBkic/giphy.gif)
+![](images/typedata.png){fig-align="center" width="390"}
 :::
 :::::
 
-## Writing better code
+## ![](images/osf.jpeg){fig-align="center" width="300"}
 
-### *Naming variables*
+### [Open Science Framework](https://osf.io/){target="_blank"}
 
-Be consistent and descriptive. Avoid cryptic names like `x1`. Use either:
+::: nonincremental
+-   Free platform to **organize**, **document**, and **share** research.\
+-   Supports **preregistration**, **archiving**, and **collaboration**.\
+-   Integrates with GitHub, Dropbox, Google Drive.\
+:::
+
+## Bad Data Sharing Example
+
+You find a paper with an OSF link, but...
+
+![](images/bad-dataset.png)
+
+## Bad Data Sharing Example
+
+Amazing! There is a single file on the OSF repository. Then you open the dataset:
+
+. . .
+
+```{r}
+bad <- readxl::read_xlsx("files/bad-dataset.xlsx")[1:5,]
+bad |> 
+  gt::gt()
+```
+
+Where is the data-dictionary?\
+What are 0 and 1?\
+How missing values are coded?\
+
+## Good Data Sharing Practices
+
+::: nonincremental
+-   Use **plain-text formats** (e.g., `.csv`, `.txt`).\
+-   Include a **data dictionary** with variable descriptions.\
+-   Add a **README** with key details.\
+-   Follow **FAIR principles** (Findable, Accessible, Interoperable, Reusable).\
+:::
+
+## FAIR Data Principles :mag:
+
+::: nonincremental
+-   **Findable**: Use metadata and DOIs to make data easy to locate.
+-   **Accessible**: Ensure data is retrievable via open repositories.
+-   **Interoperable**: Use standard formats (e.g., `.csv`, `.txt`) for compatibility.
+-   **Reusable**: Include clear documentation and open licenses.
+:::
+
+![](images/fair_diagram.png){width="800" fig-align="center"}
+
+## The Role of a Data Dictionary :open_file_folder: {data-time="3 min"}
+
+::: nonincremental
+-   A **data dictionary** defines each variable in your dataset.
+-   Boosts **transparency** and **collaboration**.
+-   Saves time for **collaborators** and **future-you**.
+:::
+
+## `datadictionary` :package:
+
+```{r}
+#| echo: true
+library(datadictionary)
+df <- data.frame( id = factor(letters[1:5]), 
+                  anxi = rnorm(5, 0, 1),
+                  edu = factor(c("PhD", "BSc", "MSc", "PhD", "BSc")))
+df_labels <- list(
+  anxi = "Beck Anxiety Inventory, standardized",
+  edu = "Last degree obtained"
+)
+create_dictionary(df, id_var = "id", var_labels = df_labels)
+```
+
+## Best Practices for Data Dictionaries
+
+::: nonincremental
+-   Provide context (e.g., how variables were measured).
+-   Define codes and abbreviations (e.g., “NA” for missing).
+-   Note special values (e.g., -999 for invalid data).
+:::
+
+![](images/datadict.png){width="512" fig-align="center"}
+
+## Data Licensing :lock: {data-time="2 min"}
+
+::: nonincremental
+-   **Licenses** clarify how others can use your data.
+-   Common licenses:
+    -   [CC BY](https://creativecommons.org/licenses/by/4.0/){target="_blank"}: Requires attribution.
+    -   [CC0](https://creativecommons.org/publicdomain/zero/1.0/){target="_blank"}: No restrictions.
+    -   [ODC-BY](https://opendatacommons.org/licenses/by/){target="_blank"}: Database-specific attribution.
+-   Choose based on **discipline norms** and **data sensitivity**.
+:::
+
+# Code
+
+## [R](images/R_logo.png){width="300"} and RStudio :computer:
+
+-   **R**: Free, open-source, with thousands of packages for analysis.
+-   **RStudio**: Intuitive interface for coding, plotting, and debugging.
+-   Vibrant **community** for support and resources.
+-   Scripting ensures **transparent, reproducible** workflows.
+
+<center>
+::: {.fragment}
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjNveWQ4ZThld2pidDg3dHlmdXA0NTQ0ZHYzeXFqaWVhbTBzdHA4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13py6c5BSnBkic/giphy.gif){.absolute bottom=0 left=300 width="500"}
+:::
+<center>
+
+## Writing Better Code :pencil:
+
+::: nonincremental
+-   **Organize scripts**: Load packages and data upfront.
+-   **Comment clearly**: Document your logic for clarity.
+-   **Name descriptively**: Use `snake_case` or `camelCase` for readability.
+:::
 
 ``` r
-x1 = rep(c("DPSS","DPG","DSS"), 4)  # What does 'x' mean?
+x1 = rep(c("Psy","Med","Bio"), 4)  # What does 'x' mean?
 DepUni = x1      # CamelCase
 dep_uni = x1     # snake_case
 ```
 
-Try to **stick to one style**.
+## Organized scripts
 
-### *Comment*
+. . .
 
-Leave meaningful comments. You might not remember your own code in a few months, imagine someone else trying to read it!
+Global operations at the beginning of the script:
+
+-   loading datasets
+-   loading packages
+-   changing general options (`options()`)
+
+. . .
+
+``` r
+# packages
+library(tidyverse)
+library(lme4)
+
+# options
+
+options(scipen = 999)
+
+# loading data
+dat <- read.csv(...)
+```
+
+## Comments, comments and comments...
+
+Write the code for your future self and for others, not for yourself right now.
+
+Try to open a (not well documented) old coding project after a couple of years and you will understand :)
+
+Invest time in writing more comprehensible and documented code for you and others.
+
+## Functions to avoid repetition
+
+Avoid repeating the same operation multiple times in the script. The rule is, if you are doing the same operation more than two times, write a function.
+
+A function can be re-used, tested and changed just one time affecting the whole project.
 
 ## Functional Programming, example...
 
@@ -183,7 +364,7 @@ head(results, n = 6)
 
 ```
 
-## Functional Programming, `*apply`
+## Functional Programming, `*apply` :package:
 
 -   The `*apply` family is one of the best tool in R. The idea is pretty simple: apply a function to each element of a list.
 -   The powerful side is that in R everything can be considered as a list. A vector is a list of single elements, a dataframe is a list of columns etc.
@@ -231,7 +412,7 @@ for(i in 1:length(res)){
 }
 ```
 
-## `microbenchmark`
+## `microbenchmark` :package:
 
 ```{r}
 #| echo: true
@@ -257,16 +438,16 @@ microbenchmark(
 ```{r}
 #| echo: true
 funs <- list(mean = mean, sd = sd, min = min, max = max, median = median)
-sapply(funs, function(f) lapply(mtcars, function(x) f(x)))
+sapply(funs, function(f) apply(mtcars, MARGIN = 2, function(x) f(x)))
 ```
 
-## Pure functions
-
-Pure functions have no side effects and always return the same output for a given input.
+## Pure vs. Impure functions
 
 ::::: columns
 ::: {.column width="50%"}
 ### Pure function
+
+Same input, same output, no side effects.
 
 ```{r, echo=TRUE}
 x = 4
@@ -281,6 +462,8 @@ print(x)
 ::: {.column width="50%"}
 ### Impure function
 
+Modifies external variables.
+
 ```{r, echo=TRUE}
 add_impure <- function(x) {
   x <<- x + 1
@@ -291,7 +474,7 @@ print(x)
 :::
 :::::
 
-## Test your functions - `fuzzr`
+## Test your functions - `fuzzr` :package:
 
 ::::: columns
 ::: {.column width="50%"}
@@ -326,7 +509,7 @@ property_mean_correct <- function(x) {
 Test the function across many randomly generated inputs...
 
 ::::: columns
-::: {.column width="70%"}
+::: {.column width="60%"}
 ```{r, echo=TRUE}
 # Property-based testing with 'fuzzr'
 library(fuzzr)
@@ -337,7 +520,7 @@ lapply(test, function(res) res$test_result$value)
 ```
 :::
 
-::: {.column width="30%"}
+::: {.column width="40%"}
 ```{r, echo=TRUE}
 fuzzr::test_dbl()
 ```
@@ -346,9 +529,11 @@ fuzzr::test_dbl()
 
 ## Why functional programming?
 
+::: nonincremental
 -   We can write less and reusable code that can be shared and used in multiple projects.
 -   The scripts are more compact, easy to modify and less error prone (imagine that you want to improve the `summ` function, you only need to change it once instead of touching the `for` loop).
 -   Functions can be easily and consistently documented (see [roxygen](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) documentation) improving the reproducibility and readability of your code.
+:::
 
 ## 
 
@@ -382,29 +567,71 @@ source("R/utils.R")
 
 ## More about functional programming in R
 
+::: nonincremental
 -   Advanced R by Hadley Wickham, section on Functional Programming (<https://adv-r.hadley.nz/fp.html>)
--   Hands-On Programming with R by Garrett Grolemund <https://rstudio-education.github.io/hopr/>
+-   Hands-On Programming with R by Garrett Grolemund [https://rstudio-education.github.io/hopr/](https://rstudio-education.github.io/hopr/)
 -   Hadley Wickham: [The Joy of Functional Programming (for Data Science)](https://www.youtube.com/watch?v=bzUmK0Y07ck)
-
-. . .
+:::
 
 <center>
-
-::::: columns
-::: {.column width="50%"}
-![Advanced R](images/advanced-r.jpg){fig-align="center" width="172"}
+::: {layout-ncol=1}
+![Advanced R](images/advanced-r.jpg){width=150 fig-align="center"}
+![Hands-on Programming With R](images/hand-on-programming.jpeg){width=150 fig-align="center"}
 :::
-
-::: {.column width="50%"}
-![Hands-on Programming With R](images/hand-on-programming.jpeg){fig-align="center" width="198"}
-:::
-:::::
 
 </center>
 
-## Organize your work - R projects
 
-### Research compendium
+# Organize your project
+
+## R Projects
+
+***R Projects*** are a feature implemented in RStudio to organize a working directory.
+
+-   They automatically set the working directory
+-   They allow the use of ***relative paths*** instead of ***absolute paths***
+-   They provide quick access to a specific project
+
+## Working Directory
+
+Where is R currently working?
+
+<br/>
+
+```{r, echo = TRUE}
+getwd()
+```
+
+## Absolute Path
+
+```         
+PC
+│
+├─ Users
+    │
+    ├─ tita/
+        │
+        ├─ repro-pre-school/
+        │
+        ├─ slide/
+```
+
+<br/> We are working inside the folder **slide**.
+
+## Relative Path (to the working directory)
+
+Since we are working inside this folder, if we want to load a file located in this folder we can simply write the file name in quotes.
+
+**Absolute** path: Users/tita/repro-pre-school/slide/df.csv\
+**Relative** path: df.csv\
+
+```{r, echo=TRUE, warning=FALSE}
+read.csv('df.csv')
+```
+
+## Project Organization with `rrtools` :package:
+
+<br/>
 
 ::::: columns
 ::: {.column width="50%"}
@@ -418,30 +645,39 @@ source("R/utils.R")
 
 ## Research compendium `rrtools` :package:
 
+::: nonincremental
 -   Organize its files according to the prevailing conventions.
 -   Maintain a clear separation of data, method, and output, while unambiguously expressing the relationship between those three (original data is untouched!).
 -   Specify the computational environment that was used for the original analysis
 
-[Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
+[Click here for Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
+:::
 
 ## 
 
 `rrtools::create_compendium()` builds the basic structure for a research compendium.
 
+::: nonincremental
 -   Storage for general metadata (e.g., citation details)
 -   Dependency management via **DESCRIPTION** file
 -   Function storage and documentation in R/ folder
+:::
 
 These features enable managing, installing, and sharing project-related functionality.
 
-## Research `renv` :package:
+[example](https://github.com/Mar-Cald/compendium){target="_blank"}
 
-`renv` helps you create reproducible environments for your R projects.
+## `renv` :package:
 
-![[renv workflow](https://rstudio.github.io/renv/articles/renv.html)](images/renv.png){fig-align="center" width="300"}
+[`renv`](https://rstudio.github.io/renv/articles/renv.html){target="blank"} helps you create reproducible environments for your R projects.
+
+![](images/renv.png){fig-align="center" width="100"}
 
 ## Project specific library
 
+<br/>
+
+```         
 `install.packages('microbenchmark')`
 
 The following package(s) will be installed:
@@ -450,37 +686,263 @@ The following package(s) will be installed:
 
 These packages will be installed into
 
-**"\~/repro-pre-school/example-renv/renv/library/macos/R-4.4/aarch64-apple-darwin20".**
+\~/repro-pre-school/example-renv/renv/library/macos/R-4.4/aarch64-apple-darwin20
+```
 
-## Research `rrtools` + `renv` :package:
+[example](https://github.com/Mar-Cald/repro-pre-school/tree/main/example-renv){target="_blank"}
+
+## Research `rrtools` + `renv` :bomb:
+
+::: nonincremental
+-   **`rrtools`**: Organizes your project into a **reproducible compendium** with clear folders.
+-   **`renv`**: Locks **R package versions** for consistent environments.
+-   Together, they ensure **structure** and **reproducibility** across teams and time.
+-   Run `rrtools::create_compendium()` to start, then `renv::init()` to lock dependencies.
+:::
+
+## ![](images/docker.webp){width="100"} [Docker](https://www.docker.com/){target="_blank"}
+
+::: nonincremental
+-   Packages your project’s **software**, **dependencies**, and **system settings** into a *container*.
+-   Ensures **consistency** across different computers or servers.
+-   Ideal for **sharing** complex analyses with others.
+:::
+
+## Documenting Your Environment :information_source:
+
+::: nonincremental
+-   **`sessionInfo()`**: Captures your **R version**, **packages**, and **platform** in one command.
+-   Easy way to **document** and **share** your environment.
+-   Perfect for **beginners** or when avoiding `renv` or Docker.
+:::
+
+```{r}
+#| echo: true
+sessionInfo()
+```
+
+# Literate Programming
+
+## [Literate Programming](https://en.wikipedia.org/wiki/Literate_programming){target="_blank"}
+
+> Donald Knuth first defined literate programming as a script, notebook, or computational document that contains an explanation of the program logic in a natural language, interspersed with snippets of macros and source code, which can be compiled and rerun
 
 
-## Reproducible Documents
+For example **jupyter notebooks**, **R Markdown** and now **Quarto** are literate programming frameworks to integrate code and text.
 
-## Quarto
 
-Quarto is an open-source scientific and technical publishing system that lets you create dynamic documents, reports, presentations, websites, and books using Markdown, code, and multiformat output (e.g., HTML, PDF, Word).
+## Literate Programming, the markup language
 
-## [APA quarto](https://wjschne.github.io/apaquarto/)
+Beyond the coding part, the markup language is the core element of a literate programming framework. The idea of a markup language is separating the result from what you actually write. Some examples are:
+
+-   LaTeX
+-   HTML
+-   Markdown
+-   XML
+-   ...
+
+## [LaTeX](https://latexbase.com/){target="_blank"}
+
+![](images/latex-example.png)
+
+## HTML
+
+``` html
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+
+Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+
+<h2>My Second Heading</h2>
+
+Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. 
+
+Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo 
+
+tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. 
+
+È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. 
+
+Fu reso popolare, negli anni ’60, con la diffusione dei 
+
+fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum
+
+più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+
+</body>
+</html>
+```
+
+## [Markdown](https://markdownlivepreview.com/){target="_blank"}
+
+<iframe src="https://markdownlivepreview.com/" height="500" width="1000" style="border: 1px solid #464646;display:block;" allowfullscreen allow="autoplay">
+
+</iframe>
+
+## Markdown
+
+Markdown is one of the most popular markup languages for several reasons:
+
+-   easy to write and read compared to Latex and HTML
+-   easy to convert from Markdown to basically every other format using `pandoc`
+-   easy to implement new features
+
+## Markdown (source code)
+. . .
+
+Also the source code can be used to take notes and read.
+
+. . .
+
+```{r, echo = TRUE, eval=FALSE}
+## My Section
+- Write **bold** text.
+- Include a [link](https://quarto.org)
+- Run code: `r mean(mtcars$mpg)`. 
+```
+
+. . .
+
+Latex and HTML need to be compiled otherwise they are very hard to read.
+
+## What's wrong about Microsoft Word?
+
+MS Word is a WYSIWYG (*what you see is what you get editor*) that force users to think about formatting, numbering, etc. Markup languages receive the content (plain text) and the rules and creates the final document.
+
+::::: columns
+::: {.column width="50%"}
+![](images/wordmeme1.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/wordmeme2.jpg)
+:::
+:::::
+
+## What's wrong about Microsoft Word?
+
+Beyond the pure writing process, there are other aspects related to research data.
+
+::: nonincremental
+-   writing math formulas
+-   reporting statistics in the text
+-   producing tables
+-   producing plots
+:::
+
+In MS Word (or similar) we need to produce everything outside and then manually put figures and tables.
+
+## The solution... Quarto
+
+Quarto (<https://quarto.org/>) is the evolution of R Markdown that integrate a programming language with the Markdown markup language. It is very simple but quite powerful.
+
+<center>
+
+::::: columns
+::: {.column width="50%"}
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/main/SVG/rmarkdown.svg){width="300px"}
+:::
+
+::: {.column width="50%"}
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/main/SVG/quarto.svg){width="300px"}
+:::
+:::::
+
+</center>
+
+## Basic Markdown
+
+Markdown can be learned in minutes. You can go to the following link <https://quarto.org/docs/authoring/markdown-basics.html> and try to understand the syntax.
+
+<iframe src="https://quarto.org/docs/authoring/markdown-basics.html" style="width:1000px; height:500px;">
+
+</iframe>
+
+## Writing Papers - [APA quarto](https://wjschne.github.io/apaquarto/){target="_blank"}
 
 APA Quarto is a Quarto extension that makes it easy to write documents in APA 7th edition style — with automatic formatting for title pages, headings, citations, references, tables, and figures.
 
-[qmd source](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.qmd)
+![](images/apaquarto.png)
 
-[docx output](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.docx)
+## Let's see an example...
 
+[.qmd source](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.qmd){target="_blank"}
 
+[docx output](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.docx){target="_blank"}
 
-## Better code
+## Quarto + Zotero ![](images/zoter.png){width="50"}
 
-Use consistent naming and comments :white_check_mark: <br/>
+:::: columns
+::: {.column width="50%"}
+![](images/zotero2.png){width="500"}\
+![](images/zotero.png){width="500"}
+:::
+::: {.column width='50%'}
+![](images/bibfileex.png){width="500"}
+:::
+:::::
 
-Break long scripts into functions! :white_check_mark: <br/>
+## More about Quarto and R Markdown
 
-Use clear structure
+The topic is extremely vast. You can do everything in Quarto, a website, thesis, your CV, etc.
 
-Use version control (e.g., Git)
+-   Yihui Xie - R Markdown Cookbook <https://bookdown.org/yihui/rmarkdown-cookbook/>
+-   Yihui Xie - R Markdown: The Definitive Guide <https://bookdown.org/yihui/rmarkdown/>
+-   Quarto documentation <https://quarto.org/docs/guide/>
 
-## Data sharing
+# Version Control
 
-## Reproducible Documents
+## Version Control with Git & GitHub :twisted_rightwards_arrows:
+
+::: nonincremental
+-   Git tracks changes in your code and text files.\
+-   GitHub makes it easy to share, collaborate, and back up your project.\
+-   You can revert to previous versions at any point.\
+-   Encourages clean, documented workflows.\
+:::
+
+> :bulb: Use meaningful commit messages and structure your repositories with clarity.
+
+## GitHub in Practice
+
+::::: columns
+::: {.column width="40%"}
+![](images/git.png)
+:::
+
+::: {.column width="60%"}
+```
+git init 
+git add . 
+git commit -m "Initial commit" 
+git push origin main
+```
+:::
+:::::
+
+## GitHub Best Practices :white_check_mark:
+
+::: nonincremental
+-   Use a clear folder structure (e.g., `data/`, `scripts/`, `results/`). `rrtools` - compendium
+-   Write a `README.md` to explain your project’s goals and usage.\
+-   Include a `LICENSE` file to define how others can reuse your work.\
+-   Add a `.gitignore` to avoid uploading large or irrelevant files (e.g., `.Rhistory`, `.DS_Store`).
+::: 
+
+## Integrated Workflow Example :hammer_and_wrench:
+
+1.  Develop your analysis using **R and Quarto**.\
+2.  Track code and scripts using **Git**.\
+3.  Host your code on **GitHub** (public or private).\
+4.  Upload your data and materials to **OSF**, including a data dictionary.\
+5.  Link your GitHub repository to your OSF project.\
+6.  Use `renv` for reproducible R environments.\
+7.  Share the OSF project and cite it in your paper.
+
+## Start small. It's easy. :feet:
+
+> “Let me tell you: anything you do — providing the raw data, posting any small scripts, detailing the versions of programs you used together with their parameters — will be tremendously welcome to anyone trying to validate or build off your paper. This includes you yourself, in 2 years.” 
+*C. Titus Brown*
