@@ -889,9 +889,11 @@ APA Quarto is a Quarto extension that makes it easy to write documents in APA 7t
 
 The topic is extremely vast. You can do everything in Quarto, a website, thesis, your CV, etc.
 
+::: nonincremental
 -   Yihui Xie - R Markdown Cookbook <https://bookdown.org/yihui/rmarkdown-cookbook/>
 -   Yihui Xie - R Markdown: The Definitive Guide <https://bookdown.org/yihui/rmarkdown/>
 -   Quarto documentation <https://quarto.org/docs/guide/>
+:::
 
 # Version Control
 
@@ -914,11 +916,18 @@ The topic is extremely vast. You can do everything in Quarto, a website, thesis,
 :::
 
 ::: {.column width="60%"}
+
+. . .
+
 ```
 git init 
+
 git add . 
+
 git commit -m "Initial commit" 
+
 git push origin main
+
 ```
 :::
 :::::
