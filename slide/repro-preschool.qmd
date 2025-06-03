@@ -578,10 +578,10 @@ No loops, no repetition.
 ## Using `sapply`, `vapply`, and `apply`
 
 ::: nonincremental
--   lapply() always returns a list.
--   sapply() tries to simplify the result into a vector or matrix.
--   vapply() is like sapply() but safer (you specify the return type).
--   apply() is for applying functions over rows or columns of a matrix or data frame.
+-   `lapply()` always returns a list.
+-   `sapply()` tries to simplify the result into a vector or matrix.
+-   `vapply()` is like `sapply()` but safer (you specify the return type).
+-   `apply()` is for applying functions over rows or columns of a matrix or data frame.
 :::
 
 ```{r}
@@ -753,6 +753,7 @@ fuzzr::test_dbl()
 :::
 
 ## Functional programming in the wild
+<br/>
 
 You can write some R scripts only with functions and `source()` them into the global environment.
 <br/><br/>
