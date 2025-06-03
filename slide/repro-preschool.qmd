@@ -1216,14 +1216,21 @@ You can write scientific documents that look and behave just like journal articl
 
 ## Quarto + Zotero ![](images/zoter.png){width="50"}
 
+
 ::::: columns
 ::: {.column width="50%"}
-![](images/zotero2.png){width="700"}\
+:::fragments
+![](images/zotero2.png){width="700"}
+
+Choose your reference:
 ![](images/zotero.png){width="700"}
+:::
 :::
 
 ::: {.column width="50%"}
+:::fragment
 ![](images/bibfileex.png){width="700"}
+:::
 :::
 :::::
 
@@ -1249,17 +1256,16 @@ You’re working on a project. You save your script as:
 -   `analysis_final_revised.R`
 -   `analysis_final_revised_OK_for_real.R`
 
-::: fragment
-This is a mess. Version control fixes this.
-:::
 
 ## What Is Git?
+<br/>
 
 Git is a version control system. It works like a time machine for your project.
 
 ``` bash
 git init
 ```
+<br/>
 
 Then, save changes with commits:
 
@@ -1273,6 +1279,7 @@ Each commit records: - The changed files - The exact changes - The time - A mess
 :::
 
 ## GitHub
+<br/>
 
 Git works **locally**. GitHub is the **online platform** for:
 
@@ -1321,6 +1328,7 @@ You can also do most of this from RStudio’s Git pane.
 :::
 
 ## Commit message :writing_hand:
+<br/>
 
 ::: nonincremental
 -   Write meaningful messages:
@@ -1335,10 +1343,21 @@ Think of commit messages as a changelog for humans. They help you and others und
 :::
 
 ## Branching & merging :seedling:
+<br/>
 
-Branches let you: ::: nonincremental - Try out new features - Fix bugs safely - Work on different versions in parallel :::
 
-Here’s what each command does:
+::: nonincremental 
+-   Try out new features
+
+-   Fix bugs safely 
+
+-   Work on different versions in parallel 
+:::
+
+
+##
+
+<br/>
 
 ``` bash
 # Create and switch to a new branch called 'new-feature'
@@ -1375,7 +1394,9 @@ plot(data, col = "blue")
 
 Git will insert conflict markers directly into the file:
 
-The code between `<<<<<<< HEAD` and `=======` is from the current branch (e.g., `main`)\
+The code between `<<<<<<< HEAD` and `=======` is from the current branch (e.g., `main`)
+<br/>
+
 The code between `=======` and `>>>>>>> new-feature` is from the other branch you're merging (e.g., `new-feature`)
 
 ## Handling conflicts
@@ -1400,6 +1421,7 @@ Conflicts are normal! Don’t panic. Read carefully, choose the right version of
 :::
 
 ## GitHub + RStudio Integration
+<br/>
 
 -   Clone repos with `File → New Project → Version Control`
 -   Commit and push from the **Git** tab in RStudio
@@ -1410,25 +1432,22 @@ For most use cases, RStudio’s Git integration is sufficient. Great for beginne
 :::
 
 ## Practice & resources
+<br/>
 
 ::: nonincremental
 -   [Happy Git and GitHub for the useR](https://happygitwithr.com)
 -   GitHub Education: <https://education.github.com>
 -   Try GitHub Desktop (GUI client)
 :::
+<br/>
 
 > Start small. Use Git for one script. Then grow your skills from there.
 
-## A note on git learning curves
 
-I won’t lie: Git can be confusing at first. The terminology (commits, branches, merges, remotes) can feel overwhelming. But you **don’t** have to learn **everything at once**. <br/>
-
-Start simple:
-
-::: nonincremental
--   Use RStudio’s Git pane to commit and push
--   Learn how to clone, pull, and push
--   Then explore branches and pull requests
+::: {.notes}
+I won’t lie: Git can be confusing at first. The terminology (commits, branches, merges, remotes) can feel overwhelming. But you don’t have to learn everything at once. 
+Start simple: Use RStudio’s Git pane to commit and push; Learn how to clone, pull, and push
+Then explore branches and pull requests
 :::
 
 ## 
@@ -1464,25 +1483,29 @@ With this setup, anyone can: 1. Clone your repo 2. Restore your environment 3. R
 
 <center>
 
-::: fragment
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjNveWQ4ZThld2pidDg3dHlmdXA0NTQ0ZHYzeXFqaWVhbTBzdHA4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13py6c5BSnBkic/giphy.gif){width="800"}
-:::
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjNveWQ4ZThld2pidDg3dHlmdXA0NTQ0ZHYzeXFqaWVhbTBzdHA4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13py6c5BSnBkic/giphy.gif){width="1000"}
 
 <center>
 
+## Reproducibility
+<br/>
+
+It’s about **credibility** and **transparency**.
+<br/><br/>
+
+Reproducible science is **not** about being **perfect**. 
+<br/><br/>
+
+It's about showing your work so that others can **follow**, **understand**, and **build upon** it.
+
+
 ## Start simple :feet:
+<br/><br/>
 
 > “... anything you do — providing the raw data, posting any small scripts, detailing the versions of programs you used together with their parameters — will be tremendously welcome to anyone trying to validate or build off your paper...”
 
 *C. Titus Brown*
 
-## Reproducibility
-
-It’s about **credibility** and **transparency**. <br/>
-
-Reproducible science is **not** about being **perfect**. <br/>
-
-It's about showing your work so that others can **follow**, **understand**, and **build upon** it.
 
 # Start simple, don’t wait until you’re “ready", and teach what you learn!
 
