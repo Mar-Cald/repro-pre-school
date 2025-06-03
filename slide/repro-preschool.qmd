@@ -553,15 +553,16 @@ means <- sapply(mtcars, mean)
 ```
 
 ## The `*apply` Family
+<br/>
 
-One of R’s best features is the \*apply family of functions: lapply, sapply, apply, vapply, tapply, mapply, and more.
-
+Apply **your** function...
 ```{r}
 #| echo: true
 results <- lapply(mtcars, summ)
 ```
 
 Now results is a list of data frames, one per column.
+<br/><br/>
 
 We can stack them into one big data frame:
 
@@ -569,8 +570,10 @@ We can stack them into one big data frame:
 #| echo: true
 results_df <- do.call(rbind, results)
 ```
+<br/>
 
-This gives us a clean summary for every variable in just a few lines of code. No loops, no repetition.
+This gives us a clean summary for every variable in just a few lines of code. 
+No loops, no repetition.
 
 ## Using `sapply`, `vapply`, and `apply`
 
@@ -752,6 +755,7 @@ fuzzr::test_dbl()
 ## Functional programming in the wild
 
 You can write some R scripts only with functions and `source()` them into the global environment.
+<br/><br/>
 
 ```         
 project/
@@ -765,7 +769,7 @@ source("R/utils.R")
 results <- lapply(mtcars, summ)
 results_df <- do.call(rbind, results)
 ```
-
+<br/><br/>
 This is reproducible, modular, and maintainable.
 
 ## More about functional programming in R
@@ -784,14 +788,14 @@ This is reproducible, modular, and maintainable.
 
 </center>
 
-## Wrapping Up
+## Wrapping up
+<br/>
 
 ::: nonincremental
--   Functional programming in R helps you write clean, concise, and reusable code.
--   The `\*apply` functions are your friends.
 -   Avoid repetition by using functions.
 -   Favor pure functions.
 -   Test your functions.
+-   The `*apply` functions are your friends.
 :::
 
 ::: notes
@@ -813,31 +817,35 @@ So far, we’ve talked about good data practices, clean code, and functional pro
 -   They provide quick access to a specific project
 
 ## The Working Directory Problem
+<br/>
 
-How many times have you opened an R script and seen this at the top?\
+How many times have you opened an R script and seen this at the top?
+<br/><br/>
 
-**setwd("C:/Users/margherita/Documents/PhD/final_data/mess")** **change**
-
-This works perfectly on one computer. But the moment someone else tries to run it, or even you open it from a different machine or folder, it breaks.\
+**setwd("C:/Users/margherita/Documents/PhD/final_data/mess")** *#change*
+<br/><br/>
 
 Instead of hardcoding paths, we want to use projects with **relative paths**.
+
+::: {.notes}
+This works perfectly on one computer. But the moment someone else tries to run it, or even you open it from a different machine or folder, it breaks.
+:::
 
 ## R Projects
 
 An R Project (.Rproj) is a file that defines a self-contained workspace.\
 When you open an R Project, your working directory is automatically set to the project root, no need to use setwd() ever again.
-
-It’s simple to create:
+<br/><br/>
 
 Open RStudio
 
 `File → New Project → New Directory → New Project`
 
+
+::: {.notes}
 Choose a folder and a name
-
-Done!
-
-Now when you save or load files, you can use relative paths!
+Done! Now when you save or load files, you can use relative paths!
+:::
 
 ## Relative Path (to the working directory)
 
@@ -882,10 +890,11 @@ This isn’t rigid, you can adapt it. But the key idea is: one folder, one proje
 :::
 
 ## Project organization with `rrtools` :package:
+<br/>
 
 To make this even "easier", you can use the `rrtools` package to create what’s called a reproducible research compendium.
+<br/><br/>
 
-Install and use it like this:
 
 ```{r, eval=FALSE, echo=TRUE}
 install.packages("rrtools")
@@ -907,40 +916,52 @@ rrtools::create_compendium("my-awesome-project")
 :::::
 
 ## Research compendium `rrtools` :package:
+<br/>
 
 ::: nonincremental
 -   Organize its files according to the prevailing conventions.
--   Maintain a clear separation of data, method, and output, while unambiguously expressing the relationship between those three (original data is untouched!).
+-   Maintain a clear separation of data (original data is untouched!), method, and output.
 -   Specify the computational environment that was used for the original analysis
 
-[--\> Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
+[> Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
 :::
 
 ## 
+<br/>
 
 `rrtools::create_compendium()` builds the basic structure for a research compendium.
+<br/>
 
 ::: nonincremental
 -   Storage for general metadata (e.g., citation details)
 -   Dependency management via **DESCRIPTION** file
 -   Function storage and documentation in R/ folder
 :::
+<br/>
 
+[> Example](https://github.com/Mar-Cald/compendium){target="_blank"}
+
+::: {.notes}
 These features enable managing, installing, and sharing project-related functionality.
-
-[Example](https://github.com/Mar-Cald/compendium){target="_blank"}
+:::
 
 ## `renv`:package: : locking your R environment
+<br/>
 
 Another challenge for reproducibility is package versions.
+<br/><br/>
 
-You write some code today using `dplyr 1.1.2`. In six months, `dplyr` gets updated... :cry:
+You write some code today using `dplyr 1.1.2`. 
+<br/><br/>
 
-![](images/renv.png){fig-align="center" width="400"}
+In six months, `dplyr` gets updated... :cry:
+<br/><br/>
 
-[`renv`](https://rstudio.github.io/renv/articles/renv.html){target="blank"} helps you create reproducible environments for your R projects.
+`renv` helps you create reproducible environments for your R projects!
+
 
 ## What does `renv` do?
+<br/>
 
 ::: nonincremental
 -   It records all the packages you use, with versions, in a lockfile
@@ -963,10 +984,14 @@ install.packages('bayesplot')
 
 These packages will be installed into "~/repro-pre-school/example-renv/renv/library/macos/R-4.4/aarch64-apple-darwin20".
 ```
+<br/>
 
-[Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/example-renv){target="_blank"}
+[> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/example-renv){target="_blank"}
 
 ## `renv` commands
+
+![](images/renv.png){fig-align="center" width="400"}
+
 
 <br/>
 
@@ -977,6 +1002,7 @@ These packages will be installed into "~/repro-pre-school/example-renv/renv/libr
 <br/>
 
 ## Research `rrtools` + `renv` :bomb:
+<br/>
 
 ::: nonincremental
 -   **`rrtools`**: Organizes your project into a **reproducible compendium** with clear folders.
