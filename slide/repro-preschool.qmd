@@ -26,6 +26,10 @@ engine: knitr
 -   Passionate about reproducible science after struggling with disorganized datasets in my early research!
 :::
 
+::: notes
+Hello everyone, and thank you for being here. My name is Margherita Calderan, and I’m a post-doctoral researcher in Cognitive Psychology at the University of Padova. I recently completed my PhD in Psychological Science, just a few months ago, and I’ve been passionate about reproducible science ever since I had one of those research experiences I’m sure some of you can relate to: trying to make sense of an old project with no documentation, no structure, and files named things like “final_version_revised3_bis.csv.” I realized that if I couldn’t understand my own work after a few months, how could I possibly expect others to follow it, replicate it, or build upon it? That’s why I’m here today: to talk about reproducible science. Not just as a buzzword or a trend, but as a concrete, powerful, and often underestimated way to improve the quality, transparency of our research.
+:::
+
 ## Our job is hard :fire:
 
 <br/>
@@ -48,6 +52,10 @@ engine: knitr
 :::
 :::::
 
+::: notes
+Let’s start with an honest look at our daily work. Doing research in psychology, or any empirical science, is hard. We juggle multiple roles: we design studies, collect data, analyze results, write papers, supervise students, prepare talks, respond to reviewers—and sometimes even do administration. It’s a lot. It’s easy to feel overwhelmed. And in that chaos, good practices often fall by the wayside. It’s tempting to write quick scripts, save datasets with unclear names, copy and paste plots into Word, and move on. But here's the thing: all of those shortcuts come at a cost. Not right away—maybe not even this week—but eventually, they come back to haunt us.
+:::
+
 ## Reproducibility helps!
 
 ::::: columns
@@ -68,15 +76,29 @@ engine: knitr
 :::
 :::::
 
+::: notes
+I want to suggest that reproducibility is not an extra task. It’s not a burden we add on top of everything else. It’s a way of working that can replace the mess with a clear system. It’s an investment in your future self. And if you’ve ever tried to understand your own code from six months ago, you know what I mean.
+:::
+
+## What is Reproducible Science?
+
+At its core, reproducible science means that someone else, or even you, in the future, can reproduce your results from your materials: your data, your code, your documentation.\
+
+::: notes
+It means your workflow is transparent. Every number in your paper, every figure in your presentation, has a clear lineage. You can trace it back to the raw data and see how it was generated.
+:::
+
+::: notes
+And it’s not just about replication in the scientific sense. It’s also about efficiency. Reproducible workflows save time. They reduce errors. They make collaboration smoother. They build trust with your peers, reviewers, and the public.
+:::
+
 ## Keys to Reproducible Science :closed_lock_with_key:
 
-<br/>
-
 ::: nonincremental
--   **Programming**: Use R or Python for transparent analysis.
--   **Literate Programming**: Combine code and text with Quarto.
--   **Version Control**: Track changes with Git/GitHub.
--   **Repositories**: Share data and code via OSF.\
+-   **Data**: How to organize, document, and share your datasets in ways that are usable by others and understandable by you—even years later.
+-   **Code**: How to write analysis scripts that are clean, transparent, and reusable..
+-   **Literate Programming**: How to combine code and text in the same document using tools like Quarto, so your reports, papers, and presentations are dynamic and replicable.
+-   **Version Control and Sharing**: How to track changes, collaborate, and make your work openly available using tools like GitHub and OSF.\
 :::
 
 ## So... Is reproducible science even harder?
@@ -93,6 +115,10 @@ At first, yes - but then...:fire_extinguisher::fire:
 
 > *Learning the tools takes effort but once you do, your workflow becomes smoother, clearer, and more reliable.*
 
+::: notes
+Now, I’ll be honest. Learning to work reproducibly takes effort. It often feels harder at first. When you start using version control or scripting your analyses, it can be frustrating. It can feel slow and confusing. But here’s the good news: once you’ve learned these tools, your workflow becomes smoother, more scalable, and much easier to maintain. Let me give you an example. Imagine you’re running an analysis for your study. You do it in SPSS or Excel. You click a few buttons, run a few tests, and get your results. Then, your co-author emails you and says, “Actually, we should exclude participants under 18.” So you go back, click through everything again, redo the tests, maybe forget a step, maybe round differently, maybe miss one plot—and now your results are inconsistent. Now imagine the same scenario, but you’ve scripted your analysis in R or Python. You go into your code, change one line—filter(age \>= 18)—and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is now documented. That’s the power of reproducibility
+:::
+
 ## Outline
 
 <br/>
@@ -107,7 +133,15 @@ At first, yes - but then...:fire_extinguisher::fire:
 
 ### Version Control
 
+::: notes
+So, to wrap up this introduction: reproducible science is not perfect science. It’s not about eliminating every mistake. It’s about building systems that help us work more clearly, more collaboratively, and more transparently. In the sections that follow, we’ll explore how to: • Document and structure your data, • Write readable, testable code, • Use functional programming principles to simplify your workflow, • Organize your projects in a way that’s portable and consistent, • And write scientific documents that are both human-readable and machine-executable.
+:::
+
 # Data
+
+::: notes
+Let’s begin with the first pillar of reproducible science: data. Everything we do as scientists builds on data. If your data is messy, undocumented, or inaccessible, it doesn’t matter how brilliant your analysis is—no one will be able to follow it, reproduce it, or extend it.
+:::
 
 ## Data Types in Research
 
@@ -137,15 +171,13 @@ At first, yes - but then...:fire_extinguisher::fire:
 
 ## Bad Data Sharing Example
 
-You find a paper with an OSF link, but...
+Imagine this scenario: you read a paper that seems really relevant to your research. At the end, you’re excited to see they’ve shared their data on OSF. You go to the repository, and there’s one file...
 
 ![](images/bad-dataset.png)
 
 ## Bad Data Sharing Example
 
-Amazing! There is a single file on the OSF repository. Then you open the dataset:
-
-. . .
+You download it, open it, and you see this: . . .
 
 ```{r}
 bad <- readxl::read_xlsx("files/bad-dataset.xlsx")[1:5,]
@@ -153,9 +185,13 @@ bad |>
   gt::gt()
 ```
 
-Where is the data-dictionary?\
-What are 0 and 1?\
-How missing values are coded?\
+What do these variables mean? What’s x3?\
+What do 0 and 1 represent? How are missing values coded?\
+Is x6 a z-score or raw data?
+
+::: notes
+There’s no README file. No codebook. No context. Even though this file is technically shared, it’s not reproducible. It’s not even interpretable. And again—this is assuming we’re lucky and the file opens properly and doesn’t require a proprietary format or a password!
+:::
 
 ## Good Data Sharing Practices
 
@@ -166,16 +202,9 @@ How missing values are coded?\
 -   Follow **FAIR principles** (Findable, Accessible, Interoperable, Reusable).\
 :::
 
-## FAIR Data Principles :mag:
-
-::: nonincremental
--   **Findable**: Use metadata and DOIs to make data easy to locate.
--   **Accessible**: Ensure data is retrievable via open repositories.
--   **Interoperable**: Use standard formats (e.g., `.csv`, `.txt`) for compatibility.
--   **Reusable**: Include clear documentation and open licenses.
+::: notes
+So how do we do this? Let’s start with some concrete recommendations. Use plain-text formats for your data: CSV (.csv) and tab-delimited text (.txt) are ideal. They’re easy to read, easy to import, and future-proof. Avoid Excel files if you can—especially those with multiple sheets, embedded charts, or merged cells. Binary formats like .sav (SPSS), .dta (Stata), or .xlsx often create compatibility issues. If you do need to share those formats, also provide a CSV version. Plain text is portable. It doesn’t care what operating system or software someone uses. That’s what you want.
 :::
-
-![](images/fair_diagram.png){width="800" fig-align="center"}
 
 ## The Role of a Data Dictionary :open_file_folder: {data-time="3 min"}
 
@@ -183,6 +212,10 @@ How missing values are coded?\
 -   A **data dictionary** defines each variable in your dataset.
 -   Boosts **transparency** and **collaboration**.
 -   Saves time for **collaborators** and **future-you**.
+:::
+
+::: notes
+A data dictionary is a simple document that describes every variable in your dataset: its name, type, possible values, coding scheme, and meaning.
 :::
 
 ## `datadictionary` :package:
@@ -200,17 +233,36 @@ df_labels <- list(
 create_dictionary(df, id_var = "id", var_labels = df_labels)
 ```
 
-## Best Practices for Data Dictionaries
-
-::: nonincremental
--   Provide context (e.g., how variables were measured).
--   Define codes and abbreviations (e.g., “NA” for missing).
--   Note special values (e.g., -999 for invalid data).
+::: notes
+This generates a clean summary of your dataset—number of rows and columns, summaries of variables, missingness, and labels. It’s readable, shareable, and even helpful for yourself when you come back to the data later. And the beauty is that it takes minutes to set up, but saves hours down the line.
 :::
 
-![](images/datadict.png){width="512" fig-align="center"}
+## README files
 
-## Data Licensing :lock: {data-time="2 min"}
+A **README** file is the first thing someone sees when they open your dataset folder. It should answer basic questions like: - What is this dataset? - Who created it? - How was it collected? - What are the main variables? - How should I cite it?
+
+::: notes
+Don’t overthink it—just write it like you’re explaining the dataset to a curious but uninformed colleague.
+:::
+
+## FAIR Data Principles :mag:
+
+::: nonincremental
+-   **Findable**: Use metadata and DOIs to make data easy to locate.
+-   **Accessible**: Ensure data is retrievable via open repositories.
+-   **Interoperable**: Use standard formats (e.g., `.csv`, `.txt`) for compatibility.
+-   **Reusable**: Include clear documentation and open licenses.
+:::
+
+![](images/fair_diagram.png){width="800" fig-align="center"}
+
+::: notes
+Your data should be discoverable. That means metadata, proper naming, and a DOI if possible. Others should be able to download your data, ideally without jumping through hoops. Use standard formats and vocabulary so that your data can be combined with other datasets. Provide enough documentation and licensing that others can actually reuse your data appropriately.
+:::
+
+## Data Licensing :lock:
+
+A license tells others what they can and can’t do with your data. If you don’t include one, legally speaking, people might not be allowed to use it—even if you meant to share it openly.
 
 ::: nonincremental
 -   **Licenses** clarify how others can use your data.
@@ -221,7 +273,23 @@ create_dictionary(df, id_var = "id", var_labels = df_labels)
 -   Choose based on **discipline norms** and **data sensitivity**.
 :::
 
+::: notes
+Wrapping Up the Data Section So let me summarize the key points before we move on: use plain, open formats like CSV Always include a README and data dictionary Follow FAIR principles Choose a license for your data Use OSF or similar platforms to share your data
+:::
+
 # Code
+
+::: notes
+Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Because messy data is bad—but undocumented code might be even worse. Just like with data, your code can either be a gateway to understanding—or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else—like your advisor, your collaborator, your reviewer, or your future self—tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code. And we’ll start with a simple but powerful idea: Write code as if someone else will need to understand and reproduce your analysis. Because they will. And sometimes, that “someone” is you.
+:::
+
+## Why Scripts Matter
+
+Scripts are: - Reproducible: You can rerun them. - Documented: You can see what you did and when. - Shareable: Others can inspect and reproduce your analysis.
+
+::: notes
+And as a bonus, they’re debuggable. If something goes wrong, you can trace it.
+:::
 
 ## [R](images/R_logo.png){width="300"} and RStudio :computer:
 
@@ -231,9 +299,11 @@ create_dictionary(df, id_var = "id", var_labels = df_labels)
 -   Scripting ensures **transparent, reproducible** workflows.
 
 <center>
-::: {.fragment}
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjNveWQ4ZThld2pidDg3dHlmdXA0NTQ0ZHYzeXFqaWVhbTBzdHA4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13py6c5BSnBkic/giphy.gif){.absolute bottom=0 left=300 width="500"}
+
+::: fragment
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjNveWQ4ZThld2pidDg3dHlmdXA0NTQ0ZHYzeXFqaWVhbTBzdHA4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13py6c5BSnBkic/giphy.gif){.absolute bottom="0" left="300" width="500"}
 :::
+
 <center>
 
 ## Writing Better Code :pencil:
@@ -244,20 +314,14 @@ create_dictionary(df, id_var = "id", var_labels = df_labels)
 -   **Name descriptively**: Use `snake_case` or `camelCase` for readability.
 :::
 
-``` r
-x1 = rep(c("Psy","Med","Bio"), 4)  # What does 'x' mean?
-DepUni = x1      # CamelCase
-dep_uni = x1     # snake_case
-```
-
 ## Organized scripts
 
 . . .
 
 Global operations at the beginning of the script:
 
--   loading datasets
 -   loading packages
+-   loading datasets
 -   changing general options (`options()`)
 
 . . .
@@ -275,19 +339,62 @@ options(scipen = 999)
 dat <- read.csv(...)
 ```
 
+::: notes
+It’s readable. It’s linear. And if something breaks, you know where to look.
+:::
+
 ## Comments, comments and comments...
 
-Write the code for your future self and for others, not for yourself right now.
+Write the code for your future self and for others, not for yourself right now.\
 
-Try to open a (not well documented) old coding project after a couple of years and you will understand :)
+Try to open a (not well documented) old coding project after a couple of years and you will understand :)\
 
-Invest time in writing more comprehensible and documented code for you and others.
+Invest time in writing more comprehensible and documented code for you and others.\
+
+```{r, echo=TRUE, eval=FALSE}
+# Remove participants with missing anxiety scores
+dat <- dat %>% filter(!is.na(anxi))
+#vs.
+dat <- dat %>% filter(!is.na(anxi))  # <-- What is this doing?
+```
+
+::: notes
+Let’s be honest: we all think we’ll remember what we did. We never do. That’s why comments are essential. Comments are the notes you leave behind for your future self—or for someone else. They don’t have to be elaborate, but they should describe why you’re doing something, especially if it’s not obvious.
+:::
+
+## Use Descriptive Names
+
+Another best practice: name your variables clearly.
+
+```{r, echo=TRUE, eval=TRUE}
+# Bad 
+x1 <- c("Psychology", "Medicine", "Biology")
+# Better
+uni_dep <- c("Psychology", "Medicine", "Biology")
+```
+
+Consistency helps too. Use either snake_case or camelCase, but pick one and stick to it.
+
+## Summary: Writing Better Code
+
+::: nonincremental
+-   Scripts beat point-and-click
+-   Structure matters
+-   Comment often
+-   Name things well
+:::
 
 ## Functions to avoid repetition
+
+Functions are the primary building blocks of your program. You write small, reusable, self-contained functions that do one thing well—and then you combine them.
 
 Avoid repeating the same operation multiple times in the script. The rule is, if you are doing the same operation more than two times, write a function.
 
 A function can be re-used, tested and changed just one time affecting the whole project.
+
+::: notes
+If you’ve ever found yourself writing the same line of code over and over again, copying and pasting blocks of logic for different variables, or modifying dozens of lines when one thing changes—this section is for you. Functional programming is not some abstract theory. It’s a way to write clearer, shorter, and less error-prone code. And it’s a huge asset for reproducible science.
+:::
 
 ## Functional Programming, example...
 
@@ -352,18 +459,6 @@ head(results, n = 6)
 
 ```
 
-## Functional Programming
-
-The actual real functional way require using the built-in iteration tools `*apply`. In this way you avoid writing the verbose `for` loop.
-
-```{r}
-#| echo: true
-results <- lapply(mtcars, summ)
-results <- do.call(rbind, results)
-head(results, n = 6)
-
-```
-
 ## Functional Programming, `*apply` :package:
 
 -   The `*apply` family is one of the best tool in R. The idea is pretty simple: apply a function to each element of a list.
@@ -382,6 +477,40 @@ for(i in 1:length(means)){
 
 # the same with sapply
 means <- sapply(mtcars, mean)
+```
+
+## The `*apply` Family
+
+One of R’s best features is the \*apply family of functions: lapply, sapply, apply, vapply, tapply, mapply, and more.
+
+```{r}
+#| echo: true
+results <- lapply(mtcars, summ)
+```
+
+Now results is a list of data frames—one per column.
+
+We can stack them into one big data frame:
+
+```{r}
+#| echo: true
+results_df <- do.call(rbind, results)
+```
+
+This gives us a clean summary for every variable in just a few lines of code. No loops, no repetition.
+
+## Using `sapply`, `vapply`, and `apply`
+
+::: nonincremental
+-   lapply() always returns a list.
+-   sapply() tries to simplify the result into a vector or matrix.
+-   vapply() is like sapply() but safer—you specify the return type.
+-   apply() is for applying functions over rows or columns of a matrix or data frame.
+:::
+
+```{r}
+#| echo: true
+sapply(mtcars, mean) == apply(mtcars, MARGIN = 2, mean) # MARGIN = 2, apply to columns
 ```
 
 ## `for` loops are bad?
@@ -433,13 +562,23 @@ microbenchmark(
   }, times = 100)
 ```
 
-## With `*apply` you can do crazy stuff!
+## Going Further: Custom Function Lists
+
+Let’s define a list of functions:
 
 ```{r}
 #| echo: true
 funs <- list(mean = mean, sd = sd, min = min, max = max, median = median)
-sapply(funs, function(f) apply(mtcars, MARGIN = 2, function(x) f(x)))
 ```
+
+Now we can apply all of these to every column:
+
+```{r}
+#| echo: true
+sapply(funs, function(f) apply(mtcars, 2, f))
+```
+
+This gives you a matrix with rows as variables and columns as statistics.
 
 ## Pure vs. Impure functions
 
@@ -476,6 +615,8 @@ print(x)
 
 ## Test your functions - `fuzzr` :package:
 
+When you write your own functions, it’s smart to test them. In R, we can use `fuzzr` to do **property-based testing**.
+
 ::::: columns
 ::: {.column width="50%"}
 Define your function...
@@ -506,7 +647,7 @@ property_mean_correct <- function(x) {
 
 ------------------------------------------------------------------------
 
-Test the function across many randomly generated inputs...
+This runs the property on different random numeric vectors and checks whether it holds.
 
 ::::: columns
 ::: {.column width="60%"}
@@ -535,54 +676,58 @@ fuzzr::test_dbl()
 -   Functions can be easily and consistently documented (see [roxygen](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) documentation) improving the reproducibility and readability of your code.
 :::
 
-## 
+## Functional Programming in the Wild
 
-If your functions are project-specific you can define them into your scripts or write some R scripts only with functions and `source()` them into the global environment.
+You can write some R scripts only with functions and `source()` them into the global environment.
 
 ```         
 project/
 ├─ R/
 │  ├─ utils.R
-├─ analysis.R
+   ├─ analysis.R
 ```
 
-And inside `utils.R` you have some functions:
-
-```{r}
-#| eval: false
-#| echo: true
-
-myfun <- function(x) {
-  # something
-}
-```
-
-Then you can load the function using `source("R/utils.R)` at the beginning of `analysis.R`:
-
-```{r}
-#| eval: false
-#| echo: true
+```{r, echo=TRUE}
 source("R/utils.R")
+results <- lapply(mtcars, summ)
+results_df <- do.call(rbind, results)
 ```
+
+This is reproducible, modular, and maintainable.
 
 ## More about functional programming in R
 
 ::: nonincremental
 -   Advanced R by Hadley Wickham, section on Functional Programming (<https://adv-r.hadley.nz/fp.html>)
--   Hands-On Programming with R by Garrett Grolemund [https://rstudio-education.github.io/hopr/](https://rstudio-education.github.io/hopr/)
--   Hadley Wickham: [The Joy of Functional Programming (for Data Science)](https://www.youtube.com/watch?v=bzUmK0Y07ck)
+-   Hands-On Programming with R by Garrett Grolemund <https://rstudio-education.github.io/hopr/>
+-   Hadley Wickham: The Joy of Functional Programming (for Data Science)(<https://www.youtube.com/watch?v=bzUmK0Y07ck>)
 :::
 
 <center>
-::: {layout-ncol=1}
-![Advanced R](images/advanced-r.jpg){width=150 fig-align="center"}
-![Hands-on Programming With R](images/hand-on-programming.jpeg){width=150 fig-align="center"}
+
+::: {layout-ncol="1"}
+![Advanced R](images/advanced-r.jpg){width="150" fig-align="center"} ![Hands-on Programming With R](images/hand-on-programming.jpeg){width="150" fig-align="center"}
 :::
 
 </center>
 
+## Wrapping Up
+
+-   Functional programming in R helps you write clean, concise, and reusable code.
+-   The \*apply functions are your friends.
+-   Avoid repetition by using functions.
+-   Favor pure functions.
+-   Test your functions.
+
+::: notes
+In the long run, these practices will save you time, reduce your bugs, and make your research far easier to reproduce.
+:::
 
 # Organize your project
+
+::: notes
+So far, we’ve talked about good data practices, clean code, and functional programming. But now we need to ask: Where does all of this live? How do we keep everything together—our data, our scripts, our figures, our notes—in a way that is coherent, portable, and reproducible? That’s what this section is about: project organization. Just like a clean kitchen makes it easier to cook, a clean research folder makes it easier to do science. And this is where R Projects, proper file structure, and tools like rrtools and renv come into play.
+:::
 
 ## R Projects
 
@@ -592,46 +737,80 @@ source("R/utils.R")
 -   They allow the use of ***relative paths*** instead of ***absolute paths***
 -   They provide quick access to a specific project
 
-## Working Directory
+## The Working Directory Problem
 
-Where is R currently working?
+How many times have you opened an R script and seen this at the top?\
 
-<br/>
+**setwd("C:/Users/margherita/Documents/PhD/final_data/mess")** **change**
 
-```{r, echo = TRUE}
-getwd()
-```
+This works perfectly on one computer. But the moment someone else tries to run it, or even you open it from a different machine or folder, it breaks.\
 
-## Absolute Path
+Instead of hardcoding paths, we want to use projects with **relative paths**.
 
-```         
-PC
-│
-├─ Users
-    │
-    ├─ tita/
-        │
-        ├─ repro-pre-school/
-        │
-        ├─ slide/
-```
+## R Projects
 
-<br/> We are working inside the folder **slide**.
+An R Project (.Rproj) is a file that defines a self-contained workspace.\
+When you open an R Project, your working directory is automatically set to the project root—no need to use setwd() ever again.
+
+It’s simple to create:
+
+Open RStudio
+
+File → New Project → New Directory → New Project
+
+Choose a folder and a name
+
+Done!
+
+Now when you save or load files, you can use relative paths!
 
 ## Relative Path (to the working directory)
 
-Since we are working inside this folder, if we want to load a file located in this folder we can simply write the file name in quotes.
+<br/>
 
-**Absolute** path: Users/tita/repro-pre-school/slide/df.csv\
-**Relative** path: df.csv\
+**Absolute** path: read.csv("Users/tita/workinMemo/data/clean_data.csv") <br/>
 
-```{r, echo=TRUE, warning=FALSE}
-read.csv('df.csv')
+**Relative** path: read.csv("data/clean_data.csv") <br/>
+
+::: notes
+This makes your code portable. Anyone can clone your project and run it from their own computer, and the paths will still work.
+:::
+
+## A Minimal Project Structure
+
+```         
+  my-project/
+      x
+      ├── data/
+      │     ├── raw/
+      │     └── processed/
+      ├── R/
+      │   └── analysis.R
+      │ 
+      ├── outputs/
+      │   ├── figures/
+      │   └── tables/
+      │
+      ├── my-project.Rproj
+      └── README.md
 ```
+
+::: notes
+This isn’t rigid—you can adapt it. But the key idea is: one folder, one project, everything in its place.
+:::
 
 ## Project Organization with `rrtools` :package:
 
-<br/>
+To make this even "easier", you can use the `rrtools` package to create what’s called a reproducible research compendium.
+
+Install and use it like this:
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages("rrtools")
+rrtools::create_compendium("my-awesome-project")
+```
+
+## Reproducible research compendium
 
 ::::: columns
 ::: {.column width="50%"}
@@ -650,7 +829,7 @@ read.csv('df.csv')
 -   Maintain a clear separation of data, method, and output, while unambiguously expressing the relationship between those three (original data is untouched!).
 -   Specify the computational environment that was used for the original analysis
 
-[Click here for Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
+[--\> Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
 :::
 
 ## 
@@ -665,20 +844,37 @@ read.csv('df.csv')
 
 These features enable managing, installing, and sharing project-related functionality.
 
-[example](https://github.com/Mar-Cald/compendium){target="_blank"}
+[Example](https://github.com/Mar-Cald/compendium){target="_blank"}
 
-## `renv` :package:
+## `renv`:package: : Locking your R environment
+
+Another challenge for reproducibility is package versions.
+
+You write some code today using `dplyr 1.1.2`. In six months, `dplyr` gets updated... :cry:
+
+![](images/renv.png){fig-align="center" width="400"}
 
 [`renv`](https://rstudio.github.io/renv/articles/renv.html){target="blank"} helps you create reproducible environments for your R projects.
 
-![](images/renv.png){fig-align="center" width="100"}
+## What does renv do?
+
+::: nonincremental
+-   It records all the packages you use, with versions, in a lockfile
+
+-   It installs them in a project-specific library
+
+-   It ensures that anyone who runs your code gets exactly the same environment
+:::
 
 ## Project specific library
 
 <br/>
 
 ```         
-`install.packages('microbenchmark')`
+install.packages("renv")
+renv::init()
+
+install.packages('microbenchmark')
 
 The following package(s) will be installed:
 
@@ -689,7 +885,17 @@ These packages will be installed into
 \~/repro-pre-school/example-renv/renv/library/macos/R-4.4/aarch64-apple-darwin20
 ```
 
-[example](https://github.com/Mar-Cald/repro-pre-school/tree/main/example-renv){target="_blank"}
+[Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/example-renv){target="_blank"}
+
+## `renv` commands
+
+<br/>
+
+`renv::snapshot()` \# save current state <br/>
+
+`renv::update()` \# update lockfile <br/>
+
+`renv::restore()` \# re-install from lockfile <br/>
 
 ## Research `rrtools` + `renv` :bomb:
 
@@ -708,12 +914,11 @@ These packages will be installed into
 -   Ideal for **sharing** complex analyses with others.
 :::
 
-## Documenting Your Environment :information_source:
+## Documenting your environment :information_source:
 
 ::: nonincremental
 -   **`sessionInfo()`**: Captures your **R version**, **packages**, and **platform** in one command.
 -   Easy way to **document** and **share** your environment.
--   Perfect for **beginners** or when avoiding `renv` or Docker.
 :::
 
 ```{r}
@@ -721,92 +926,24 @@ These packages will be installed into
 sessionInfo()
 ```
 
+## Organizing for reproducibility
+
+-   Don’t hardcode paths—use `R Projects`
+-   Create a logical folder structure for your project
+-   Use `rrtools` to scaffold a research compendium
+-   Use `renv` to lock your package versions
+
+# All of this structure isn’t just for you, it makes it easier to work with others.
+
+::: notes
+All of this structure isn’t just for you, it makes it easier to work with others. Imagine sending a collaborator your entire project folder. They open it, install renv, run one script, and everything works. No more back-and-forth about “which version of ggplot2 did you use?” or “can you send me the latest version of the file?” Everything is versioned. That’s reproducible science.
+:::
+
 # Literate Programming
 
-## [Literate Programming](https://en.wikipedia.org/wiki/Literate_programming){target="_blank"}
-
-> Donald Knuth first defined literate programming as a script, notebook, or computational document that contains an explanation of the program logic in a natural language, interspersed with snippets of macros and source code, which can be compiled and rerun
-
-
-For example **jupyter notebooks**, **R Markdown** and now **Quarto** are literate programming frameworks to integrate code and text.
-
-
-## Literate Programming, the markup language
-
-Beyond the coding part, the markup language is the core element of a literate programming framework. The idea of a markup language is separating the result from what you actually write. Some examples are:
-
--   LaTeX
--   HTML
--   Markdown
--   XML
--   ...
-
-## [LaTeX](https://latexbase.com/){target="_blank"}
-
-![](images/latex-example.png)
-
-## HTML
-
-``` html
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>My First Heading</h1>
-
-Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
-
-<h2>My Second Heading</h2>
-
-Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. 
-
-Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo 
-
-tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. 
-
-È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. 
-
-Fu reso popolare, negli anni ’60, con la diffusione dei 
-
-fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum
-
-più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
-
-</body>
-</html>
-```
-
-## [Markdown](https://markdownlivepreview.com/){target="_blank"}
-
-<iframe src="https://markdownlivepreview.com/" height="500" width="1000" style="border: 1px solid #464646;display:block;" allowfullscreen allow="autoplay">
-
-</iframe>
-
-## Markdown
-
-Markdown is one of the most popular markup languages for several reasons:
-
--   easy to write and read compared to Latex and HTML
--   easy to convert from Markdown to basically every other format using `pandoc`
--   easy to implement new features
-
-## Markdown (source code)
-. . .
-
-Also the source code can be used to take notes and read.
-
-. . .
-
-```{r, echo = TRUE, eval=FALSE}
-## My Section
-- Write **bold** text.
-- Include a [link](https://quarto.org)
-- Run code: `r mean(mtcars$mpg)`. 
-```
-
-. . .
-
-Latex and HTML need to be compiled otherwise they are very hard to read.
+::: notes
+What if your paper, your report, and your code could all live in the same file? No more copy-pasting tables from R to Word. No more screenshots of plots. No more “Oops, I updated the figure but forgot to update the caption.”
+:::
 
 ## What's wrong about Microsoft Word?
 
@@ -835,7 +972,78 @@ Beyond the pure writing process, there are other aspects related to research dat
 
 In MS Word (or similar) we need to produce everything outside and then manually put figures and tables.
 
-## The solution... Quarto
+## Think about the typical MW workflow
+
+-   You run your analysis in R
+-   You copy the results into a Word document
+-   You tweak the formatting
+-   You insert a figure generate with R manually
+-   You change your analysis, but forget to update the results in the text…
+
+::: notes
+It’s easy to make mistakes. Your document and your data are out of sync. And your work is not reproducible. Word was designed for writing, not for science.
+:::
+
+## [Literate Programming](https://en.wikipedia.org/wiki/Literate_programming){target="_blank"}
+
+A document where:
+
+::: nonincremental
+-   The code is part of the text
+-   The results are generated *dynamically*
+-   The figures are rendered *automatically*
+-   Everything is in *sync*
+:::
+
+For example **jupyter notebooks**, **R Markdown** and now **Quarto** are literate programming frameworks to integrate code and text.
+
+## Literate Programming, the markup language
+
+Beyond the coding part, the markup language is the core element of a literate programming framework.\
+The idea of a markup language is separating the result from what you actually write. Some examples are:
+
+::: nonincremental
+-   LaTeX
+-   HTML
+-   Markdown
+-   XML
+-   ...
+:::
+
+## [LaTeX](https://latexbase.com/){target="_blank"}
+
+![](images/latex-example.png)
+
+## [Markdown](https://markdownlivepreview.com/){target="_blank"}
+
+<iframe src="https://markdownlivepreview.com/" height="500" width="1000" style="border: 1px solid #464646;display:block;" allowfullscreen allow="autoplay">
+
+</iframe>
+
+## Markdown
+
+Markdown is one of the most popular markup languages for several reasons:
+
+::: nonincremental
+-   easy to write and read compared to Latex and HTML
+-   easy to convert from Markdown to basically every other format using `pandoc`
+-   easy to implement new features
+:::
+
+## Markdown (source code)
+
+Also the source code can be used to take notes and read.
+
+```{r, echo = TRUE, eval=FALSE}
+## My Section
+- Write **bold** text.
+- Include a [link](https://quarto.org)
+- Run code: `r mean(mtcars$mpg)`. 
+```
+
+Latex and HTML need to be compiled otherwise they are very hard to read.
+
+## Quarto
 
 Quarto (<https://quarto.org/>) is the evolution of R Markdown that integrate a programming language with the Markdown markup language. It is very simple but quite powerful.
 
@@ -861,9 +1069,60 @@ Markdown can be learned in minutes. You can go to the following link <https://qu
 
 </iframe>
 
+## Quarto
+
+You write your documents in **Markdown**, and **Quarto** turns them into:\
+
+::: nonincremental
+-   HTML reports
+-   PDF articles
+-   Word documents
+-   Slides
+-   Website
+-   Academic manuscripts
+-   ...
+:::
+
+## Quarto
+
+::: nonincremental
+-   If your data changes, your summary table updates.
+-   If you update your model, your coefficients update.
+-   If you change a plot’s colors, the new version appears—without having to re-export and re-insert anything.
+:::
+
+This eliminates a huge source of human error: **manual updates**.
+
+\[add example!!\]
+
+## Outputs
+
+Quarto can generate multiple output formats from the same source file.
+
+With one command, you get three outputs:
+
+::: nonincremental
+-   A PDF to send to your colleagues
+-   A Word document for your co-author who hates PDFs
+-   An HTML report for your own website
+:::
+
+Everything from the same source. No duplication. **Synchronization**.
+
+\[add example!!\]
+
+## Extra Tools: Citations and Cross-Referencing
+
+-   Citations with BibTeX or Zotero
+-   Cross-references for figures and tables
+-   Numbered equations with LaTeX syntax
+-   Footnotes, tables of contents, and more
+
+You can write scientific documents that look and behave just like journal articles—without ever opening Word.
+
 ## Writing Papers - [APA quarto](https://wjschne.github.io/apaquarto/){target="_blank"}
 
-APA Quarto is a Quarto extension that makes it easy to write documents in APA 7th edition style — with automatic formatting for title pages, headings, citations, references, tables, and figures.
+**APA Quarto** is a Quarto extension that makes it easy to write documents in APA 7th edition style — with automatic formatting for title pages, headings, citations, references, tables, and figures.
 
 ![](images/apaquarto.png)
 
@@ -875,13 +1134,14 @@ APA Quarto is a Quarto extension that makes it easy to write documents in APA 7t
 
 ## Quarto + Zotero ![](images/zoter.png){width="50"}
 
-:::: columns
+::::: columns
 ::: {.column width="50%"}
-![](images/zotero2.png){width="500"}\
-![](images/zotero.png){width="500"}
+![](images/zotero2.png){width="700"}\
+![](images/zotero.png){width="700"}
 :::
-::: {.column width='50%'}
-![](images/bibfileex.png){width="500"}
+
+::: {.column width="50%"}
+![](images/bibfileex.png){width="700"}
 :::
 :::::
 
@@ -897,51 +1157,215 @@ The topic is extremely vast. You can do everything in Quarto, a website, thesis,
 
 # Version Control
 
-## Version Control with Git & GitHub :twisted_rightwards_arrows:
+## Why Version Control?
 
-::: nonincremental
--   Git tracks changes in your code and text files.\
--   GitHub makes it easy to share, collaborate, and back up your project.\
--   You can revert to previous versions at any point.\
--   Encourages clean, documented workflows.\
+You’re working on a project. You save your script as:
+
+-   `analysis.R`
+-   `analysis2.R`
+-   `analysis_final.R`
+-   `analysis_final_revised.R`
+-   `analysis_final_revised_OK_for_real.R`
+
+::: fragment
+This is a mess. Version control fixes this.
 :::
 
-> :bulb: Use meaningful commit messages and structure your repositories with clarity.
+## What Is Git?
+
+Git is a version control system. It works like a time machine for your project.
+
+``` bash
+git init
+```
+
+Then, save changes with commits:
+
+``` bash
+git add analysis.R
+git commit -m "Added initial analysis"
+```
+
+::: notes
+Each commit records: - The changed files - The exact changes - The time - A message describing what you did
+:::
+
+## GitHub
+
+Git works **locally**. GitHub is the **online platform** for:
+
+::: nonincremental
+-   Backing up your project
+-   Sharing it publicly or privately
+-   Collaborating with others
+-   Tracking issues and progress
+:::
+
+<https://github.com>
+
+------------------------------------------------------------------------
 
 ## GitHub in Practice
 
 ::::: columns
-::: {.column width="40%"}
+::: {.column width="20%"}
 ![](images/git.png)
 :::
 
-::: {.column width="60%"}
+::: {.column width="80%"}
+``` bash
+# 1. Initialize a Git repository in your current project folder
+git init
 
-. . .
+# 2. Stage a file to be tracked (e.g., your script)
+git add analysis.R
 
-```
-git init 
+# 3. Save a snapshot of your work with a message
+git commit -m "Initial commit"
 
-git add . 
+# 4. Rename the default branch to 'main' (recommended)
+git branch -M main
 
-git commit -m "Initial commit" 
+# 5. Connect your local project to a GitHub repo (change the URL)
+git remote add origin https://github.com/yourname/repo.git
 
-git push origin main
-
+# 6. Upload your commits to GitHub
+git push -u origin main
 ```
 :::
 :::::
 
-## GitHub Best Practices :white_check_mark:
+::: notes
+You can also do most of this from RStudio’s Git pane.
+:::
+
+## Commit Message Tips :writing_hand:
 
 ::: nonincremental
--   Use a clear folder structure (e.g., `data/`, `scripts/`, `results/`). `rrtools` - compendium
--   Write a `README.md` to explain your project’s goals and usage.\
--   Include a `LICENSE` file to define how others can reuse your work.\
--   Add a `.gitignore` to avoid uploading large or irrelevant files (e.g., `.Rhistory`, `.DS_Store`).
-::: 
+-   Write meaningful messages:
+-   :white_check_mark: `"Fix bug in anxiety scoring function"`
+-   :x: `"stuff"`
+-   Use the imperative mood: `"Add README"`, `"Update plots"`
+-   Keep lines to 50–72 characters
+:::
 
-## Integrated Workflow Example :hammer_and_wrench:
+::: notes
+Think of commit messages as a changelog for humans. They help you and others understand what happened and why.
+:::
+
+## Branching & merging :seedling:
+
+Branches let you: ::: nonincremental - Try out new features - Fix bugs safely - Work on different versions in parallel :::
+
+Here’s what each command does:
+
+``` bash
+# Create and switch to a new branch called 'new-feature'
+git checkout -b new-feature
+
+# (Make your changes in code, then stage and commit them)
+# Save those changes with a descriptive message
+git commit -m "Add new plot"
+
+# Switch back to the main branch
+git checkout main
+
+# Merge the changes from 'new-feature' into 'main'
+git merge new-feature
+```
+
+> Use branches to keep your `main` branch clean.
+
+::: notes
+This workflow helps you test or develop new ideas without affecting the stable version in `main`. When you're happy with the results, you merge them back in.
+:::
+
+## Handling conflicts
+
+Sometimes, Git can’t automatically merge changes. This happens when two branches modify the same line in a file.
+
+``` text
+<<<<<<< HEAD
+plot(data)
+=======
+plot(data, col = "blue")
+>>>>>>> new-feature
+```
+
+Git will insert conflict markers directly into the file:
+
+The code between `<<<<<<< HEAD` and `=======` is from the current branch (e.g., `main`)\
+The code between `=======` and `>>>>>>> new-feature` is from the other branch you're merging (e.g., `new-feature`)
+
+## Handling conflicts
+
+To resolve the conflict, choose the correct version (or combine them), delete the markers, and save the file.
+
+For example:
+
+``` r
+plot(data, col = "blue")  # resolved version
+```
+
+Then:
+
+``` bash
+git add file.R
+git commit -m "Resolve merge conflict in file.R"
+```
+
+::: notes
+Conflicts are normal! Don’t panic. Read carefully, choose the right version of the code, and commit the resolved file.
+:::
+
+## GitHub + RStudio Integration
+
+-   Clone repos with `File → New Project → Version Control`
+-   Commit and push from the **Git** tab in RStudio
+-   View commit history in **History** pane
+
+::: notes
+For most use cases, RStudio’s Git integration is sufficient. Great for beginners.
+:::
+
+## Practice & resources
+
+::: nonincremental
+-   [Happy Git and GitHub for the useR](https://happygitwithr.com)
+-   GitHub Education: <https://education.github.com>
+-   Try GitHub Desktop (GUI client)
+:::
+
+> Start small. Use Git for one script. Then grow your skills from there.
+
+## A note on git learning curves
+
+I won’t lie: Git can be confusing at first. The terminology—commits, branches, merges, remotes—can feel overwhelming. But you **don’t** have to learn **everything at once**. <br/>
+
+Start simple:
+
+::: nonincremental
+-   Use RStudio’s Git pane to commit and push
+-   Learn how to clone, pull, and push
+-   Then explore branches and pull requests
+:::
+
+## 
+
+If Git and GitHub feel too technical, or if your collaborators are less technical, the OSF is a fantastic alternative or complement.
+
+::: nonincremental
+-   Upload data, code, and documents
+-   Create public or private projects
+-   Add collaborators
+-   Create preregistrations
+-   Generate DOIs for citation
+-   Track changes
+:::
+
+> You can also connect OSF to GitHub.
+
+## Integrated workflow :hammer_and_wrench:
 
 1.  Develop your analysis using **R and Quarto**.\
 2.  Track code and scripts using **Git**.\
@@ -951,7 +1375,26 @@ git push origin main
 6.  Use `renv` for reproducible R environments.\
 7.  Share the OSF project and cite it in your paper.
 
-## Start small. It's easy. :feet:
+::: notes
+With this setup, anyone can: 1. Clone your repo 2. Restore your environment 3. Re-render your paper
+:::
 
-> “Let me tell you: anything you do — providing the raw data, posting any small scripts, detailing the versions of programs you used together with their parameters — will be tremendously welcome to anyone trying to validate or build off your paper. This includes you yourself, in 2 years.” 
+## Start simple :feet:
+
+> “Let me tell you: anything you do — providing the raw data, posting any small scripts, detailing the versions of programs you used together with their parameters — will be tremendously welcome to anyone trying to validate or build off your paper. This includes you yourself, in 2 years.”
+
 *C. Titus Brown*
+
+## Reproducibility
+
+It’s about **credibility** and **transparency**. <br/>
+
+Reproducible science is **not** about being **perfect**. <br/>
+
+It's about showing your work so that others can **follow**, **understand**, and **build upon** it.
+
+# Start simple, don’t wait until you’re “ready", and teach what you learn!
+
+::: notes
+You don’t need to become an expert overnight. You don’t have to adopt every tool I mentioned today all at once. Start small: Write your next data cleaning script with comments. Save your next analysis as an R Project. Try Quarto for your next report. Upload one dataset to OSF with a README. These little changes compound over time. And each time you do it, it gets easier. You’re not just changing your workflow. You’re investing in your future self.
+:::
