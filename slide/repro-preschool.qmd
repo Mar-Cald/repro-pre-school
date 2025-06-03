@@ -80,25 +80,24 @@ Let’s start with an honest look at our daily work. Doing research in psycholog
 I want to suggest that reproducibility is not an extra task. It’s not a burden we add on top of everything else. It’s a way of working that can replace the mess with a clear system. It’s an investment in your future self. And if you’ve ever tried to understand your own code from six months ago, you know what I mean.
 :::
 
-## What is Reproducible Science?
+## What is reproducible science?
 
-At its core, reproducible science means that someone else, or even you, in the future, can reproduce your results from your materials: your data, your code, your documentation.\
+At its core, reproducible science means that someone else, or even you, in the future, can **reproduce** your **results** from your **materials**: your data, your code, your documentation.
+<br/>
 
-::: notes
-It means your workflow is transparent. Every number in your paper, every figure in your presentation, has a clear lineage. You can trace it back to the raw data and see how it was generated.
-:::
+It means your workflow is **transparent**.
 
 ::: notes
 And it’s not just about replication in the scientific sense. It’s also about efficiency. Reproducible workflows save time. They reduce errors. They make collaboration smoother. They build trust with your peers, reviewers, and the public.
 :::
 
-## Keys to Reproducible Science :closed_lock_with_key:
+## Keys to reproducible science :closed_lock_with_key:
 
 ::: nonincremental
--   **Data**: How to organize, document, and share your datasets in ways that are usable by others and understandable by you—even years later.
--   **Code**: How to write analysis scripts that are clean, transparent, and reusable..
--   **Literate Programming**: How to combine code and text in the same document using tools like Quarto, so your reports, papers, and presentations are dynamic and replicable.
--   **Version Control and Sharing**: How to track changes, collaborate, and make your work openly available using tools like GitHub and OSF.\
+-   **Data**: organize, document, and share your datasets in ways that are usable by others and understandable by you—even years later.
+-   **Code**: write analysis scripts that are clean, transparent, and reusable..
+-   **Literate programming**: combine code and text in the same document, so your reports are dynamic and replicable.
+-   **Version Control and Sharing**: track changes, collaborate, and make your work openly available using tools like GitHub and OSF.
 :::
 
 ## So... Is reproducible science even harder?
@@ -143,7 +142,7 @@ So, to wrap up this introduction: reproducible science is not perfect science. I
 Let’s begin with the first pillar of reproducible science: data. Everything we do as scientists builds on data. If your data is messy, undocumented, or inaccessible, it doesn’t matter how brilliant your analysis is—no one will be able to follow it, reproduce it, or extend it.
 :::
 
-## Data Types in Research
+## Data types in research
 
 ::::: columns
 ::: {.column .nonincremental width="50%"}
@@ -169,13 +168,13 @@ Let’s begin with the first pillar of reproducible science: data. Everything we
 -   Integrates with GitHub, Dropbox, Google Drive.\
 :::
 
-## Bad Data Sharing Example
+## Bad data sharing example
 
 Imagine this scenario: you read a paper that seems really relevant to your research. At the end, you’re excited to see they’ve shared their data on OSF. You go to the repository, and there’s one file...
 
 ![](images/bad-dataset.png)
 
-## Bad Data Sharing Example
+## Bad data sharing example
 
 You download it, open it, and you see this: . . .
 
@@ -193,20 +192,20 @@ Is x6 a z-score or raw data?
 There’s no README file. No codebook. No context. Even though this file is technically shared, it’s not reproducible. It’s not even interpretable. And again—this is assuming we’re lucky and the file opens properly and doesn’t require a proprietary format or a password!
 :::
 
-## Good Data Sharing Practices
+## Good data sharing practices
 
 ::: nonincremental
--   Use **plain-text formats** (e.g., `.csv`, `.txt`).\
--   Include a **data dictionary** with variable descriptions.\
--   Add a **README** with key details.\
--   Follow **FAIR principles** (Findable, Accessible, Interoperable, Reusable).\
+-   Use **plain-text formats** (e.g., `.csv`, `.txt`).
+-   Include a **data dictionary** with variable descriptions.
+-   Add a **README** with key details.
+-   Follow **FAIR principles** (Findable, Accessible, Interoperable, Reusable).
 :::
 
 ::: notes
-So how do we do this? Let’s start with some concrete recommendations. Use plain-text formats for your data: CSV (.csv) and tab-delimited text (.txt) are ideal. They’re easy to read, easy to import, and future-proof. Avoid Excel files if you can—especially those with multiple sheets, embedded charts, or merged cells. Binary formats like .sav (SPSS), .dta (Stata), or .xlsx often create compatibility issues. If you do need to share those formats, also provide a CSV version. Plain text is portable. It doesn’t care what operating system or software someone uses. That’s what you want.
+So how do we do this? Let’s start with some concrete recommendations. Use plain-text formats for your data: CSV (.csv) and tab-delimited text (.txt) are ideal. They’re easy to read, easy to import, and future-proof. Avoid Excel files or other propietary formats often create compatibility issues. If you do need to share those formats, also provide a CSV version. Plain text is portable. It doesn’t care what operating system or software someone uses. That’s what you want.
 :::
 
-## The Role of a Data Dictionary :open_file_folder: {data-time="3 min"}
+## Data dictionary :open_file_folder: 
 
 ::: nonincremental
 -   A **data dictionary** defines each variable in your dataset.
@@ -237,15 +236,38 @@ create_dictionary(df, id_var = "id", var_labels = df_labels)
 This generates a clean summary of your dataset—number of rows and columns, summaries of variables, missingness, and labels. It’s readable, shareable, and even helpful for yourself when you come back to the data later. And the beauty is that it takes minutes to set up, but saves hours down the line.
 :::
 
+## Data dictionary - [Good](https://osf.io/ygxde) data sharing example
+
+![](images/luca2.png)
+
 ## README files
 
-A **README** file is the first thing someone sees when they open your dataset folder. It should answer basic questions like: - What is this dataset? - Who created it? - How was it collected? - What are the main variables? - How should I cite it?
+A **README** file is the first thing someone sees when they open your dataset/project folder. It should answer basic questions like: 
+
+::: nonincremental
+-   What is this dataset? 
+-   How was it collected? 
+-   What are the variables? 
+::: 
 
 ::: notes
 Don’t overthink it—just write it like you’re explaining the dataset to a curious but uninformed colleague.
 :::
 
-## FAIR Data Principles :mag:
+## README - [Good](https://osf.io/4d729) data sharing example
+<br/>
+
+![](images/giulia1.png)
+
+
+## README - [Good](https://osf.io/9beu5) data sharing example
+<br/>
+
+![](images/pippo1.png)
+
+
+
+## FAIR data principles :mag:
 
 ::: nonincremental
 -   **Findable**: Use metadata and DOIs to make data easy to locate.
@@ -260,7 +282,7 @@ Don’t overthink it—just write it like you’re explaining the dataset to a c
 Your data should be discoverable. That means metadata, proper naming, and a DOI if possible. Others should be able to download your data, ideally without jumping through hoops. Use standard formats and vocabulary so that your data can be combined with other datasets. Provide enough documentation and licensing that others can actually reuse your data appropriately.
 :::
 
-## Data Licensing :lock:
+## Data licensing :lock:
 
 A license tells others what they can and can’t do with your data. If you don’t include one, legally speaking, people might not be allowed to use it—even if you meant to share it openly.
 
@@ -283,9 +305,15 @@ Wrapping Up the Data Section So let me summarize the key points before we move o
 Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Because messy data is bad—but undocumented code might be even worse. Just like with data, your code can either be a gateway to understanding—or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else—like your advisor, your collaborator, your reviewer, or your future self—tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code. And we’ll start with a simple but powerful idea: Write code as if someone else will need to understand and reproduce your analysis. Because they will. And sometimes, that “someone” is you.
 :::
 
-## Why Scripts Matter
+## Why scripts matter
 
-Scripts are: - Reproducible: You can rerun them. - Documented: You can see what you did and when. - Shareable: Others can inspect and reproduce your analysis.
+Scripts are: 
+
+::: nonincremental
+-   Reproducible: You can rerun them. 
+-   Documented: You can see what you did and when. 
+-   Shareable: Others can inspect and reproduce your analysis.
+:::
 
 ::: notes
 And as a bonus, they’re debuggable. If something goes wrong, you can trace it.
@@ -306,7 +334,7 @@ And as a bonus, they’re debuggable. If something goes wrong, you can trace it.
 
 <center>
 
-## Writing Better Code :pencil:
+## Writing better code :pencil:
 
 ::: nonincremental
 -   **Organize scripts**: Load packages and data upfront.
@@ -362,7 +390,7 @@ dat <- dat %>% filter(!is.na(anxi))  # <-- What is this doing?
 Let’s be honest: we all think we’ll remember what we did. We never do. That’s why comments are essential. Comments are the notes you leave behind for your future self—or for someone else. They don’t have to be elaborate, but they should describe why you’re doing something, especially if it’s not obvious.
 :::
 
-## Use Descriptive Names
+## Use descriptive names
 
 Another best practice: name your variables clearly.
 
@@ -375,7 +403,7 @@ uni_dep <- c("Psychology", "Medicine", "Biology")
 
 Consistency helps too. Use either snake_case or camelCase, but pick one and stick to it.
 
-## Summary: Writing Better Code
+## Summary: writing Better Code
 
 ::: nonincremental
 -   Scripts beat point-and-click
@@ -562,7 +590,7 @@ microbenchmark(
   }, times = 100)
 ```
 
-## Going Further: Custom Function Lists
+## Going further: custom function lists
 
 Let’s define a list of functions:
 
@@ -676,7 +704,7 @@ fuzzr::test_dbl()
 -   Functions can be easily and consistently documented (see [roxygen](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) documentation) improving the reproducibility and readability of your code.
 :::
 
-## Functional Programming in the Wild
+## Functional programming in the wild
 
 You can write some R scripts only with functions and `source()` them into the global environment.
 
@@ -713,11 +741,13 @@ This is reproducible, modular, and maintainable.
 
 ## Wrapping Up
 
+::: nonincremental
 -   Functional programming in R helps you write clean, concise, and reusable code.
 -   The \*apply functions are your friends.
 -   Avoid repetition by using functions.
 -   Favor pure functions.
 -   Test your functions.
+:::
 
 ::: notes
 In the long run, these practices will save you time, reduce your bugs, and make your research far easier to reproduce.
@@ -756,7 +786,7 @@ It’s simple to create:
 
 Open RStudio
 
-File → New Project → New Directory → New Project
+*File → New Project → New Directory → New Project*
 
 Choose a folder and a name
 
@@ -799,7 +829,7 @@ This makes your code portable. Anyone can clone your project and run it from the
 This isn’t rigid—you can adapt it. But the key idea is: one folder, one project, everything in its place.
 :::
 
-## Project Organization with `rrtools` :package:
+## Project organization with `rrtools` :package:
 
 To make this even "easier", you can use the `rrtools` package to create what’s called a reproducible research compendium.
 
@@ -846,7 +876,7 @@ These features enable managing, installing, and sharing project-related function
 
 [Example](https://github.com/Mar-Cald/compendium){target="_blank"}
 
-## `renv`:package: : Locking your R environment
+## `renv`:package: : locking your R environment
 
 Another challenge for reproducibility is package versions.
 
@@ -856,7 +886,7 @@ You write some code today using `dplyr 1.1.2`. In six months, `dplyr` gets updat
 
 [`renv`](https://rstudio.github.io/renv/articles/renv.html){target="blank"} helps you create reproducible environments for your R projects.
 
-## What does renv do?
+## What does `renv` do?
 
 ::: nonincremental
 -   It records all the packages you use, with versions, in a lockfile
@@ -872,17 +902,12 @@ You write some code today using `dplyr 1.1.2`. In six months, `dplyr` gets updat
 
 ```         
 install.packages("renv")
+
 renv::init()
 
-install.packages('microbenchmark')
+install.packages('bayesplot')
 
-The following package(s) will be installed:
-
-\- microbenchmark \[1.5.0\]
-
-These packages will be installed into
-
-\~/repro-pre-school/example-renv/renv/library/macos/R-4.4/aarch64-apple-darwin20
+These packages will be installed into "~/repro-pre-school/example-renv/renv/library/macos/R-4.4/aarch64-apple-darwin20".
 ```
 
 [Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/example-renv){target="_blank"}
@@ -891,11 +916,11 @@ These packages will be installed into
 
 <br/>
 
-`renv::snapshot()` \# save current state <br/>
+`renv::snapshot()` \# update lockfile 
+<br/>
 
-`renv::update()` \# update lockfile <br/>
-
-`renv::restore()` \# re-install from lockfile <br/>
+`renv::restore()` \# re-install from lockfile 
+<br/>
 
 ## Research `rrtools` + `renv` :bomb:
 
@@ -1111,7 +1136,7 @@ Everything from the same source. No duplication. **Synchronization**.
 
 \[add example!!\]
 
-## Extra Tools: Citations and Cross-Referencing
+## Extra Tools: citations and cross-referencing
 
 -   Citations with BibTeX or Zotero
 -   Cross-references for figures and tables
@@ -1239,7 +1264,7 @@ git push -u origin main
 You can also do most of this from RStudio’s Git pane.
 :::
 
-## Commit Message Tips :writing_hand:
+## Commit message :writing_hand:
 
 ::: nonincremental
 -   Write meaningful messages:
