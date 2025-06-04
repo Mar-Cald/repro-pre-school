@@ -27,7 +27,7 @@ engine: knitr
 :::
 
 ::: notes
-I’ve been passionate about reproducible science ever since I had one of those research experiences I’m sure some of you can relate to: trying to make sense of an old project with no documentation, no structure, and files named things like “final_version_revised3_bis.csv.” I realized that if I couldn’t understand my own work after a few months, how could I possibly expect others to follow it, replicate it, or build upon it? That’s why I’m here today: to talk about reproducible science, as a concrete way to improve the quality, transparency of our research.
+I’ve been passionate about reproducible science after going through an experience I’m sure many of you can relate to: trying to make sense of an old project with no documentation, no structure, and files named things like “final_version_revised3_bis.csv.” I realized that if I couldn’t understand my own work after a few months, how could I possibly expect others to follow it, replicate it, or build upon it? That’s why I’m here today: to talk about reproducible science, as a concrete way to improve the quality, transparency of our research.
 :::
 
 ## Our job is hard :fire:
