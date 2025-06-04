@@ -27,11 +27,11 @@ This repository contains all workshop materials:
  ├── <b>example-renv/</b> # Example renv-managed environment 
  ├── <b>files/</b> # Images and other media assets 
  ├── <b>index_files/libs/</b> # Quarto output dependencies
- ├── <b>paper/</b> # Reproducible manuscript (e.g. APA-style) 
+ ├── <b>paper/</b> # Reproducible manuscript (APA-style) 
  ├── <b>slide/</b> # Slides for the workshop (Quarto Reveal.js) 
- ├── <b>index.qmd</b> # Main homepage or landing Quarto document 
- ├── <b>index.html</b> # Rendered HTML output 
- ├── <b>LICENSE</b> # License information (e.g. MIT) 
+ ├── <b>index.qmd</b> # Main homepage
+ ├── <b>index.html</b> # Main homepage HTML  
+ ├── <b>LICENSE</b> # License information 
  └── <b>repro-pre-school.Rproj</b> # RStudio project file </pre>
 
 
