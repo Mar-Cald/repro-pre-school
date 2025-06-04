@@ -53,7 +53,7 @@ I’ve been passionate about reproducible science after going through an experie
 :::::
 
 ::: notes
-Let’s start with an honest look at our daily work. Doing research in psychology, or any empirical science, is hard. We juggle multiple roles: we design studies, collect data, analyze results, write papers, supervise students, prepare talks, respond to reviewers, and sometimes even do administration. It’s a lot. It’s easy to feel overwhelmed. And in that chaos, good practices often fall by the wayside. It’s tempting to write quick scripts, save datasets with unclear names, copy and paste plots into Word, and move on. But here's the thing: all of those shortcuts come at a cost. Not right away, maybe not even this week, but eventually, they come back to haunt us.
+Let’s start with an honest look at our daily work. Doing research in psychology, or any empirical science, is hard. We juggle multiple roles: we design studies, collect data, analyze results, write papers, supervise students, prepare talks, respond to reviewers, and sometimes even do administration. It’s a lot. It’s easy to feel overwhelmed. And in that chaos, good practices often fall by the wayside. It’s tempting to write quick scripts, save datasets with unclear names, copy and paste plots into Word, and move on. But here's the thing: all of those shortcuts come at a cost. Not right away, maybe not even this week, but eventually for sure
 :::
 
 ## Reproducibility helps!
@@ -102,7 +102,7 @@ It means your workflow is **transparent**.
 :::
 
 ::: notes
-We need to organize, document, and share our data so it’s clear to others. Our analysis code should be clean, transparent, and reusable. By combining code and explanation in the same document, we make our work dynamic and understandable. And with version control tools like Git, we can track changes, collaborate, and share our work openly.
+We need to organize, document, and share our data so it’s clear to others. Our analysis code should be clean, transparent, and reusable. By combining code and text in the same document, we make our work dynamic and understandable. And with version control tools like Git, we can track changes, collaborate, and share our work openly.
 :::
 
 ## So... Is reproducible science even harder?
@@ -120,7 +120,7 @@ At first, yes - but then...:fire_extinguisher::fire:
 > *Learning the tools takes effort but once you do, your workflow becomes smoother, clearer, and more reliable.*
 
 ::: notes
-Now, I’ll be honest. Learning to work reproducibly takes effort. It often feels harder at first. When you start using version control or scripting your analyses, it can be frustrating. It can feel slow and confusing. But once you’ve learned these tools, your workflow becomes smoother, and much easier to maintain. 
+Now, I’ll be honest. Learning to work reproducibly takes effort. It often feels harder at first. It can feel slow and confusing. But once you’ve learned these tools, your workflow becomes smoother, and much easier to maintain. 
 :::
 
 ## Outline
@@ -207,7 +207,7 @@ There’s no README file. No codebook. No context. Even though this file is tech
 :::
 
 ::: notes
-So how do we do this? Let’s start with some concrete recommendations. Use plain-text formats for your data: CSV (.csv) and tab-delimited text (.txt) are ideal. They’re easy to read, easy to import, and future-proof. Avoid Excel files or other propietary formats often create compatibility issues. If you do need to share those formats, also provide a CSV version. Plain text is portable. It doesn’t care what operating system or software someone uses. That’s what you want.
+So how do we do this? Let’s start with some concrete recommendations. Use plain-text formats for your data: CSV (.csv) and tab-delimited text (.txt) are ideal. They’re easy to read, easy to import- Avoid Excel files or other proprietary formats that often create compatibility issues. Plain text is portable. It doesn’t care what operating system or software someone uses. 
 :::
 
 ## Data dictionary :open_file_folder: 
@@ -307,8 +307,8 @@ Now that we’ve talked about how to document and organize your data, let’s mo
 ## Why scripting? 
 <br/>
 
-Scripting ensures **transparent, reproducible** workflows.
-<br/>
+Scripting ensures **transparent** and **reproducible** workflows.
+<br/><br/>
 
 ::: nonincremental
 **Reproducible**: You can rerun them. 
@@ -340,7 +340,6 @@ they’re debuggable. If something goes wrong, you can trace it.
 
 -   Forget a step? Round differently?
 
--   Now the results don’t match the manuscript...
 ::: 
 
 > Stressful, error-prone, and undocumented.
@@ -354,7 +353,7 @@ they’re debuggable. If something goes wrong, you can trace it.
 # Load data
 data <- read.csv("data.csv")
 
-# Filter
+# Filter age
 data <- data[data$age >= 18, ]
 
 # Analyze
@@ -387,7 +386,6 @@ Let me give you an example. Imagine you’re running an analysis for your study.
 -   **Name descriptively**: Use `snake_case` or `camelCase` for readability.
 -   **Comment clearly**: Document your logic for clarity.
 -   **Organize scripts**: Load packages and data upfront.
-
 :::
 
 
@@ -397,9 +395,9 @@ Another best practice: name your variables clearly.
 
 ```{r, echo=TRUE, eval=TRUE}
 # Bad 
-x1 <- c("Psychology", "Medicine", "Biology")
+x1 <- c("unipd_psychology", "unipd_medicine", "unito_biology")
 # Better
-uni_dep <- c("Psychology", "Medicine", "Biology")
+uni_dep <- c("unipd_psychology", "unipd_medicine", "unito_biology")
 ```
 
 Consistency helps too. Use either snake_case or camelCase, but pick one and stick to it.
@@ -776,6 +774,7 @@ results <- lapply(mtcars, summ)
 results_df <- do.call(rbind, results)
 ```
 <br/><br/>
+
 This is reproducible, modular, and maintainable.
 
 ## More about functional programming in R
@@ -811,7 +810,7 @@ In the long run, these practices will save you time, reduce your bugs, and make 
 # Organize your project
 
 ::: notes
-So far, we’ve talked about good data practices, clean code, and functional programming. But now we need to ask: Where does all of this live? How do we keep everything together, our data, our scripts, our figures, our notes, in a way that is coherent, portable, and reproducible?
+So far, we’ve talked about good data practices, clean code, and functional programming. But now we need to ask: How do we keep everything together, our data, our scripts, our figures, our notes, in a way that is coherent, portable, and reproducible?
 :::
 
 ## R Projects
@@ -1032,13 +1031,14 @@ sessionInfo()
 # All of this structure isn’t just for you, it makes it easier to work with others.
 
 ::: notes
-All of this structure isn’t just for you, it makes it easier to work with others. Imagine sending a collaborator your entire project folder. They open it, install renv, run one script, and everything works. No more back-and-forth about “which version of ggplot2 did you use?” or “can you send me the latest version of the file?” Everything is versioned.
+All of this structure isn’t just for you, it makes it easier to work with others. Imagine sending a collaborator your entire project folder. They open it, install renv, run one script, and everything works.
 :::
 
 # Literate Programming
 
 ::: notes
 What if your paper and your code could all live in the same file? No more copy-pasting tables from R to Word.
+Why would it be desiderable?
 :::
 
 ## What's wrong about Microsoft Word?
@@ -1077,7 +1077,7 @@ In MS Word (or similar) we need to produce everything outside and then manually 
 -   You change your analysis, but forget to update the results in the text…
 
 ::: notes
-It’s easy to make mistakes. Your document and your data are out of sync. And your work is not reproducible. Word was designed for writing, not for science.
+It’s easy to make mistakes. Your document and your data are out of sync. And your work is not reproducible. 
 :::
 
 ## [Literate Programming](https://en.wikipedia.org/wiki/Literate_programming){target="_blank"}
@@ -1276,7 +1276,7 @@ You’re working on a project. You save your script as:
 -   `analysis_final_revised_OK_for_real.R`
 
 
-## What Is Git?
+## What is Git?
 <br/>
 
 Git is a version control system. It works like a time machine for your project.
@@ -1296,6 +1296,21 @@ git commit -m "Added initial analysis"
 ::: notes
 Each commit records: - The changed files - The exact changes - The time - A message describing what you did
 :::
+
+## Commit message :writing_hand:
+<br/>
+
+::: nonincremental
+-   Write meaningful messages:
+-   :white_check_mark: `"Fix bug in anxiety scoring function"`
+-   :x: `"stuff"`
+-   Use the imperative mood: `"Add README"`, `"Update plots"`
+:::
+
+::: notes
+Think of commit messages as a changelog for humans. They help you and others understand what happened and why.
+:::
+
 
 ## GitHub
 <br/>
@@ -1346,23 +1361,9 @@ git push -u origin main
 You can also do most of this from RStudio’s Git pane.
 :::
 
-## Commit message :writing_hand:
-<br/>
-
-::: nonincremental
--   Write meaningful messages:
--   :white_check_mark: `"Fix bug in anxiety scoring function"`
--   :x: `"stuff"`
--   Use the imperative mood: `"Add README"`, `"Update plots"`
-:::
-
-::: notes
-Think of commit messages as a changelog for humans. They help you and others understand what happened and why.
-:::
 
 ## Branching & merging :seedling:
 <br/>
-
 
 ::: nonincremental 
 -   Try out new features
