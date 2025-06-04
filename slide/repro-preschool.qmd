@@ -1172,7 +1172,6 @@ You write your documents in **Markdown**, and **Quarto** turns them into:\
 :::
 
 ## Quarto
-<br/>
 
 [> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/slide/example-quarto.qmd){target="_blank"}
 <br/>
@@ -1189,8 +1188,6 @@ This eliminates a huge source of human error: **manual updates**.
 ## Outputs
 
 Quarto can generate multiple output formats from the same source file.
-
-With one command, you get three outputs:
 
 ::: nonincremental
 -   A PDF to send to your colleagues
