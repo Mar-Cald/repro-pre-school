@@ -6,6 +6,6 @@ simulate_data = function(n,eff){
   
   # Combina i dati in un dataframe
   return(data.frame(
-    x = ifelse(x == 0, "control","experimental"),
+    condition = ifelse(x == 0, "control","experimental"),
     y = y))
 }
