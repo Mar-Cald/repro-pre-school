@@ -441,7 +441,7 @@ Margherita Calderan
 </ul>
 </div>
 <aside class="notes">
-<p>Hello everyone, and thank you for being here. My name is Margherita Calderan, and I’m a post-doctoral researcher in Cognitive Psychology at the University of Padova. I recently completed my PhD in Psychological Science, just a few months ago, and I’ve been passionate about reproducible science ever since I had one of those research experiences I’m sure some of you can relate to: trying to make sense of an old project with no documentation, no structure, and files named things like “final_version_revised3_bis.csv.” I realized that if I couldn’t understand my own work after a few months, how could I possibly expect others to follow it, replicate it, or build upon it? That’s why I’m here today: to talk about reproducible science. Not just as a buzzword or a trend, but as a concrete, powerful, and often underestimated way to improve the quality, transparency of our research.</p>
+<p>I’ve been passionate about reproducible science ever since I had one of those research experiences I’m sure some of you can relate to: trying to make sense of an old project with no documentation, no structure, and files named things like “final_version_revised3_bis.csv.” I realized that if I couldn’t understand my own work after a few months, how could I possibly expect others to follow it, replicate it, or build upon it? That’s why I’m here today: to talk about reproducible science, as a concrete way to improve the quality, transparency of our research.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -557,7 +557,7 @@ Margherita Calderan
 <p><em>Learning the tools takes effort but once you do, your workflow becomes smoother, clearer, and more reliable.</em></p>
 </blockquote>
 <aside class="notes">
-<p>Now, I’ll be honest. Learning to work reproducibly takes effort. It often feels harder at first. When you start using version control or scripting your analyses, it can be frustrating. It can feel slow and confusing. But here’s the good news: once you’ve learned these tools, your workflow becomes smoother, more scalable, and much easier to maintain.</p>
+<p>Now, I’ll be honest. Learning to work reproducibly takes effort. It often feels harder at first. When you start using version control or scripting your analyses, it can be frustrating. It can feel slow and confusing. But once you’ve learned these tools, your workflow becomes smoother, and much easier to maintain.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -579,7 +579,7 @@ Margherita Calderan
 <h3 id="literate-programming">Literate Programming</h3>
 <h3 id="version-control">Version Control</h3>
 <aside class="notes">
-<p>So, to wrap up this introduction: reproducible science is not perfect science. It’s not about eliminating every mistake. It’s about building systems that help us work more clearly, more collaboratively, and more transparently. In the sections that follow, we’ll explore how to: • Document and structure your data, • Write readable, testable code, • Use functional programming principles to simplify your workflow, • Organize your projects in a way that’s portable and consistent, • And write scientific documents that are both human-readable and machine-executable.</p>
+<p>In the sections that follow, we’ll explore how to: • Document and structure your data, • Write readable, testable code, • Use functional programming principles to simplify your workflow, • Organize your projects in a way that’s portable and consistent, • And write scientific documents that are both human-readable and machine-executable.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -651,23 +651,23 @@ Margherita Calderan
 <p>You download it, open it, and you see this: . . .</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ttxqjfaiyl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ttxqjfaiyl table {
+<div id="wxwszgegys" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wxwszgegys table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ttxqjfaiyl thead, #ttxqjfaiyl tbody, #ttxqjfaiyl tfoot, #ttxqjfaiyl tr, #ttxqjfaiyl td, #ttxqjfaiyl th {
+#wxwszgegys thead, #wxwszgegys tbody, #wxwszgegys tfoot, #wxwszgegys tr, #wxwszgegys td, #wxwszgegys th {
   border-style: none;
 }
 
-#ttxqjfaiyl p {
+#wxwszgegys p {
   margin: 0;
   padding: 0;
 }
 
-#ttxqjfaiyl .gt_table {
+#wxwszgegys .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -693,12 +693,12 @@ Margherita Calderan
   border-left-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_caption {
+#wxwszgegys .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ttxqjfaiyl .gt_title {
+#wxwszgegys .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -710,7 +710,7 @@ Margherita Calderan
   border-bottom-width: 0;
 }
 
-#ttxqjfaiyl .gt_subtitle {
+#wxwszgegys .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -722,7 +722,7 @@ Margherita Calderan
   border-top-width: 0;
 }
 
-#ttxqjfaiyl .gt_heading {
+#wxwszgegys .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -734,13 +734,13 @@ Margherita Calderan
   border-right-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_bottom_border {
+#wxwszgegys .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_col_headings {
+#wxwszgegys .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -755,7 +755,7 @@ Margherita Calderan
   border-right-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_col_heading {
+#wxwszgegys .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -775,7 +775,7 @@ Margherita Calderan
   overflow-x: hidden;
 }
 
-#ttxqjfaiyl .gt_column_spanner_outer {
+#wxwszgegys .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -787,15 +787,15 @@ Margherita Calderan
   padding-right: 4px;
 }
 
-#ttxqjfaiyl .gt_column_spanner_outer:first-child {
+#wxwszgegys .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ttxqjfaiyl .gt_column_spanner_outer:last-child {
+#wxwszgegys .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ttxqjfaiyl .gt_column_spanner {
+#wxwszgegys .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -807,11 +807,11 @@ Margherita Calderan
   width: 100%;
 }
 
-#ttxqjfaiyl .gt_spanner_row {
+#wxwszgegys .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ttxqjfaiyl .gt_group_heading {
+#wxwszgegys .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -837,7 +837,7 @@ Margherita Calderan
   text-align: left;
 }
 
-#ttxqjfaiyl .gt_empty_group_heading {
+#wxwszgegys .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -852,15 +852,15 @@ Margherita Calderan
   vertical-align: middle;
 }
 
-#ttxqjfaiyl .gt_from_md > :first-child {
+#wxwszgegys .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ttxqjfaiyl .gt_from_md > :last-child {
+#wxwszgegys .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ttxqjfaiyl .gt_row {
+#wxwszgegys .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -879,7 +879,7 @@ Margherita Calderan
   overflow-x: hidden;
 }
 
-#ttxqjfaiyl .gt_stub {
+#wxwszgegys .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -892,7 +892,7 @@ Margherita Calderan
   padding-right: 5px;
 }
 
-#ttxqjfaiyl .gt_stub_row_group {
+#wxwszgegys .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -906,15 +906,15 @@ Margherita Calderan
   vertical-align: top;
 }
 
-#ttxqjfaiyl .gt_row_group_first td {
+#wxwszgegys .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ttxqjfaiyl .gt_row_group_first th {
+#wxwszgegys .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ttxqjfaiyl .gt_summary_row {
+#wxwszgegys .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -924,16 +924,16 @@ Margherita Calderan
   padding-right: 5px;
 }
 
-#ttxqjfaiyl .gt_first_summary_row {
+#wxwszgegys .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_first_summary_row.thick {
+#wxwszgegys .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ttxqjfaiyl .gt_last_summary_row {
+#wxwszgegys .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -943,7 +943,7 @@ Margherita Calderan
   border-bottom-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_grand_summary_row {
+#wxwszgegys .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -953,7 +953,7 @@ Margherita Calderan
   padding-right: 5px;
 }
 
-#ttxqjfaiyl .gt_first_grand_summary_row {
+#wxwszgegys .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -963,7 +963,7 @@ Margherita Calderan
   border-top-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_last_grand_summary_row_top {
+#wxwszgegys .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -973,11 +973,11 @@ Margherita Calderan
   border-bottom-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_striped {
+#wxwszgegys .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ttxqjfaiyl .gt_table_body {
+#wxwszgegys .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -986,7 +986,7 @@ Margherita Calderan
   border-bottom-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_footnotes {
+#wxwszgegys .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1000,7 +1000,7 @@ Margherita Calderan
   border-right-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_footnote {
+#wxwszgegys .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1009,7 +1009,7 @@ Margherita Calderan
   padding-right: 5px;
 }
 
-#ttxqjfaiyl .gt_sourcenotes {
+#wxwszgegys .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1023,7 +1023,7 @@ Margherita Calderan
   border-right-color: #D3D3D3;
 }
 
-#ttxqjfaiyl .gt_sourcenote {
+#wxwszgegys .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1031,72 +1031,72 @@ Margherita Calderan
   padding-right: 5px;
 }
 
-#ttxqjfaiyl .gt_left {
+#wxwszgegys .gt_left {
   text-align: left;
 }
 
-#ttxqjfaiyl .gt_center {
+#wxwszgegys .gt_center {
   text-align: center;
 }
 
-#ttxqjfaiyl .gt_right {
+#wxwszgegys .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ttxqjfaiyl .gt_font_normal {
+#wxwszgegys .gt_font_normal {
   font-weight: normal;
 }
 
-#ttxqjfaiyl .gt_font_bold {
+#wxwszgegys .gt_font_bold {
   font-weight: bold;
 }
 
-#ttxqjfaiyl .gt_font_italic {
+#wxwszgegys .gt_font_italic {
   font-style: italic;
 }
 
-#ttxqjfaiyl .gt_super {
+#wxwszgegys .gt_super {
   font-size: 65%;
 }
 
-#ttxqjfaiyl .gt_footnote_marks {
+#wxwszgegys .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ttxqjfaiyl .gt_asterisk {
+#wxwszgegys .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ttxqjfaiyl .gt_indent_1 {
+#wxwszgegys .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ttxqjfaiyl .gt_indent_2 {
+#wxwszgegys .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ttxqjfaiyl .gt_indent_3 {
+#wxwszgegys .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ttxqjfaiyl .gt_indent_4 {
+#wxwszgegys .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ttxqjfaiyl .gt_indent_5 {
+#wxwszgegys .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ttxqjfaiyl .katex-display {
+#wxwszgegys .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ttxqjfaiyl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wxwszgegys div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1169,7 +1169,7 @@ Margherita Calderan
 What do 0 and 1 represent? How are missing values coded?<br>
 Is x6 a z-score or raw data?</p>
 <aside class="notes">
-<p>There’s no README file. No codebook. No context. Even though this file is technically shared, it’s not reproducible. It’s not even interpretable. And again, this is assuming we’re lucky and the file opens properly and doesn’t require a proprietary format or a password!</p>
+<p>There’s no README file. No codebook. No context. Even though this file is technically shared, it’s not reproducible. It’s not even interpretable. And again, this is assuming we’re lucky and the file opens properly.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1247,10 +1247,10 @@ Is x6 a z-score or raw data?</p>
 2                                                    Columns in dataset     3
 3    id                    Unique identifier              unique values     5
 4                                                               missing     0
-5  anxi Beck Anxiety Inventory, standardized numeric               mean     1
-6                                                                median     1
-7                                                                   min -0.62
-8                                                                   max  1.42
+5  anxi Beck Anxiety Inventory, standardized numeric               mean     0
+6                                                                median     0
+7                                                                   min -0.54
+8                                                                   max  0.47
 9                                                               missing     0
 10  edu                 Last degree obtained  factor            BSc (1)     2
 11                                                              MSc (2)     1
@@ -1320,7 +1320,7 @@ Is x6 a z-score or raw data?</p>
 </ul>
 </div>
 
-<img data-src="images/fair_diagram.png" class="quarto-figure quarto-figure-center r-stretch" width="800"><aside class="notes">
+<img data-src="images/fair_diagram.png" class="quarto-figure quarto-figure-center r-stretch" width="1000"><aside class="notes">
 <p>Your data should be discoverable. That means metadata, proper naming, and a DOI if possible. Others should be able to download your data, ideally without jumping through hoops. Use standard formats and vocabulary so that your data can be combined with other datasets. Provide enough documentation and licensing that others can actually reuse your data appropriately.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1344,30 +1344,16 @@ Is x6 a z-score or raw data?</p>
 <ul>
 <li><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY</a>: Requires attribution.</li>
 <li><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0</a>: No restrictions.</li>
-<li><a href="https://opendatacommons.org/licenses/by/" target="_blank">ODC-BY</a>: Database-specific attribution.</li>
+<li><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU-GPL</a>: guarantees end users the freedom to run, study, share, and modify the software while requiring that all modified versions and derivative works also be distributed under the same license. <span class="emoji" data-emoji="heart">❤️</span></li>
 </ul></li>
-<li>Choose based on <strong>discipline norms</strong> and <strong>data sensitivity</strong>.</li>
 </ul>
 </div>
-<aside class="notes">
-<p>Wrapping Up the Data Section So let me summarize the key points before we move on: use plain, open formats like CSV Always include a README and data dictionary Follow FAIR principles Choose a license for your data Use OSF or similar platforms to share your data</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section></section>
 <section>
 <section id="code-1" class="title-slide slide level1 center">
 <h1>Code</h1>
 <aside class="notes">
-<p>Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Because messy data is bad, but undocumented code might be even worse. Just like with data, your code can either be a gateway to understanding, or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else, like your advisor, your collaborator, your reviewer, or your future self, tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code. And we’ll start with a simple but powerful idea: Write code as if someone else will need to understand and reproduce your analysis. Because they will. And sometimes, that “someone” is you.</p>
+<p>Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Just like with data, your code can either be a gateway to understanding, or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else, like your collaborator or your reviewer tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code. And we’ll start with a simple but powerful idea: Write code as if someone else will need to understand and reproduce your analysis. Because they will. And sometimes, that “someone” is you.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1380,17 +1366,17 @@ Is x6 a z-score or raw data?</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="scripts" class="slide level2">
-<h2>Scripts</h2>
+<section id="why-scripting" class="slide level2">
+<h2>Why scripting?</h2>
 <p><br></p>
-<p>Scripting ensures <strong>transparent, reproducible</strong> workflows.</p>
+<p>Scripting ensures <strong>transparent, reproducible</strong> workflows. <br></p>
 <div>
 <p><strong>Reproducible</strong>: You can rerun them. <br><br></p>
 <p><strong>Documented</strong>: You can see what you did and when. <br><br></p>
 <p><strong>Shareable</strong>: Others can inspect and reproduce your analysis. <br><br></p>
 </div>
 <aside class="notes">
-<p>And as a bonus, they’re debuggable. If something goes wrong, you can trace it.</p>
+<p>they’re debuggable. If something goes wrong, you can trace it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1441,7 +1427,7 @@ Is x6 a z-score or raw data?</p>
 </blockquote>
 </div></div>
 <aside class="notes">
-<p>Let me give you an example. Imagine you’re running an analysis for your study. You do it in SPSS or Excel. You click a few buttons, run a few tests, and get your results. Then, your co-author emails you and says, “Actually, we should exclude participants under 18.” So you go back, click through everything again, redo the tests, maybe forget a step, maybe round differently, maybe miss one plot, and now your results are inconsistent. Now imagine the same scenario, but you’ve scripted your analysis in R or Python. You go into your code, change one line: filter(age &gt;= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is now documented. That’s the power of reproducibility</p>
+<p>Let me give you an example. Imagine you’re running an analysis for your study. You do it in SPSS or Excel. You click a few buttons, run a few tests, and get your results. Then, your co-author emails you and says, “Actually, we should exclude participants under 18.” So you go back, click through everything again, redo the tests, maybe forget a step, maybe round differently, maybe miss one plot, and now your results are inconsistent. Now imagine the same scenario, but you’ve scripted your analysis in R or Python. You go into your code, change one line: filter(age &gt;= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is documented.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1466,47 +1452,22 @@ Is x6 a z-score or raw data?</p>
 <h2>Writing better code <span class="emoji" data-emoji="pencil">📝</span></h2>
 <div>
 <ul>
-<li><strong>Organize scripts</strong>: Load packages and data upfront.</li>
-<li><strong>Comment clearly</strong>: Document your logic for clarity.</li>
 <li><strong>Name descriptively</strong>: Use <code>snake_case</code> or <code>camelCase</code> for readability.</li>
+<li><strong>Comment clearly</strong>: Document your logic for clarity.</li>
+<li><strong>Organize scripts</strong>: Load packages and data upfront.</li>
 </ul>
 </div>
 </section>
-<section id="organized-scripts" class="slide level2">
-<h2>Organized scripts</h2>
-<div class="fragment">
-<p>Global operations at the beginning of the script:</p>
-<ul>
-<li class="fragment">loading packages</li>
-<li class="fragment">loading datasets</li>
-<li class="fragment">changing general options (<code>options()</code>)</li>
-</ul>
+<section id="use-descriptive-names" class="slide level2">
+<h2>Use descriptive names</h2>
+<p>Another best practice: name your variables clearly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Bad </span></span>
+<span id="cb4-2"><a href=""></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Psychology"</span>, <span class="st">"Medicine"</span>, <span class="st">"Biology"</span>)</span>
+<span id="cb4-3"><a href=""></a><span class="co"># Better</span></span>
+<span id="cb4-4"><a href=""></a>uni_dep <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Psychology"</span>, <span class="st">"Medicine"</span>, <span class="st">"Biology"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="fragment">
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># packages</span></span>
-<span id="cb4-2"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-3"><a href=""></a><span class="fu">library</span>(lme4)</span>
-<span id="cb4-4"><a href=""></a></span>
-<span id="cb4-5"><a href=""></a><span class="co"># options</span></span>
-<span id="cb4-6"><a href=""></a></span>
-<span id="cb4-7"><a href=""></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
-<span id="cb4-8"><a href=""></a></span>
-<span id="cb4-9"><a href=""></a><span class="co"># loading data</span></span>
-<span id="cb4-10"><a href=""></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<aside class="notes">
-<p>It’s readable. It’s linear. And if something breaks, you know where to look.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
+<p>Consistency helps too. Use either snake_case or camelCase, but pick one and stick to it.</p>
 </section>
 <section id="comments-comments-and-comments" class="slide level2">
 <h2>Comments, comments and comments…</h2>
@@ -1523,7 +1484,7 @@ Is x6 a z-score or raw data?</p>
 <span id="cb5-4"><a href=""></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(anxi))  <span class="co"># &lt;-- What is this doing?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
-<p>Let’s be honest: we all think we’ll remember what we did. We never do. That’s why comments are essential. Comments are the notes you leave behind for your future self, or for someone else. They don’t have to be elaborate, but they should describe why you’re doing something, especially if it’s not obvious.</p>
+<p>Let’s be honest: we all think we’ll remember what we did. We never do. That’s why comments are essential. They don’t have to be elaborate, but they should describe why you’re doing something, especially if it’s not obvious.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1536,16 +1497,41 @@ Is x6 a z-score or raw data?</p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="use-descriptive-names" class="slide level2">
-<h2>Use descriptive names</h2>
-<p>Another best practice: name your variables clearly.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Bad </span></span>
-<span id="cb6-2"><a href=""></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Psychology"</span>, <span class="st">"Medicine"</span>, <span class="st">"Biology"</span>)</span>
-<span id="cb6-3"><a href=""></a><span class="co"># Better</span></span>
-<span id="cb6-4"><a href=""></a>uni_dep <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Psychology"</span>, <span class="st">"Medicine"</span>, <span class="st">"Biology"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="organized-scripts" class="slide level2">
+<h2>Organized scripts</h2>
+<div class="fragment">
+<p>Global operations at the beginning of the script:</p>
+<ul>
+<li class="fragment">loading packages</li>
+<li class="fragment">loading datasets</li>
+<li class="fragment">changing general options (<code>options()</code>)</li>
+</ul>
 </div>
-<p>Consistency helps too. Use either snake_case or camelCase, but pick one and stick to it.</p>
+<div class="fragment">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># packages</span></span>
+<span id="cb6-2"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-3"><a href=""></a><span class="fu">library</span>(lme4)</span>
+<span id="cb6-4"><a href=""></a></span>
+<span id="cb6-5"><a href=""></a><span class="co"># options</span></span>
+<span id="cb6-6"><a href=""></a></span>
+<span id="cb6-7"><a href=""></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb6-8"><a href=""></a></span>
+<span id="cb6-9"><a href=""></a><span class="co"># loading data</span></span>
+<span id="cb6-10"><a href=""></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>It’s readable. It’s linear. And if something breaks, you know where to look.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
@@ -1564,7 +1550,7 @@ Is x6 a z-score or raw data?</p>
 <p>Avoid repeating the same operation multiple times in the script. The rule is, if you are doing the same operation more than two times, write a function.</p>
 <p>A function can be re-used, tested and changed just one time affecting the whole project.</p>
 <aside class="notes">
-<p>If you’ve ever found yourself writing the same line of code over and over again, copying and pasting blocks of logic for different variables, or modifying dozens of lines when one thing change. It’s a way to write clearer, shorter, and less error-prone code. And it’s a huge asset for reproducible science.</p>
+<p>If you’ve ever found yourself writing the same line of code over and over again, copying and pasting blocks of logic for different variables, or modifying dozens of lines when one thing change. It’s a way to write clearer, shorter, and less error-prone code.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1757,9 +1743,9 @@ TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE </code></pre>
 <span id="cb23-15"><a href=""></a>  }, <span class="at">times =</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: microseconds
-         expr      min       lq      mean   median       uq      max neval cld
- grow_in_loop 1141.399 1251.648 1403.8994 1299.557 1365.874 3918.247   100  a 
- preallocated  659.690  692.613  785.7449  706.635  727.996 6277.059   100   b</code></pre>
+         expr      min       lq      mean    median       uq      max neval cld
+ grow_in_loop 1181.374 1278.708 1434.0992 1326.5345 1383.709 6921.456   100  a 
+ preallocated  669.243  701.018  768.2412  712.4775  738.451 2395.876   100   b</code></pre>
 </div>
 </div>
 </section>
@@ -1949,7 +1935,7 @@ $dbl_all_na
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><img data-src="images/advanced-r.jpg" class="quarto-figure quarto-figure-center" width="150" alt="Advanced R"> <img data-src="images/hand-on-programming.jpeg" class="quarto-figure quarto-figure-center" width="150" alt="Hands-on Programming With R"></p>
+<p><img data-src="images/advanced-r.jpg" class="quarto-figure quarto-figure-center" width="200" alt="Advanced R"> <img data-src="images/hand-on-programming.jpeg" class="quarto-figure quarto-figure-center" width="200" alt="Hands-on Programming With R"></p>
 </div>
 </div>
 </div>
@@ -1963,7 +1949,7 @@ $dbl_all_na
 <li>Avoid repetition by using functions.</li>
 <li>Favor pure functions.</li>
 <li>Test your functions.</li>
-<li>The <code>*apply</code> functions are your friends.</li>
+<li>The <code>*apply</code> functions are your friends, or <code>*map</code> from <code>purrr</code> <span class="emoji" data-emoji="package">📦</span></li>
 </ul>
 </div>
 <aside class="notes">
@@ -1984,7 +1970,7 @@ $dbl_all_na
 <section id="organize-your-project" class="title-slide slide level1 center">
 <h1>Organize your project</h1>
 <aside class="notes">
-<p>So far, we’ve talked about good data practices, clean code, and functional programming. But now we need to ask: Where does all of this live? How do we keep everything togethe, our data, our scripts, our figures, our notes, in a way that is coherent, portable, and reproducible? That’s what this section is about: project organization. Just like a clean kitchen makes it easier to cook, a clean research folder makes it easier to do science. And this is where R Projects, proper file structure, and tools like rrtools and renv come into play.</p>
+<p>So far, we’ve talked about good data practices, clean code, and functional programming. But now we need to ask: Where does all of this live? How do we keep everything together, our data, our scripts, our figures, our notes, in a way that is coherent, portable, and reproducible?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -2270,7 +2256,7 @@ loaded via a namespace (and not attached):
 <section id="all-of-this-structure-isnt-just-for-you-it-makes-it-easier-to-work-with-others." class="title-slide slide level1 center">
 <h1>All of this structure isn’t just for you, it makes it easier to work with others.</h1>
 <aside class="notes">
-<p>All of this structure isn’t just for you, it makes it easier to work with others. Imagine sending a collaborator your entire project folder. They open it, install renv, run one script, and everything works. No more back-and-forth about “which version of ggplot2 did you use?” or “can you send me the latest version of the file?” Everything is versioned. That’s reproducible science.</p>
+<p>All of this structure isn’t just for you, it makes it easier to work with others. Imagine sending a collaborator your entire project folder. They open it, install renv, run one script, and everything works. No more back-and-forth about “which version of ggplot2 did you use?” or “can you send me the latest version of the file?” Everything is versioned.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -2288,7 +2274,7 @@ loaded via a namespace (and not attached):
 <section id="literate-programming-1" class="title-slide slide level1 center">
 <h1>Literate Programming</h1>
 <aside class="notes">
-<p>What if your paper, your report, and your code could all live in the same file? No more copy-pasting tables from R to Word. No more screenshots of plots. No more “Oops, I updated the figure but forgot to update the caption.”</p>
+<p>What if your paper and your code could all live in the same file? No more copy-pasting tables from R to Word.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -2310,9 +2296,7 @@ loaded via a namespace (and not attached):
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/wordmeme2.jpg"></p>
 </div></div>
-</section>
-<section id="whats-wrong-about-microsoft-word-1" class="slide level2">
-<h2>What’s wrong about Microsoft Word?</h2>
+<h3 id="problems-beyond-formatting">Problems beyond formatting</h3>
 <p>Beyond the pure writing process, there are other aspects related to research data.</p>
 <div>
 <ul>
@@ -2330,7 +2314,7 @@ loaded via a namespace (and not attached):
 <li class="fragment">You run your analysis in R</li>
 <li class="fragment">You copy the results into a Word document</li>
 <li class="fragment">You tweak the formatting</li>
-<li class="fragment">You insert a figure generate with R manually</li>
+<li class="fragment">You insert a figure generated with R manually</li>
 <li class="fragment">You change your analysis, but forget to update the results in the text…</li>
 </ul>
 <aside class="notes">
@@ -2363,13 +2347,12 @@ loaded via a namespace (and not attached):
 <section id="literate-programming-the-markup-language" class="slide level2">
 <h2>Literate Programming, the markup language</h2>
 <p>Beyond the coding part, the markup language is the core element of a literate programming framework.<br>
-The idea of a markup language is separating the result from what you actually write. Some examples are:</p>
+When you write in a markup language, you’re writing <strong>plain text</strong> while also giving <strong>instructions</strong> for how to generate the final result.</p>
 <div>
 <ul>
 <li>LaTeX</li>
 <li>HTML</li>
 <li>Markdown</li>
-<li>XML</li>
 <li>…</li>
 </ul>
 </div>
@@ -2490,7 +2473,7 @@ The idea of a markup language is separating the result from what you actually wr
 <p><a href="https://github.com/Mar-Cald/repro-pre-school/tree/main/paper" target="_blank">&gt; Example</a></p>
 </section>
 <section id="quarto-zotero" class="slide level2">
-<h2>Quarto + Zotero <img data-src="images/zoter.png" width="50"></h2>
+<h2><a href="https://quarto.org/docs/visual-editor/technical.html#citations-from-zotero">Quarto</a> + Zotero <img data-src="images/zoter.png" width="50"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="fragments">
@@ -2614,7 +2597,6 @@ The idea of a markup language is separating the result from what you actually wr
 <li><span class="emoji" data-emoji="white_check_mark">✅</span> <code>"Fix bug in anxiety scoring function"</code></li>
 <li><span class="emoji" data-emoji="x">❌</span> <code>"stuff"</code></li>
 <li>Use the imperative mood: <code>"Add README"</code>, <code>"Update plots"</code></li>
-<li>Keep lines to 50–72 characters</li>
 </ul>
 </div>
 <aside class="notes">

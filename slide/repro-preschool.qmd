@@ -27,7 +27,7 @@ engine: knitr
 :::
 
 ::: notes
-Hello everyone, and thank you for being here. My name is Margherita Calderan, and I’m a post-doctoral researcher in Cognitive Psychology at the University of Padova. I recently completed my PhD in Psychological Science, just a few months ago, and I’ve been passionate about reproducible science ever since I had one of those research experiences I’m sure some of you can relate to: trying to make sense of an old project with no documentation, no structure, and files named things like “final_version_revised3_bis.csv.” I realized that if I couldn’t understand my own work after a few months, how could I possibly expect others to follow it, replicate it, or build upon it? That’s why I’m here today: to talk about reproducible science. Not just as a buzzword or a trend, but as a concrete, powerful, and often underestimated way to improve the quality, transparency of our research.
+I’ve been passionate about reproducible science ever since I had one of those research experiences I’m sure some of you can relate to: trying to make sense of an old project with no documentation, no structure, and files named things like “final_version_revised3_bis.csv.” I realized that if I couldn’t understand my own work after a few months, how could I possibly expect others to follow it, replicate it, or build upon it? That’s why I’m here today: to talk about reproducible science, as a concrete way to improve the quality, transparency of our research.
 :::
 
 ## Our job is hard :fire:
@@ -116,7 +116,7 @@ At first, yes - but then...:fire_extinguisher::fire:
 > *Learning the tools takes effort but once you do, your workflow becomes smoother, clearer, and more reliable.*
 
 ::: notes
-Now, I’ll be honest. Learning to work reproducibly takes effort. It often feels harder at first. When you start using version control or scripting your analyses, it can be frustrating. It can feel slow and confusing. But here’s the good news: once you’ve learned these tools, your workflow becomes smoother, more scalable, and much easier to maintain. 
+Now, I’ll be honest. Learning to work reproducibly takes effort. It often feels harder at first. When you start using version control or scripting your analyses, it can be frustrating. It can feel slow and confusing. But once you’ve learned these tools, your workflow becomes smoother, and much easier to maintain. 
 :::
 
 ## Outline
@@ -134,7 +134,7 @@ Now, I’ll be honest. Learning to work reproducibly takes effort. It often feel
 ### Version Control
 
 ::: notes
-So, to wrap up this introduction: reproducible science is not perfect science. It’s not about eliminating every mistake. It’s about building systems that help us work more clearly, more collaboratively, and more transparently. In the sections that follow, we’ll explore how to: • Document and structure your data, • Write readable, testable code, • Use functional programming principles to simplify your workflow, • Organize your projects in a way that’s portable and consistent, • And write scientific documents that are both human-readable and machine-executable.
+In the sections that follow, we’ll explore how to: • Document and structure your data, • Write readable, testable code, • Use functional programming principles to simplify your workflow, • Organize your projects in a way that’s portable and consistent, • And write scientific documents that are both human-readable and machine-executable.
 :::
 
 # Data
@@ -190,7 +190,7 @@ What do 0 and 1 represent? How are missing values coded?\
 Is x6 a z-score or raw data?
 
 ::: notes
-There’s no README file. No codebook. No context. Even though this file is technically shared, it’s not reproducible. It’s not even interpretable. And again, this is assuming we’re lucky and the file opens properly and doesn’t require a proprietary format or a password!
+There’s no README file. No codebook. No context. Even though this file is technically shared, it’s not reproducible. It’s not even interpretable. And again, this is assuming we’re lucky and the file opens properly.
 :::
 
 ## Good data sharing practices
@@ -276,7 +276,7 @@ Don’t overthink it, just write it like you’re explaining the dataset to a cu
 -   **Reusable**: Include clear documentation and open licenses.
 :::
 
-![](images/fair_diagram.png){width="800" fig-align="center"}
+![](images/fair_diagram.png){width="1000" fig-align="center"}
 
 ::: notes
 Your data should be discoverable. That means metadata, proper naming, and a DOI if possible. Others should be able to download your data, ideally without jumping through hoops. Use standard formats and vocabulary so that your data can be combined with other datasets. Provide enough documentation and licensing that others can actually reuse your data appropriately.
@@ -291,24 +291,20 @@ A license tells others what they can and can’t do with your data. If you don�
 -   Common licenses:
     -   [CC BY](https://creativecommons.org/licenses/by/4.0/){target="_blank"}: Requires attribution.
     -   [CC0](https://creativecommons.org/publicdomain/zero/1.0/){target="_blank"}: No restrictions.
-    -   [ODC-BY](https://opendatacommons.org/licenses/by/){target="_blank"}: Database-specific attribution.
--   Choose based on **discipline norms** and **data sensitivity**.
-:::
-
-::: notes
-Wrapping Up the Data Section So let me summarize the key points before we move on: use plain, open formats like CSV Always include a README and data dictionary Follow FAIR principles Choose a license for your data Use OSF or similar platforms to share your data
+    -   [GNU-GPL](https://www.gnu.org/licenses/gpl-3.0.html){target="_blank"}: guarantees end users the freedom to run, study, share, and modify the software while requiring that all modified versions and derivative works also be distributed under the same license. :heart:
 :::
 
 # Code
 
 ::: notes
-Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Because messy data is bad, but undocumented code might be even worse. Just like with data, your code can either be a gateway to understanding, or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else, like your advisor, your collaborator, your reviewer, or your future self, tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code. And we’ll start with a simple but powerful idea: Write code as if someone else will need to understand and reproduce your analysis. Because they will. And sometimes, that “someone” is you.
+Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Just like with data, your code can either be a gateway to understanding, or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else, like your collaborator or your reviewer tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code. And we’ll start with a simple but powerful idea: Write code as if someone else will need to understand and reproduce your analysis. Because they will. And sometimes, that “someone” is you.
 :::
 
-## Scripts 
+## Why scripting? 
 <br/>
 
 Scripting ensures **transparent, reproducible** workflows.
+<br/>
 
 ::: nonincremental
 **Reproducible**: You can rerun them. 
@@ -322,7 +318,7 @@ Scripting ensures **transparent, reproducible** workflows.
 :::
 
 ::: notes
-And as a bonus, they’re debuggable. If something goes wrong, you can trace it.
+they’re debuggable. If something goes wrong, you can trace it.
 :::
 
 
@@ -372,7 +368,7 @@ ggplot(data, aes(x = condition, y = score)) +
 :::::
 
 ::: notes
-Let me give you an example. Imagine you’re running an analysis for your study. You do it in SPSS or Excel. You click a few buttons, run a few tests, and get your results. Then, your co-author emails you and says, “Actually, we should exclude participants under 18.” So you go back, click through everything again, redo the tests, maybe forget a step, maybe round differently, maybe miss one plot, and now your results are inconsistent. Now imagine the same scenario, but you’ve scripted your analysis in R or Python. You go into your code, change one line: filter(age \>= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is now documented. That’s the power of reproducibility
+Let me give you an example. Imagine you’re running an analysis for your study. You do it in SPSS or Excel. You click a few buttons, run a few tests, and get your results. Then, your co-author emails you and says, “Actually, we should exclude participants under 18.” So you go back, click through everything again, redo the tests, maybe forget a step, maybe round differently, maybe miss one plot, and now your results are inconsistent. Now imagine the same scenario, but you’ve scripted your analysis in R or Python. You go into your code, change one line: filter(age \>= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is  documented. 
 :::
 
 ## [R](images/R_logo.png){width="300"} and RStudio :computer:
@@ -384,9 +380,43 @@ Let me give you an example. Imagine you’re running an analysis for your study.
 ## Writing better code :pencil:
 
 ::: nonincremental
--   **Organize scripts**: Load packages and data upfront.
--   **Comment clearly**: Document your logic for clarity.
 -   **Name descriptively**: Use `snake_case` or `camelCase` for readability.
+-   **Comment clearly**: Document your logic for clarity.
+-   **Organize scripts**: Load packages and data upfront.
+
+:::
+
+
+## Use descriptive names
+
+Another best practice: name your variables clearly.
+
+```{r, echo=TRUE, eval=TRUE}
+# Bad 
+x1 <- c("Psychology", "Medicine", "Biology")
+# Better
+uni_dep <- c("Psychology", "Medicine", "Biology")
+```
+
+Consistency helps too. Use either snake_case or camelCase, but pick one and stick to it.
+
+## Comments, comments and comments...
+
+Write the code for your future self and for others, not for yourself right now.\
+
+Try to open a (not well documented) old coding project after a couple of years and you will understand :)\
+
+Invest time in writing more comprehensible and documented code for you and others.\
+
+```{r, echo=TRUE, eval=FALSE}
+# Remove participants with missing anxiety scores
+dat <- dat %>% filter(!is.na(anxi))
+#vs.
+dat <- dat %>% filter(!is.na(anxi))  # <-- What is this doing?
+```
+
+::: notes
+Let’s be honest: we all think we’ll remember what we did. We never do. That’s why comments are essential. They don’t have to be elaborate, but they should describe why you’re doing something, especially if it’s not obvious.
 :::
 
 ## Organized scripts
@@ -418,38 +448,6 @@ dat <- read.csv(...)
 It’s readable. It’s linear. And if something breaks, you know where to look.
 :::
 
-## Comments, comments and comments...
-
-Write the code for your future self and for others, not for yourself right now.\
-
-Try to open a (not well documented) old coding project after a couple of years and you will understand :)\
-
-Invest time in writing more comprehensible and documented code for you and others.\
-
-```{r, echo=TRUE, eval=FALSE}
-# Remove participants with missing anxiety scores
-dat <- dat %>% filter(!is.na(anxi))
-#vs.
-dat <- dat %>% filter(!is.na(anxi))  # <-- What is this doing?
-```
-
-::: notes
-Let’s be honest: we all think we’ll remember what we did. We never do. That’s why comments are essential. Comments are the notes you leave behind for your future self, or for someone else. They don’t have to be elaborate, but they should describe why you’re doing something, especially if it’s not obvious.
-:::
-
-## Use descriptive names
-
-Another best practice: name your variables clearly.
-
-```{r, echo=TRUE, eval=TRUE}
-# Bad 
-x1 <- c("Psychology", "Medicine", "Biology")
-# Better
-uni_dep <- c("Psychology", "Medicine", "Biology")
-```
-
-Consistency helps too. Use either snake_case or camelCase, but pick one and stick to it.
-
 ## Summary
 
 ::: nonincremental
@@ -468,7 +466,7 @@ Avoid repeating the same operation multiple times in the script. The rule is, if
 A function can be re-used, tested and changed just one time affecting the whole project.
 
 ::: notes
-If you’ve ever found yourself writing the same line of code over and over again, copying and pasting blocks of logic for different variables, or modifying dozens of lines when one thing change. It’s a way to write clearer, shorter, and less error-prone code. And it’s a huge asset for reproducible science.
+If you’ve ever found yourself writing the same line of code over and over again, copying and pasting blocks of logic for different variables, or modifying dozens of lines when one thing change. It’s a way to write clearer, shorter, and less error-prone code.
 :::
 
 ## Functional Programming, example...
@@ -787,7 +785,7 @@ This is reproducible, modular, and maintainable.
 <center>
 
 ::: {layout-ncol="1"}
-![Advanced R](images/advanced-r.jpg){width="150" fig-align="center"} ![Hands-on Programming With R](images/hand-on-programming.jpeg){width="150" fig-align="center"}
+![Advanced R](images/advanced-r.jpg){width="200" fig-align="center"} ![Hands-on Programming With R](images/hand-on-programming.jpeg){width="200" fig-align="center"}
 :::
 
 </center>
@@ -799,7 +797,7 @@ This is reproducible, modular, and maintainable.
 -   Avoid repetition by using functions.
 -   Favor pure functions.
 -   Test your functions.
--   The `*apply` functions are your friends.
+-   The `*apply` functions are your friends, or `*map` from `purrr` :package:
 :::
 
 ::: notes
@@ -809,7 +807,7 @@ In the long run, these practices will save you time, reduce your bugs, and make 
 # Organize your project
 
 ::: notes
-So far, we’ve talked about good data practices, clean code, and functional programming. But now we need to ask: Where does all of this live? How do we keep everything togethe, our data, our scripts, our figures, our notes, in a way that is coherent, portable, and reproducible? That’s what this section is about: project organization. Just like a clean kitchen makes it easier to cook, a clean research folder makes it easier to do science. And this is where R Projects, proper file structure, and tools like rrtools and renv come into play.
+So far, we’ve talked about good data practices, clean code, and functional programming. But now we need to ask: Where does all of this live? How do we keep everything together, our data, our scripts, our figures, our notes, in a way that is coherent, portable, and reproducible?
 :::
 
 ## R Projects
@@ -1030,13 +1028,13 @@ sessionInfo()
 # All of this structure isn’t just for you, it makes it easier to work with others.
 
 ::: notes
-All of this structure isn’t just for you, it makes it easier to work with others. Imagine sending a collaborator your entire project folder. They open it, install renv, run one script, and everything works. No more back-and-forth about “which version of ggplot2 did you use?” or “can you send me the latest version of the file?” Everything is versioned. That’s reproducible science.
+All of this structure isn’t just for you, it makes it easier to work with others. Imagine sending a collaborator your entire project folder. They open it, install renv, run one script, and everything works. No more back-and-forth about “which version of ggplot2 did you use?” or “can you send me the latest version of the file?” Everything is versioned.
 :::
 
 # Literate Programming
 
 ::: notes
-What if your paper, your report, and your code could all live in the same file? No more copy-pasting tables from R to Word. No more screenshots of plots. No more “Oops, I updated the figure but forgot to update the caption.”
+What if your paper and your code could all live in the same file? No more copy-pasting tables from R to Word.
 :::
 
 ## What's wrong about Microsoft Word?
@@ -1053,7 +1051,7 @@ MS Word is a WYSIWYG (*what you see is what you get editor*) that force users to
 :::
 :::::
 
-## What's wrong about Microsoft Word?
+### Problems beyond formatting
 
 Beyond the pure writing process, there are other aspects related to research data.
 
@@ -1071,7 +1069,7 @@ In MS Word (or similar) we need to produce everything outside and then manually 
 -   You run your analysis in R
 -   You copy the results into a Word document
 -   You tweak the formatting
--   You insert a figure generate with R manually
+-   You insert a figure generated with R manually
 -   You change your analysis, but forget to update the results in the text…
 
 ::: notes
@@ -1094,13 +1092,12 @@ For example **jupyter notebooks**, **R Markdown** and now **Quarto** are literat
 ## Literate Programming, the markup language
 
 Beyond the coding part, the markup language is the core element of a literate programming framework.\
-The idea of a markup language is separating the result from what you actually write. Some examples are:
+When you write in a markup language, you're writing **plain text** while also giving **instructions** for how to generate the final result.
 
 ::: nonincremental
 -   LaTeX
 -   HTML
 -   Markdown
--   XML
 -   ...
 :::
 
@@ -1233,8 +1230,7 @@ You can write scientific documents that look and behave just like journal articl
 [> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/paper){target="_blank"}
 
 
-## Quarto + Zotero ![](images/zoter.png){width="50"}
-
+## [Quarto](https://quarto.org/docs/visual-editor/technical.html#citations-from-zotero) + Zotero ![](images/zoter.png){width="50"}
 
 ::::: columns
 ::: {.column width="50%"}
@@ -1354,7 +1350,6 @@ You can also do most of this from RStudio’s Git pane.
 -   :white_check_mark: `"Fix bug in anxiety scoring function"`
 -   :x: `"stuff"`
 -   Use the imperative mood: `"Add README"`, `"Update plots"`
--   Keep lines to 50–72 characters
 :::
 
 ::: notes
