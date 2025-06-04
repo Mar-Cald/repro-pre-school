@@ -1216,7 +1216,7 @@ With one command, you get three outputs:
 
 Everything from the same source. No duplication. **Synchronization**.
 
-[> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/slide/example-quarto.html){target="_blank"}
+[> Example](https://mar-cald.github.io/repro-pre-school/slide/example-quarto.html){target="_blank"}
 
 ## Extra Tools: citations and cross-referencing
 <br/>
