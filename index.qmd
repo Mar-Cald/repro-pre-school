@@ -12,11 +12,12 @@ incremental: true
 engine: knitr  
 ---
 
-Here you can find the slide... :smile:
+Slides:
 
-[Slides](slide/repro-preschool.html)  
-[PDF](slide/repro-preschool.pdf)
+-   [HTML](slide/repro-preschool.html)
 
----
+-   [PDF](slide/repro-preschool.pdf)
 
-[Quarto output](slide/example-quarto.html)
+------------------------------------------------------------------------
+
+Quarto: [output](slide/example-quarto.html)
