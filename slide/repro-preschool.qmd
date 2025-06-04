@@ -239,7 +239,7 @@ This generates a clean summary of your dataset, number of rows and columns, summ
 
 ## Data dictionary - [Good](https://osf.io/ygxde) data sharing example
 
-![](images/luca2.png){width = 300}
+![](images/luca2.png)
 
 ## README files
 
@@ -308,6 +308,8 @@ Now that we’ve talked about how to document and organize your data, let’s mo
 ## Scripts 
 <br/>
 
+Scripting ensures **transparent, reproducible** workflows.
+
 ::: nonincremental
 **Reproducible**: You can rerun them. 
 <br/><br/>
@@ -323,12 +325,6 @@ Now that we’ve talked about how to document and organize your data, let’s mo
 And as a bonus, they’re debuggable. If something goes wrong, you can trace it.
 :::
 
-## [R](images/R_logo.png){width="300"} and RStudio :computer:
-
--   **R**: Free, open-source, with thousands of packages for analysis.
--   **RStudio**: Intuitive interface for coding, plotting, and debugging.
--   Vibrant **community** for support and resources.
--   Scripting ensures **transparent, reproducible** workflows.
 
 ##
 :::: columns
@@ -378,6 +374,12 @@ ggplot(data, aes(x = condition, y = score)) +
 ::: notes
 Let me give you an example. Imagine you’re running an analysis for your study. You do it in SPSS or Excel. You click a few buttons, run a few tests, and get your results. Then, your co-author emails you and says, “Actually, we should exclude participants under 18.” So you go back, click through everything again, redo the tests, maybe forget a step, maybe round differently, maybe miss one plot, and now your results are inconsistent. Now imagine the same scenario, but you’ve scripted your analysis in R or Python. You go into your code, change one line: filter(age \>= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is now documented. That’s the power of reproducibility
 :::
+
+## [R](images/R_logo.png){width="300"} and RStudio :computer:
+
+-   **R**: Free, open-source, with thousands of packages for analysis.
+-   **RStudio**: Intuitive interface for coding, plotting, and debugging.
+-   Vibrant **community** for support and resources.
 
 ## Writing better code :pencil:
 
@@ -479,7 +481,7 @@ head(mtcars, n = 3)
 str(mtcars)
 ```
 
-## Functional Programming
+## Imperative Programming
 
 The standard (\~imperative) option is using a `for` loop, iterating through columns, calculate the values and store into another data structure.
 
@@ -669,7 +671,7 @@ x = 4
 add_pure<- function(x) {
   return(x + 1)
 }
-add_pure(2)
+add_pure(x)
 print(x)
 ```
 :::
@@ -680,6 +682,7 @@ print(x)
 Modifies external variables.
 
 ```{r, echo=TRUE}
+x = 4
 add_impure <- function(x) {
   x <<- x + 1
 }
@@ -896,16 +899,6 @@ This isn’t rigid, you can adapt it. But the key idea is: one folder, one proje
 To make this even "easier", you can use the `rrtools` package to create what’s called a reproducible research compendium.
 <br/><br/>
 
-
-```{r, eval=FALSE, echo=TRUE}
-install.packages("rrtools")
-
-rrtools::create_compendium("my-awesome-project")
-```
-
-## Reproducible research compendium
-<br/>
-
 ::::: columns
 ::: {.column width="50%"}
 > *... the goal is to provide a standard and easily recognisable way for organising the digital materials of a project to enable others to inspect, reproduce, and extend the research... [@Marwick02012018]*
@@ -915,6 +908,7 @@ rrtools::create_compendium("my-awesome-project")
 ![](images/compendia.png){fig-align="center" width="300"}
 :::
 :::::
+
 
 ## Research compendium `rrtools` :package:
 <br/>
@@ -928,16 +922,10 @@ rrtools::create_compendium("my-awesome-project")
 :::
 
 ## 
+
 <br/>
 
 `rrtools::create_compendium()` builds the basic structure for a research compendium.
-<br/>
-
-::: nonincremental
--   Storage for general metadata (e.g., citation details)
--   Dependency management via **DESCRIPTION** file
--   Function storage and documentation in R/ folder
-:::
 <br/>
 
 [> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/compendium){target="_blank"}
@@ -1190,6 +1178,10 @@ You write your documents in **Markdown**, and **Quarto** turns them into:\
 :::
 
 ## Quarto
+<br/>
+
+[> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/slide/example-quarto.qmd){target="_blank"}
+<br/>
 
 ::: nonincremental
 -   If your data changes, your summary table updates.
@@ -1198,8 +1190,6 @@ You write your documents in **Markdown**, and **Quarto** turns them into:\
 :::
 
 This eliminates a huge source of human error: **manual updates**.
-
-[> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/slide/example-quarto.qmd){target="_blank"}
 
 
 ## Outputs
