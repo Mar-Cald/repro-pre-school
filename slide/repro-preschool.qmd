@@ -89,7 +89,7 @@ At its core, reproducible science means that someone else, or even you, in the f
 It means your workflow is **transparent**.
 
 ::: notes
-And it’s not just about replication in the scientific sense. It’s also about efficiency. Reproducible workflows save time. They reduce errors. They make collaboration smoother. They build trust with your peers, reviewers, and the public.
+ Reproducible workflows save time. They reduce errors. They make collaboration smoother. 
 :::
 
 ## Keys to reproducible science :closed_lock_with_key:
@@ -99,6 +99,10 @@ And it’s not just about replication in the scientific sense. It’s also about
 -   **Code**: write analysis scripts that are clean, transparent, and reusable..
 -   **Literate programming**: combine code and text in the same document, so your reports are dynamic and replicable.
 -   **Version Control and Sharing**: track changes, collaborate, and make your work openly available using tools like GitHub and OSF.
+:::
+
+::: notes
+We need to organize, document, and share our data so it’s clear to others. Our analysis code should be clean, transparent, and reusable. By combining code and explanation in the same document, we make our work dynamic and understandable. And with version control tools like Git, we can track changes, collaborate, and share our work openly.
 :::
 
 ## So... Is reproducible science even harder?
