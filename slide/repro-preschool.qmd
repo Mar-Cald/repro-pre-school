@@ -1199,7 +1199,8 @@ You write your documents in **Markdown**, and **Quarto** turns them into:\
 
 This eliminates a huge source of human error: **manual updates**.
 
-\[add example!!\]
+[> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/slide/example-quarto.qmd){target="_blank"}
+
 
 ## Outputs
 
@@ -1215,7 +1216,7 @@ With one command, you get three outputs:
 
 Everything from the same source. No duplication. **Synchronization**.
 
-\[add example!!\]
+[> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/slide/example-quarto.html){target="_blank"}
 
 ## Extra Tools: citations and cross-referencing
 <br/>
@@ -1237,9 +1238,10 @@ You can write scientific documents that look and behave just like journal articl
 
 ## Let's see an example...
 
-[.qmd source](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.qmd){target="_blank"}
+<br/>
 
-[docx output](https://github.com/Mar-Cald/compendium/blob/master/analysis/paper/example.docx){target="_blank"}
+[> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/paper){target="_blank"}
+
 
 ## Quarto + Zotero ![](images/zoter.png){width="50"}
 

@@ -1,0 +1,46 @@
+---
+title: "example-quarto"
+toc: true
+format:
+  html: default
+  pdf: default
+  docx: default
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| message: false
+# load packages
+pkg <- c("ggplot2", "see")
+invisible(sapply(pkg, library, character.only = TRUE)) #don't print
+# load functions
+source("R/utils.R")
+#set theme
+theme_set(theme_classic())
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#| echo: false
+# Load data
+data <- simulate_data(n = 50, eff = .3)
+```
+You can add options to executable code like this
+
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+#| echo: false
+# Make plot
+ggplot(data, aes(y = y, x= x, fill = x)) +
+  geom_violindot(size_dots = 2)
+```
