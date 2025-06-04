@@ -16,3 +16,6 @@ Here you can find the slide... :smile:
 
 [Slides](slide/repro-preschool.html)  
 [PDF](slide/repro-preschool.pdf)
+
+Quarto Example
+[Quarto output](slide/example-quarto.html)
