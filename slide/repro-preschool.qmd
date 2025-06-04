@@ -1038,7 +1038,7 @@ Why would it be desiderable?
 
 MS Word is a WYSIWYG (*what you see is what you get editor*) that force users to think about formatting, numbering, etc. Markup languages receive the content (plain text) and the rules and creates the final document.
 
-::::: columns
+:::: columns
 ::: {.column width="50%"}
 ![](images/wordmeme1.jpg)
 :::
