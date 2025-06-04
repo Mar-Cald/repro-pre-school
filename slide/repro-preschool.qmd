@@ -1048,7 +1048,7 @@ MS Word is a WYSIWYG (*what you see is what you get editor*) that force users to
 :::
 :::::
 
-### Problems beyond formatting
+## Problems beyond formatting
 
 Beyond the pure writing process, there are other aspects related to research data.
 
