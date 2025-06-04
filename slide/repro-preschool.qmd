@@ -940,7 +940,7 @@ rrtools::create_compendium("my-awesome-project")
 :::
 <br/>
 
-[> Example](https://github.com/Mar-Cald/compendium){target="_blank"}
+[> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/compendium){target="_blank"}
 
 ::: {.notes}
 These features enable managing, installing, and sharing project-related functionality.
