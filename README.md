@@ -1,10 +1,12 @@
 # Reproducible Science Workshop – June 6, 2025
 
 📅 **Date**: Friday, June 6, 2025  
-🕒 **Time**: 14:30–16:30  
-📍 **Location**: University of Padova, [DPSS](https://g.co/kgs/Q6fpK3w) - Room 2, Ground floor of Psico 1 (the pink building) 
----
 
+🕒 **Time**: 14:30–16:30  
+
+📍 **Location**: University of Padova, [DPSS](https://g.co/kgs/Q6fpK3w) - Room 2, Ground floor of Psico 1 (the pink building) 
+
+---
 ## 🎯 Workshop Goals
 
 This [pre-school](https://psicostat.github.io/replicability-psy-unipd-phd/) session offers a hands-on introduction to reproducible science practices in psychology and related fields.
