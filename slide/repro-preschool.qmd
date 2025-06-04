@@ -785,13 +785,6 @@ This is reproducible, modular, and maintainable.
 -   Hadley Wickham: The Joy of Functional Programming (for Data Science)(<https://www.youtube.com/watch?v=bzUmK0Y07ck>)
 :::
 
-<center>
-
-::: {layout-ncol="1"}
-![Advanced R](images/advanced-r.jpg){width="200" fig-align="center"} ![Hands-on Programming With R](images/hand-on-programming.jpeg){width="200" fig-align="center"}
-:::
-
-</center>
 
 ## Wrapping up
 <br/>
