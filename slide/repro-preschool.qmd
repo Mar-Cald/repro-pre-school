@@ -607,7 +607,6 @@ means <- sapply(mtcars, mean)
 ```
 
 ## The `*apply` Family
-<br/>
 
 Apply **your** function...
 ```{r}
@@ -640,10 +639,7 @@ No loops, no repetition.
 -   `apply()` is for applying functions over rows or columns of a matrix or data frame.
 :::
 
-```{r}
-#| echo: true
-sapply(mtcars, mean) == apply(mtcars, MARGIN = 2, mean) # MARGIN = 2, apply to columns
-```
+
 
 ## `for` loops are bad?
 
@@ -707,7 +703,7 @@ Now we can apply all of these to every column:
 
 ```{r}
 #| echo: true
-sapply(funs, function(f) apply(mtcars, 2, f))
+sapply(funs, function(f) apply(mtcars, MARGIN = 2, f)) # MARGIN = 2 = column
 ```
 
 This gives you a matrix with rows as variables and columns as statistics.
