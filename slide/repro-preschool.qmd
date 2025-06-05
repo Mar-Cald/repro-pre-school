@@ -305,6 +305,57 @@ A license tells others what they can and can’t do with your data. If you don�
 Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Just like with data, your code can either be a gateway to understanding, or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else, like your collaborator or your reviewer tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code.
 :::
 
+
+## Why scripting? 
+
+:::: columns
+::: {.column width="50%"}
+**The SPSS Workflow**
+
+::: nonincremental
+-   Click menu items to run analysis
+
+-   "exclude <18"
+
+-   Click through everything again
+
+-   Forget a step? Round differently?
+
+::: 
+
+> Stressful, error-prone, and undocumented.
+
+::: 
+
+::: {.column width="50%"}
+**R Workflow**
+
+```{r, echo = TRUE, eval = FALSE}
+# Load data
+data <- read.csv("data.csv")
+
+# Filter age
+data <- data[data$age >= 18, ]
+
+# Analyze
+summary(lm(score ~ condition, data = data))
+
+# Make plot
+ggplot(data, aes(x = condition, y = score)) +
+  geom_boxplot()
+```
+
+
+> One line change, rerun, and everything updates.
+
+:::
+:::::
+
+::: notes
+You go into your code, change one line: filter(age \>= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is  documented. 
+:::
+
+
 ## Why scripting? 
 <br/>
 
