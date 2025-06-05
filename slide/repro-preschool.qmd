@@ -378,53 +378,6 @@ they’re debuggable. If something goes wrong, you can trace it.
 :::
 
 
-##
-:::: columns
-::: {.column width="50%"}
-**The SPSS Workflow**
-
-::: nonincremental
--   Click menu items to run analysis
-
--   "exclude <18"
-
--   Click through everything again
-
--   Forget a step? Round differently?
-
-::: 
-
-> Stressful, error-prone, and undocumented.
-
-::: 
-
-::: {.column width="50%"}
-**R Workflow**
-
-```{r, echo = TRUE, eval = FALSE}
-# Load data
-data <- read.csv("data.csv")
-
-# Filter age
-data <- data[data$age >= 18, ]
-
-# Analyze
-summary(lm(score ~ condition, data = data))
-
-# Make plot
-ggplot(data, aes(x = condition, y = score)) +
-  geom_boxplot()
-```
-
-
-> One line change, rerun, and everything updates.
-
-:::
-:::::
-
-::: notes
-You go into your code, change one line: filter(age \>= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is  documented. 
-:::
 
 ## [R](images/R_logo.png){width="300"} and RStudio :computer:
 
