@@ -849,6 +849,20 @@ Done! Now when you save or load files, you can use relative paths!
 
 <br/>
 
+```
+Users
+ |
+ ├─tita
+    |
+    ├─ workinMemo
+           |
+           ├─ data
+               |
+               ├─ clean_data.csv
+```
+
+<br/>
+
 **Absolute** path: read.csv("Users/tita/workinMemo/data/clean_data.csv") 
 <br/><br/>
 
