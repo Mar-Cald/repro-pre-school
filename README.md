@@ -9,7 +9,7 @@
 ---
 ## 🎯 Workshop Goals
 
-This [pre-school](https://psicostat.github.io/replicability-psy-unipd-phd/) session offers a hands-on introduction to reproducible science practices in psychology and related fields.
+This [pre-school](https://psicostat.github.io/replicability-psy-unipd-phd/) session offers a hands-on introduction to reproducible science practices.
 
 You’ll learn how to:
 - Write transparent, script-based analyses in R
