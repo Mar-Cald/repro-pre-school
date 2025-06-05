@@ -856,16 +856,17 @@ Users
  |
  ├─tita
     |
-    ├─ workinMemo
+    ├─ workin_memo
            |
            ├─ data
-               |
-               ├─ clean_data.csv
+           |    ├─ clean_data.csv
+           |
+           ├─ workin_memo.Rproj
 ```
 
 <br/>
 
-**Absolute** path: read.csv("Users/tita/workinMemo/data/clean_data.csv") 
+**Absolute** path: read.csv("Users/tita/workin_memo/data/clean_data.csv") 
 <br/><br/>
 
 **Relative** path: read.csv("data/clean_data.csv")
