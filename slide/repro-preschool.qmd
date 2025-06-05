@@ -918,7 +918,7 @@ To make this even "easier", you can use the `rrtools` package to create what’s
 
 <br/>
 
-`rrtools::create_compendium()` builds the basic structure for a research compendium.
+`rrtools::create_compendium("compedium")` builds the basic structure for a research compendium.
 <br/>
 
 [> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/compendium){target="_blank"}
@@ -989,7 +989,7 @@ These packages will be installed into "~/repro-pre-school/example-renv/renv/libr
 -   **`rrtools`**: Organizes your project into a **reproducible compendium** with clear folders.
 -   **`renv`**: Locks **R package versions** for consistent environments.
 -   Together, they ensure **structure** and **reproducibility** across teams and time.
--   Run `rrtools::create_compendium()` to start, then `renv::init()` to lock dependencies.
+-   Run `rrtools::create_compendium("project")` to start, then `renv::init()` to lock dependencies.
 :::
 
 ## ![](images/docker.webp){width="100"} [Docker](https://www.docker.com/){target="_blank"}
