@@ -701,7 +701,7 @@ When you write your own functions, it’s smart to test them. In R, we can use `
 Define your function...
 
 ```{r, echo=TRUE}
-my_mean <- function(x) {
+my_mean <- function(x, na.rm = TRUE) {
   if (!is.numeric(x)) stop("`x` must be numeric")
   if (length(x) == 0) return(NA)
   if (na.rm) x <- x[!is.na(x)]
