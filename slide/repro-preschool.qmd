@@ -701,7 +701,7 @@ When you write your own functions, it’s smart to test them. In R, we can use `
 Define your function...
 
 ```{r, echo=TRUE}
-my_mean <- function(x, na.rm = TRUE) {
+my_mean <- function(x) {
   if (!is.numeric(x)) stop("`x` must be numeric")
   if (length(x) == 0) return(NA)
   if (na.rm) x <- x[!is.na(x)]
@@ -912,7 +912,6 @@ To make this even "easier", you can use the `rrtools` package to create what’s
 -   Maintain a clear separation of data (original data is untouched!), method, and output.
 -   Specify the computational environment that was used for the original analysis
 
-[> Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
 :::
 
 ## 
@@ -923,6 +922,7 @@ To make this even "easier", you can use the `rrtools` package to create what’s
 <br/>
 
 [> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/compendium){target="_blank"}
+[> Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
 
 ::: {.notes}
 These features enable managing, installing, and sharing project-related functionality.
@@ -978,8 +978,6 @@ These packages will be installed into "~/repro-pre-school/example-renv/renv/libr
 
 <br/>
 
-`renv::snapshot()` \# update lockfile 
-<br/>
 
 `renv::restore()` \# re-install from lockfile 
 <br/>
@@ -1088,7 +1086,7 @@ For example **jupyter notebooks**, **R Markdown** and now **Quarto** are literat
 
 ## Literate Programming, the markup language
 
-Beyond the coding part, the markup language is the core element of a literate programming framework.\
+The markup language is the core element of a literate programming framework.\
 When you write in a markup language, you're writing **plain text** while also giving **instructions** for how to generate the final result.
 
 ::: nonincremental
@@ -1115,21 +1113,8 @@ Markdown is one of the most popular markup languages for several reasons:
 ::: nonincremental
 -   easy to write and read compared to Latex and HTML
 -   easy to convert from Markdown to basically every other format using `pandoc`
--   easy to implement new features
 :::
 
-## Markdown (source code)
-
-Also the source code can be used to take notes and read.
-
-```{r, echo = TRUE, eval=FALSE}
-## My Section
-- Write **bold** text.
-- Include a [link](https://quarto.org)
-- Run code: `r mean(mtcars$mpg)`. 
-```
-
-Latex and HTML need to be compiled otherwise they are very hard to read.
 
 ## Quarto
 
@@ -1517,13 +1502,12 @@ It's about showing your work so that others can **follow**, **understand**, and 
 
 
 # Start simple, don’t wait until you’re “ready", and teach what you learn!
-<br/><br/>
-<center>
-THANK YOU!
-<center>
 
 ::: notes
 You don’t need to become an expert overnight. You don’t have to adopt every tool I mentioned today all at once. Start small: Write your next data cleaning script with comments. Save your next analysis as an R Project. Try Quarto for your next report. Upload one dataset to OSF with a README. These little changes compound over time. And each time you do it, it gets easier. You’re not just changing your workflow. You’re investing in your future self.
-:::
+::
+
+# THANK YOU!
+
 
 
