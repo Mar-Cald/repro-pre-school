@@ -1502,7 +1502,7 @@ It's about showing your work so that others can **follow**, **understand**, and 
 
 ::: notes
 You don’t need to become an expert overnight. You don’t have to adopt every tool I mentioned today all at once. Start small: Write your next data cleaning script with comments. Save your next analysis as an R Project. Try Quarto for your next report. Upload one dataset to OSF with a README. These little changes compound over time. And each time you do it, it gets easier. You’re not just changing your workflow. You’re investing in your future self.
-::
+:::
 
 # THANK YOU!
 
