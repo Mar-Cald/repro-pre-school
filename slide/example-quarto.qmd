@@ -2,6 +2,7 @@
 title: "example-quarto"
 toc: true #Include a table of contents in the document
 format:
+  html: default
   pdf: default
   docx: default
 editor: visual
