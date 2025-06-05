@@ -922,7 +922,9 @@ To make this even "easier", you can use the `rrtools` package to create what’s
 <br/>
 
 [> Example](https://github.com/Mar-Cald/repro-pre-school/tree/main/compendium){target="_blank"}
-[> Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in)
+<br/>
+
+[> Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html#let%E2%80%99s_dive_in){target="_blank"}
 
 ::: {.notes}
 These features enable managing, installing, and sharing project-related functionality.
