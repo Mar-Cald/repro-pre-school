@@ -27,7 +27,7 @@ engine: knitr
 :::
 
 ::: notes
-I’ve been passionate about reproducible science after going through an experience I’m sure many of you can relate to: trying to make sense of an old project with no documentation, no structure, and files named things like “final_version_revised3_bis.csv.” I realized that if I couldn’t understand my own work after a few months, how could I possibly expect others to follow it, replicate it, or build upon it? That’s why I’m here today: to talk about reproducible science, as a concrete way to improve the quality, transparency of our research.
+That’s why I’m here today: to talk about reproducible science, as a concrete way to improve the quality, transparency of our research.
 :::
 
 ## Our job is hard :fire:
@@ -53,7 +53,7 @@ I’ve been passionate about reproducible science after going through an experie
 :::::
 
 ::: notes
-Let’s start with an honest look at our daily work. Doing research in psychology, or any empirical science, is hard. We juggle multiple roles: we design studies, collect data, analyze results, write papers, supervise students, prepare talks, respond to reviewers, and sometimes even do administration. It’s a lot. It’s easy to feel overwhelmed. And in that chaos, good practices often fall by the wayside. It’s tempting to write quick scripts, save datasets with unclear names, copy and paste plots into Word, and move on. But here's the thing: all of those shortcuts come at a cost. Not right away, maybe not even this week, but eventually for sure
+It’s a lot. It’s easy to feel overwhelmed. And in that chaos, good practices often fall by the wayside. It’s tempting to write quick scripts, save datasets with unclear names, copy and paste plots into Word, and move on. But here's the thing: all of those shortcuts come at a cost. 
 :::
 
 ## Reproducibility helps!
@@ -77,7 +77,7 @@ Let’s start with an honest look at our daily work. Doing research in psycholog
 :::::
 
 ::: notes
-I want to suggest that reproducibility is not an extra task. It’s not a burden we add on top of everything else. It’s a way of working that can replace the mess with a clear system. It’s an investment in your future self. And if you’ve ever tried to understand your own code from six months ago, you know what I mean.
+I want to suggest that reproducibility is not an extra task. It’s not a burden we add on top of everything else. It’s a way of working that can replace the mess with a clear system. It’s an investment in your future self.
 :::
 
 ## What is reproducible science?
@@ -89,7 +89,7 @@ At its core, reproducible science means that someone else, or even you, in the f
 It means your workflow is **transparent**.
 
 ::: notes
- Reproducible workflows save time. They reduce errors. They make collaboration smoother. 
+They reduce errors. They make collaboration smoother. 
 :::
 
 ## Keys to reproducible science :closed_lock_with_key:
@@ -120,7 +120,7 @@ At first, yes - but then...:fire_extinguisher::fire:
 > *Learning the tools takes effort but once you do, your workflow becomes smoother, clearer, and more reliable.*
 
 ::: notes
-Now, I’ll be honest. Learning to work reproducibly takes effort. It often feels harder at first. It can feel slow and confusing. But once you’ve learned these tools, your workflow becomes smoother, and much easier to maintain. 
+Learning takes effort. It can feel slow and confusing. But once you’ve learned these tools, your workflow becomes smoother. 
 :::
 
 ## Outline
@@ -144,7 +144,7 @@ In the sections that follow, we’ll explore how to: • Document and structure 
 # Data
 
 ::: notes
-Let’s begin with the first pillar of reproducible science: data. Everything we do as scientists builds on data. If your data is messy, undocumented, or inaccessible, it doesn’t matter how brilliant your analysis is, no one will be able to follow it, reproduce it, or extend it.
+If your data is messy, undocumented, or inaccessible, it doesn’t matter how brilliant your analysis is, no one will be able to follow it, reproduce it, or extend it.
 :::
 
 ## Data types in research
@@ -207,7 +207,7 @@ There’s no README file. No codebook. No context. Even though this file is tech
 :::
 
 ::: notes
-So how do we do this? Let’s start with some concrete recommendations. Use plain-text formats for your data: CSV (.csv) and tab-delimited text (.txt) are ideal. They’re easy to read, easy to import- Avoid Excel files or other proprietary formats that often create compatibility issues. Plain text is portable. It doesn’t care what operating system or software someone uses. 
+ They’re easy to read, easy to import- Avoid Excel files or other proprietary formats that often create compatibility issues. Plain text is portable. It doesn’t care what operating system or software someone uses. 
 :::
 
 ## Data dictionary :open_file_folder: 
@@ -238,7 +238,7 @@ create_dictionary(df, id_var = "id", var_labels = df_labels)
 ```
 
 ::: notes
-This generates a clean summary of your dataset, number of rows and columns, summaries of variables, missingness, and labels. It’s readable, shareable, and even helpful for yourself when you come back to the data later. And the beauty is that it takes minutes to set up, but saves hours down the line.
+It’s readable, shareable, and even helpful for yourself when you come back to the data later. And the beauty is that it takes minutes to set up, but saves hours down the line.
 :::
 
 ## Data dictionary - [Good](https://osf.io/ygxde) data sharing example
@@ -253,6 +253,7 @@ A **README** file is the first thing someone sees when they open your dataset/pr
 -   What is this dataset? 
 -   How was it collected? 
 -   What are the variables? 
+-   Which is the structure of the project?
 ::: 
 
 ::: notes
@@ -301,7 +302,7 @@ A license tells others what they can and can’t do with your data. If you don�
 # Code
 
 ::: notes
-Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Just like with data, your code can either be a gateway to understanding, or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else, like your collaborator or your reviewer tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code. And we’ll start with a simple but powerful idea: Write code as if someone else will need to understand and reproduce your analysis. Because they will. And sometimes, that “someone” is you.
+Now that we’ve talked about how to document and organize your data, let’s move to the next part : your code. Just like with data, your code can either be a gateway to understanding, or a brick wall. And unfortunately, many of us learn to code the way we learn to cook when we’re hungry: quickly, messily, and without a recipe. That might work in the moment, but if someone else, like your collaborator or your reviewer tries to understand what you did… it’s going to be tough. So let’s talk about how to write clear, organized, and reproducible code.
 :::
 
 ## Why scripting? 
@@ -371,7 +372,7 @@ ggplot(data, aes(x = condition, y = score)) +
 :::::
 
 ::: notes
-Let me give you an example. Imagine you’re running an analysis for your study. You do it in SPSS or Excel. You click a few buttons, run a few tests, and get your results. Then, your co-author emails you and says, “Actually, we should exclude participants under 18.” So you go back, click through everything again, redo the tests, maybe forget a step, maybe round differently, maybe miss one plot, and now your results are inconsistent. Now imagine the same scenario, but you’ve scripted your analysis in R or Python. You go into your code, change one line: filter(age \>= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is  documented. 
+You go into your code, change one line: filter(age \>= 18), and rerun everything. The tables update, the figures update, the results update, and you’re done. No mistakes, no stress, and your analysis is  documented. 
 :::
 
 ## [R](images/R_logo.png){width="300"} and RStudio :computer:
@@ -564,18 +565,20 @@ results <- lapply(mtcars, summ)
 ```
 
 Now results is a list of data frames, one per column.
-<br/><br/>
+<br/>
 
 We can stack them into one big data frame:
 
 ```{r}
 #| echo: true
 results_df <- do.call(rbind, results)
+results_df
 ```
-<br/>
 
+::: notes
 This gives us a clean summary for every variable in just a few lines of code. 
 No loops, no repetition.
+:::
 
 ## Using `sapply`, `vapply`, and `apply`
 
@@ -775,7 +778,6 @@ results_df <- do.call(rbind, results)
 ```
 <br/><br/>
 
-This is reproducible, modular, and maintainable.
 
 ## More about functional programming in R
 
@@ -803,7 +805,7 @@ In the long run, these practices will save you time, reduce your bugs, and make 
 # Organize your project
 
 ::: notes
-So far, we’ve talked about good data practices, clean code, and functional programming. But now we need to ask: How do we keep everything together, our data, our scripts, our figures, our notes, in a way that is coherent, portable, and reproducible?
+How do we keep everything together, our data, our scripts, our figures, our notes, in a way that is coherent, portable, and reproducible?
 :::
 
 ## R Projects
@@ -1035,17 +1037,12 @@ sessionInfo()
 -   Use `rrtools` to scaffold a research compendium
 -   Use `renv` to lock your package versions
 
-# All of this structure isn’t just for you, it makes it easier to work with others.
 
-::: notes
-All of this structure isn’t just for you, it makes it easier to work with others. Imagine sending a collaborator your entire project folder. They open it, install renv, run one script, and everything works.
-:::
 
 # Literate Programming
 
 ::: notes
-What if your paper and your code could all live in the same file? No more copy-pasting tables from R to Word.
-Why would it be desiderable?
+What if your paper and your code could all live in the same file? No more copy-pasting tables from R to Word. 
 :::
 
 
@@ -1331,13 +1328,10 @@ git add analysis.R
 # 3. Save a snapshot of your work with a message
 git commit -m "Initial commit"
 
-# 4. Rename the default branch to 'main' (recommended)
-git branch -M main
-
-# 5. Connect your local project to a GitHub repo (change the URL)
+# 4. Connect your local project to a GitHub repo (change the URL)
 git remote add origin https://github.com/yourname/repo.git
 
-# 6. Upload your commits to GitHub
+# 5. Upload your commits to GitHub
 git push -u origin main
 ```
 :::
@@ -1432,9 +1426,6 @@ Conflicts are normal! Don’t panic. Read carefully, choose the right version of
 -   Commit and push from the **Git** tab in RStudio
 -   View commit history in **History** pane
 
-::: notes
-For most use cases, RStudio’s Git integration is sufficient. Great for beginners.
-:::
 
 ## Practice & resources
 <br/>
