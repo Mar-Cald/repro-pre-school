@@ -14,7 +14,9 @@ reference-section-title: References
 final-slide: true  
 from: markdown+emoji  
 incremental: true  
-engine: knitr  
+engine: knitr 
+logo: images/psicostatLogo.png
+
 ---
 
 ## About me :wave:
