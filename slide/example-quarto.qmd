@@ -2,8 +2,6 @@
 title: "example-quarto"
 toc: true #Include a table of contents in the document
 format:
-  html: default
-  pdf: default
   docx: default
 editor: visual
 ---
@@ -34,9 +32,7 @@ When you click the **Render** button a document will be generated that includes 
 data <- simulate_data(n = 50, eff = .3)
 ```
 
-You can add options to executable code like this
-
-The `echo: false` option disables the printing of code (only output is displayed).
+Mean Control `r mean(data$y[data$condition]=="control")`
 
 ```{r}
 #| echo: false
