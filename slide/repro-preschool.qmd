@@ -1498,14 +1498,6 @@ Reproducible science is **not** about being **perfect**.
 It's about showing your work so that others can **follow**, **understand**, and **build upon** it.
 
 
-## Start simple :feet:
-<br/><br/>
-
-> “... anything you do — providing the raw data, posting any small scripts, detailing the versions of programs you used together with their parameters — will be tremendously welcome to anyone trying to validate or build off your paper...”
-
-*C. Titus Brown*
-
-
 # Start simple, don’t wait until you’re “ready", and teach what you learn!
 
 ::: notes
